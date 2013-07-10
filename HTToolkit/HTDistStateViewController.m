@@ -8,7 +8,7 @@
 
 #import "HTDistStateViewController.h"
 #import "HTAllianceData.h"
-#import "HTAttStateViewController.h"
+#import "HTUSstateViewController.h"
 
 @interface HTDistStateViewController ()
 
@@ -108,7 +108,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDistricts"]) {
-        HTAttStateViewController *detailViewController = [segue destinationViewController];
+        HTUSstateViewController *detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSMutableArray *dist = [[NSMutableArray alloc]init];
         NSMutableArray *lis = [[NSMutableArray alloc]init];
@@ -122,7 +122,7 @@
             if(data.state == state)
                 [lis insertObject:data atIndex:0];
         }
-        detailViewController.states = dist;
+        detailViewController.districts = dist;
         detailViewController.list = lis;
     }
 }

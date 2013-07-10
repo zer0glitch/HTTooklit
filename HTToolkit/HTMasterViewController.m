@@ -57,6 +57,25 @@
     one = [[HTFullData alloc] initWithName:@"Texas" jurisdiction:@"Texas, Southern" agencyName:@"Office of the Attorney General of Texas" contact:@"Captain Kimberly Bustos" email:@"kimberly.bustos@texasattorneygeneral.gov"];
     [one addNumber:@"(512)936-2896"];
     [self insertNewObject:one];
+    
+    one = [[HTFullData alloc]initWithName:@"Georgia" jurisdiction:@"Atlanta" agencyName:@"SAC Office" contact:@"Brian Ramsey" email:@"brian.e.ramsey@ice.dhs.gov"];
+    [one addNumber:@"(404)346-2885"];
+    [self insertNewObject:one];
+    one = [[HTFullData alloc]initWithName:@"Texas" jurisdiction:@"El Paso" agencyName:@"SAC Office" contact:@"Gustavo Correa" email:@"gustavo.e.correa@ice.dhs.gov"];
+    [one addNumber:@"(915)881-5560"];
+    [self insertNewObject:one];
+    one = [[HTFullData alloc]initWithName:@"Kansas" jurisdiction:@"Kansas City" agencyName:@"SAC Office" contact:@"Mark Fox" email:@"mark.e.fox@ice.dhs.gov"];
+    [one addNumber:@"(816)584-1054"];
+    [self insertNewObject:one];
+    one = [[HTFullData alloc]initWithName:@"California" jurisdiction:@"Los Angeles" agencyName:@"SAC Office" contact:@"Liz Mitchell" email:@"liz.e.mitchell@ice.dhs.gov"];
+    [one addNumber:@"(213)633-6262"];
+    [self insertNewObject:one];
+    one = [[HTFullData alloc]initWithName:@"Tennessee" jurisdiction:@"Memphis" agencyName:@"SAC Office" contact:@"James Shires" email:@"james.a.shires@ice.dhs.gove"];
+    [one addNumber:@"(504)310-8865"];
+    [self insertNewObject:one];
+    one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami" agencyName:@"SAC Office" contact:@"Mariano Aponte" email:@"mariano.L.Aponte@ice.dhs.gov"];
+    [one addNumber:@"(305)597-6614"];
+    [self insertNewObject:one];
 }
 
 - (void)didReceiveMemoryWarning
