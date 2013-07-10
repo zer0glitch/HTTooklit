@@ -67,12 +67,13 @@
 		[subView removeFromSuperview];
 	}
     HTStateLawData *dat = [Laws objectAtIndex:indexPath.row];
-    UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, 260, 50)];
+    UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width-20, 50)];
     textview.text = dat.caseName;
     textview.editable = NO;
     textview.scrollEnabled = NO;
     textview.backgroundColor = [UIColor clearColor];
     [textview setFont: [UIFont systemFontOfSize:15]];
+    textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [cell.contentView addSubview:textview];
     return cell;
 }

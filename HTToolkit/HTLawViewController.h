@@ -11,8 +11,6 @@
 
 @interface HTLawViewController : UITableViewController
 
-@property (weak, nonatomic) HTFedLawData* data;
-@property (weak, nonatomic) IBOutlet UITextView *summary;
-@property (weak, nonatomic) IBOutlet UITextView *link;
+@property (retain, nonatomic) HTFedLawData* data;
 
 @end

@@ -54,79 +54,28 @@
         <scene sceneID="qRa-1j-eGN">
             <objects>
                 <tableViewController id="hct-5x-H9U" customClass="HTLawViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Lnc-hP-U5U">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Lnc-hP-U5U">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Summary" id="e65-5A-xah">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="198" id="78k-bO-i39">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="197"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKc-FT-jNe">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="191" id="411-nx-cJB"/>
-                                                        <constraint firstAttribute="width" constant="300" id="myi-vP-s5b"/>
-                                                    </constraints>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="BKc-FT-jNe" firstAttribute="top" secondItem="78k-bO-i39" secondAttribute="top" constant="1" id="Pzy-09-JKk"/>
-                                            <constraint firstItem="BKc-FT-jNe" firstAttribute="centerX" secondItem="78k-bO-i39" secondAttribute="centerX" type="default" id="R9D-C0-jRe"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Link" id="p1M-K9-rkE">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gIg-uH-YjZ">
-                                        <rect key="frame" x="0.0" y="292" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBm-b3-onR">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="DBF-iJ-tTb"/>
-                                                        <constraint firstAttribute="width" constant="300" id="QGy-Ey-Urc"/>
-                                                    </constraints>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="IBm-b3-onR" firstAttribute="top" secondItem="gIg-uH-YjZ" secondAttribute="top" constant="1" id="6ZB-ZG-WY8"/>
-                                            <constraint firstItem="IBm-b3-onR" firstAttribute="centerX" secondItem="gIg-uH-YjZ" secondAttribute="centerX" type="default" id="LFm-vH-8VQ"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" id="0dO-2Z-KAG">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="hct-5x-H9U" id="5LN-z9-tHW"/>
                             <outlet property="delegate" destination="hct-5x-H9U" id="tlc-tb-Qr0"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="7Lp-hz-1U8"/>
-                    <connections>
-                        <outlet property="link" destination="IBm-b3-onR" id="7cA-z8-NC1"/>
-                        <outlet property="summary" destination="BKc-FT-jNe" id="lZa-Fa-6Ym"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhY-yi-j1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -496,79 +445,28 @@
         <scene sceneID="md4-Dg-LTA">
             <objects>
                 <tableViewController id="qOx-Ud-sjw" customClass="HTLawViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="EQk-DC-2Yh">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="EQk-DC-2Yh">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Summary" id="9IP-4x-w2H">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="198" id="4Bl-PU-j9h">
-                                        <rect key="frame" x="0.0" y="46" width="320" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="197"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRg-Xl-Kif">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="187" id="tZh-QB-7s9"/>
-                                                        <constraint firstAttribute="width" constant="300" id="z8m-XQ-LGu"/>
-                                                    </constraints>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="pRg-Xl-Kif" firstAttribute="top" secondItem="4Bl-PU-j9h" secondAttribute="top" constant="1" id="9sp-dK-g9y"/>
-                                            <constraint firstItem="pRg-Xl-Kif" firstAttribute="centerX" secondItem="4Bl-PU-j9h" secondAttribute="centerX" type="default" id="COs-si-pSA"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Link" id="lOR-dc-OZN">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mGW-sv-mnU">
-                                        <rect key="frame" x="0.0" y="292" width="320" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nh-fz-Vmg">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="5Gd-7I-Svg"/>
-                                                        <constraint firstAttribute="width" constant="300" id="NTv-xH-aNm"/>
-                                                    </constraints>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="1nh-fz-Vmg" firstAttribute="centerX" secondItem="mGW-sv-mnU" secondAttribute="centerX" type="default" id="E5d-l5-CZk"/>
-                                            <constraint firstItem="1nh-fz-Vmg" firstAttribute="top" secondItem="mGW-sv-mnU" secondAttribute="top" constant="1" id="Rmi-7C-Snh"/>
-                                        </constraints>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" id="rjQ-2t-VUS">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="qOx-Ud-sjw" id="3h9-M6-7RV"/>
                             <outlet property="delegate" destination="qOx-Ud-sjw" id="Cc2-5Y-XMO"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="UEk-ek-i5u"/>
-                    <connections>
-                        <outlet property="link" destination="1nh-fz-Vmg" id="OtP-OT-eP7"/>
-                        <outlet property="summary" destination="pRg-Xl-Kif" id="0Rt-gb-mm7"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mQ-hP-9bY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1549,90 +1447,6 @@
         <image name="social_services.png" width="32" height="32"/>
         <image name="users-icon.png" width="43" height="31"/>
     </resources>
-    <classes>
-        <class className="HTAllianceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAllianceViewController.h"/>
-        </class>
-        <class className="HTAttGenTypeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttGenTypeViewController.h"/>
-        </class>
-        <class className="HTAttStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttStateViewController.h"/>
-        </class>
-        <class className="HTAttorneyViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttorneyViewController.h"/>
-        </class>
-        <class className="HTCityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTCityViewController.h"/>
-        </class>
-        <class className="HTContactsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTContactsViewController.h"/>
-        </class>
-        <class className="HTDistStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistStateViewController.h"/>
-        </class>
-        <class className="HTDistrictViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistrictViewController.h"/>
-        </class>
-        <class className="HTFedLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedLawViewController.h"/>
-        </class>
-        <class className="HTFedSerInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedSerInfoViewController.h"/>
-        </class>
-        <class className="HTFedServiceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedServiceViewController.h"/>
-        </class>
-        <class className="HTLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTLawViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="link" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="summary" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="HTMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTMasterViewController.h"/>
-        </class>
-        <class className="HTSerAgencyViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerAgencyViewController.h"/>
-        </class>
-        <class className="HTSerCityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerCityViewController.h"/>
-        </class>
-        <class className="HTSerGenderViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerGenderViewController.h"/>
-        </class>
-        <class className="HTSerStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerStateViewController.h"/>
-        </class>
-        <class className="HTServiceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTServiceViewController.h"/>
-        </class>
-        <class className="HTStateLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLawViewController.h"/>
-        </class>
-        <class className="HTStateLookViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLookViewController.h"/>
-        </class>
-        <class className="HTStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateViewController.h"/>
-        </class>
-        <class className="HTTrainViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTTrainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tVisa" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="traf" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="uVisa" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="vawa" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="HTUSattViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSattViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

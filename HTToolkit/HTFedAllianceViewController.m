@@ -33,8 +33,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 280, 90)];
-    UITextView *labelView = [[UITextView alloc] initWithFrame:CGRectMake(10, 10, 280, 50)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 90)];
+    UITextView *labelView = [[UITextView alloc] initWithFrame:CGRectMake(10, 10, self.tableView.bounds.size.width, 50)];
     [headerView addSubview:labelView];
     headerView.backgroundColor = [UIColor clearColor];
     labelView.backgroundColor = [UIColor clearColor];
@@ -75,42 +75,45 @@
     static NSString *CellIdentifier = @"dataCell";
     if(indexPath.section == 0){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, 280, 40)];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
         textview.text = entry.state;
         textview.editable = NO;
         textview.scrollEnabled = NO;
         textview.backgroundColor = [UIColor clearColor];
-        cell.accessoryView = textview;
+        textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:textview];
         [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
     else if(indexPath.section == 1){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, 280, 90)];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 90)];
         textview.text = entry.summary;
         textview.dataDetectorTypes = UIDataDetectorTypeLink;
         textview.editable = NO;
         textview.scrollEnabled = NO;
         textview.backgroundColor = [UIColor clearColor];
-        cell.accessoryView = textview;
+        textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:textview];
         [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
     else if(indexPath.section == 2){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, 280, 90)];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 90)];
         textview.text = entry.address;
         textview.dataDetectorTypes = UIDataDetectorTypeAddress;
         textview.editable = NO;
         textview.scrollEnabled = NO;
         textview.backgroundColor = [UIColor clearColor];
-        cell.accessoryView = textview;
+        textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:textview];
         [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
     else if(indexPath.section == 3){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, 280, 40)];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
         NSMutableArray* arr = [[NSMutableArray alloc]init];
         arr = entry.phoneNumbers;
         textview.text = [arr objectAtIndex:indexPath.row];
@@ -118,7 +121,8 @@
         textview.editable = NO;
         textview.scrollEnabled = NO;
         textview.backgroundColor = [UIColor clearColor];
-        cell.accessoryView = textview;
+        textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:textview];
         [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
