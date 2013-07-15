@@ -9,7 +9,7 @@
 #import "HTAttGenTypeViewController.h"
 #import "HTAttStateViewController.h"
 #import "HTAllianceData.h"
-#import "HTEricViewController.h"
+#import "HTAttorneyViewController.h"
 
 @interface HTAttGenTypeViewController ()
 
@@ -95,7 +95,7 @@
             detailViewController.list = lis;
         }
     if ([[segue identifier] isEqualToString:@"showEric"]) {
-            HTEricViewController *detailViewController = [segue destinationViewController];
+            HTAttorneyViewController *detailViewController = [segue destinationViewController];
                 HTAllianceData *data = [list objectAtIndex:0];
             detailViewController.entry = data;
     }

@@ -13,7 +13,6 @@
 		5C2A5F31177B3E4600167331 /* HTUSattViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A5F30177B3E4600167331 /* HTUSattViewController.m */; };
 		5C2A5F34177B59B700167331 /* HTFedAllianceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2A5F33177B59B600167331 /* HTFedAllianceViewController.m */; };
 		5C30CE2B177DDAA000D3AA8C /* HTAttGenTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE2A177DDAA000D3AA8C /* HTAttGenTypeViewController.m */; };
-		5C30CE31177DE5BF00D3AA8C /* HTEricViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE30177DE5BE00D3AA8C /* HTEricViewController.m */; };
 		5C30CE34177DFF6800D3AA8C /* HTAttorneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE33177DFF6800D3AA8C /* HTAttorneyViewController.m */; };
 		5C30CE371781F0D400D3AA8C /* HTDistStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE361781F0D300D3AA8C /* HTDistStateViewController.m */; };
 		5C6F5DE81754FEC3003B1927 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6F5DE71754FEC3003B1927 /* UIKit.framework */; };
@@ -41,7 +40,6 @@
 		5C85B2DE175F8F9E00C30057 /* HTAllianceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85B2DD175F8F9D00C30057 /* HTAllianceViewController.m */; };
 		5C85B2E1175F9C6500C30057 /* HTAttStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85B2E0175F9C6400C30057 /* HTAttStateViewController.m */; };
 		5C85B2E4175FA27300C30057 /* HTDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85B2E3175FA27200C30057 /* HTDistrictViewController.m */; };
-		5C85B2E7175FBB0F00C30057 /* HTAllyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85B2E6175FBB0E00C30057 /* HTAllyViewController.m */; };
 		5C85B2ED1760DAD100C30057 /* HTLawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85B2EC1760DACC00C30057 /* HTLawViewController.m */; };
 		5C85B2F31767847D00C30057 /* HTServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85B2F21767847B00C30057 /* HTServiceData.m */; };
 		5C85B2F617678A0600C30057 /* HTFedServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85B2F517678A0500C30057 /* HTFedServiceViewController.m */; };
@@ -72,8 +70,6 @@
 		5C2A5F33177B59B600167331 /* HTFedAllianceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTFedAllianceViewController.m; sourceTree = "<group>"; };
 		5C30CE29177DDAA000D3AA8C /* HTAttGenTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAttGenTypeViewController.h; sourceTree = "<group>"; };
 		5C30CE2A177DDAA000D3AA8C /* HTAttGenTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAttGenTypeViewController.m; sourceTree = "<group>"; };
-		5C30CE2F177DE5BE00D3AA8C /* HTEricViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTEricViewController.h; sourceTree = "<group>"; };
-		5C30CE30177DE5BE00D3AA8C /* HTEricViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTEricViewController.m; sourceTree = "<group>"; };
 		5C30CE32177DFF6700D3AA8C /* HTAttorneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAttorneyViewController.h; sourceTree = "<group>"; };
 		5C30CE33177DFF6800D3AA8C /* HTAttorneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAttorneyViewController.m; sourceTree = "<group>"; };
 		5C30CE351781F0D300D3AA8C /* HTDistStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDistStateViewController.h; sourceTree = "<group>"; };
@@ -125,8 +121,6 @@
 		5C85B2E0175F9C6400C30057 /* HTAttStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAttStateViewController.m; sourceTree = "<group>"; };
 		5C85B2E2175FA27200C30057 /* HTDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDistrictViewController.h; sourceTree = "<group>"; };
 		5C85B2E3175FA27200C30057 /* HTDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDistrictViewController.m; sourceTree = "<group>"; };
-		5C85B2E5175FBB0E00C30057 /* HTAllyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTAllyViewController.h; sourceTree = "<group>"; };
-		5C85B2E6175FBB0E00C30057 /* HTAllyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAllyViewController.m; sourceTree = "<group>"; };
 		5C85B2EB1760DACA00C30057 /* HTLawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLawViewController.h; sourceTree = "<group>"; };
 		5C85B2EC1760DACC00C30057 /* HTLawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLawViewController.m; sourceTree = "<group>"; };
 		5C85B2F11767847900C30057 /* HTServiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTServiceData.h; sourceTree = "<group>"; };
@@ -204,8 +198,6 @@
 			children = (
 				5C6F5DF61754FEC3003B1927 /* HTAppDelegate.h */,
 				5C6F5DF71754FEC3003B1927 /* HTAppDelegate.m */,
-				5C30CE2F177DE5BE00D3AA8C /* HTEricViewController.h */,
-				5C30CE30177DE5BE00D3AA8C /* HTEricViewController.m */,
 				5C6F5DFF1754FEC3003B1927 /* MainStoryboard.storyboard */,
 				5C30CE29177DDAA000D3AA8C /* HTAttGenTypeViewController.h */,
 				5C30CE2A177DDAA000D3AA8C /* HTAttGenTypeViewController.m */,
@@ -219,8 +211,6 @@
 				5C2A5F33177B59B600167331 /* HTFedAllianceViewController.m */,
 				5C2A5F2F177B3E4600167331 /* HTUSattViewController.h */,
 				5C2A5F30177B3E4600167331 /* HTUSattViewController.m */,
-				5C85B2E5175FBB0E00C30057 /* HTAllyViewController.h */,
-				5C85B2E6175FBB0E00C30057 /* HTAllyViewController.m */,
 				5C85B2DF175F9C6400C30057 /* HTAttStateViewController.h */,
 				5C85B2E0175F9C6400C30057 /* HTAttStateViewController.m */,
 				5C1B16BE178DE2C500D87662 /* HTUSstateViewController.h */,
@@ -386,7 +376,6 @@
 				5C85B2DE175F8F9E00C30057 /* HTAllianceViewController.m in Sources */,
 				5C85B2E1175F9C6500C30057 /* HTAttStateViewController.m in Sources */,
 				5C85B2E4175FA27300C30057 /* HTDistrictViewController.m in Sources */,
-				5C85B2E7175FBB0F00C30057 /* HTAllyViewController.m in Sources */,
 				5C85B2ED1760DAD100C30057 /* HTLawViewController.m in Sources */,
 				5C85B2F31767847D00C30057 /* HTServiceData.m in Sources */,
 				5C85B2F617678A0600C30057 /* HTFedServiceViewController.m in Sources */,
@@ -399,7 +388,6 @@
 				5C2A5F31177B3E4600167331 /* HTUSattViewController.m in Sources */,
 				5C2A5F34177B59B700167331 /* HTFedAllianceViewController.m in Sources */,
 				5C30CE2B177DDAA000D3AA8C /* HTAttGenTypeViewController.m in Sources */,
-				5C30CE31177DE5BF00D3AA8C /* HTEricViewController.m in Sources */,
 				5C30CE34177DFF6800D3AA8C /* HTAttorneyViewController.m in Sources */,
 				5C30CE371781F0D400D3AA8C /* HTDistStateViewController.m in Sources */,
 				5C1B16C0178DE2C900D87662 /* HTUSstateViewController.m in Sources */,

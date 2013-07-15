@@ -1104,7 +1104,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" rowHeight="109" id="070-H0-Zk0">
-                                        <rect key="frame" x="0.0" y="339" width="320" height="110"/>
+                                        <rect key="frame" x="0.0" y="339" width="320" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="108"/>
@@ -1144,9 +1144,193 @@
                                             <constraint firstItem="c23-61-J4b" firstAttribute="bottom" secondItem="75J-Qz-b2D" secondAttribute="bottom" type="default" id="HPj-pa-lYX"/>
                                             <constraint firstItem="4C8-qQ-NqF" firstAttribute="top" secondItem="070-H0-Zk0" secondAttribute="top" type="default" id="Ini-Wp-aNL"/>
                                             <constraint firstItem="75J-Qz-b2D" firstAttribute="top" secondItem="c23-61-J4b" secondAttribute="top" type="default" id="Nkn-A4-rea"/>
+                                            <constraint firstAttribute="bottom" secondItem="75J-Qz-b2D" secondAttribute="bottom" constant="1" id="P5h-6b-iFa"/>
                                             <constraint firstItem="4C8-qQ-NqF" firstAttribute="centerX" secondItem="070-H0-Zk0" secondAttribute="centerX" type="default" id="SUe-r8-IZK"/>
                                             <constraint firstItem="4C8-qQ-NqF" firstAttribute="trailing" secondItem="c23-61-J4b" secondAttribute="trailing" type="default" id="Sas-0I-wvP"/>
-                                            <constraint firstAttribute="bottom" secondItem="75J-Qz-b2D" secondAttribute="bottom" constant="2" id="yh5-lE-faQ"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" rowHeight="109" id="gKq-Pb-3Kw">
+                                        <rect key="frame" x="0.0" y="448" width="320" height="109"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wn-p2-hfd">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="api-3i-m54"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Human Trafficking:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-eJ-dRG">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="C63-b9-GA1"/>
+                                                        <constraint firstAttribute="width" constant="113" id="DGg-wF-ho7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Human Trafficking Cheat Sheet" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x5J-xL-Sxc">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="Vzp-vv-H4v"/>
+                                                        <constraint firstAttribute="width" constant="260" id="ZYC-8u-XeQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="x5J-xL-Sxc" firstAttribute="top" secondItem="gKq-Pb-3Kw" secondAttribute="top" type="default" id="2Fx-EC-gtR"/>
+                                            <constraint firstItem="1Wn-p2-hfd" firstAttribute="bottom" secondItem="pTk-eJ-dRG" secondAttribute="bottom" type="default" id="ByU-Ch-03P"/>
+                                            <constraint firstItem="x5J-xL-Sxc" firstAttribute="centerX" secondItem="gKq-Pb-3Kw" secondAttribute="centerX" type="default" id="LXJ-r9-pzS"/>
+                                            <constraint firstAttribute="bottom" secondItem="pTk-eJ-dRG" secondAttribute="bottom" constant="1" id="VOr-YG-vQK"/>
+                                            <constraint firstItem="x5J-xL-Sxc" firstAttribute="trailing" secondItem="1Wn-p2-hfd" secondAttribute="trailing" type="default" id="dBi-uM-KX7"/>
+                                            <constraint firstItem="pTk-eJ-dRG" firstAttribute="top" secondItem="1Wn-p2-hfd" secondAttribute="top" type="default" id="fSY-V6-gh8"/>
+                                            <constraint firstItem="x5J-xL-Sxc" firstAttribute="leading" secondItem="pTk-eJ-dRG" secondAttribute="leading" type="default" id="uQV-uK-rHi"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" rowHeight="109" id="3Dj-gF-K56">
+                                        <rect key="frame" x="0.0" y="557" width="320" height="109"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrP-yr-1sf">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="RcC-vm-DFm"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Human Trafficking:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcc-Qt-jbn">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="01s-hG-QrZ"/>
+                                                        <constraint firstAttribute="width" constant="113" id="ufP-tZ-SHC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Comprehensive Trafficking Assessment" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Rt-yS-JkI">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="frK-us-QEP"/>
+                                                        <constraint firstAttribute="height" constant="47" id="tM1-1O-0Ww"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="1Rt-yS-JkI" firstAttribute="centerX" secondItem="3Dj-gF-K56" secondAttribute="centerX" type="default" id="3wp-Ml-MsE"/>
+                                            <constraint firstItem="fcc-Qt-jbn" firstAttribute="top" secondItem="NrP-yr-1sf" secondAttribute="top" type="default" id="8XJ-Gc-JiK"/>
+                                            <constraint firstItem="1Rt-yS-JkI" firstAttribute="top" secondItem="3Dj-gF-K56" secondAttribute="top" type="default" id="Gqq-aP-pnI"/>
+                                            <constraint firstItem="1Rt-yS-JkI" firstAttribute="leading" secondItem="fcc-Qt-jbn" secondAttribute="leading" type="default" id="Zw7-SU-O0W"/>
+                                            <constraint firstItem="1Rt-yS-JkI" firstAttribute="trailing" secondItem="NrP-yr-1sf" secondAttribute="trailing" type="default" id="jKU-pn-zkg"/>
+                                            <constraint firstAttribute="bottom" secondItem="fcc-Qt-jbn" secondAttribute="bottom" constant="1" id="pCR-Ju-tvL"/>
+                                            <constraint firstItem="NrP-yr-1sf" firstAttribute="bottom" secondItem="fcc-Qt-jbn" secondAttribute="bottom" type="default" id="zly-If-G2z"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" rowHeight="109" id="xrb-0Y-TjH">
+                                        <rect key="frame" x="0.0" y="666" width="320" height="109"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vs-fE-Unr">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="HN7-oW-BCF"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Human Trafficking:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G37-ro-PMR">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="113" id="eDG-DV-YC8"/>
+                                                        <constraint firstAttribute="height" constant="43" id="oEo-gU-O6S"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Identifying Victims of Human Trafficking" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iui-i6-TXK">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="47" id="ViI-Zq-cXW"/>
+                                                        <constraint firstAttribute="width" constant="260" id="VzE-8n-XVR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="iui-i6-TXK" firstAttribute="trailing" secondItem="5vs-fE-Unr" secondAttribute="trailing" type="default" id="3HU-aI-ywg"/>
+                                            <constraint firstItem="iui-i6-TXK" firstAttribute="leading" secondItem="G37-ro-PMR" secondAttribute="leading" type="default" id="4ZT-rO-haL"/>
+                                            <constraint firstAttribute="bottom" secondItem="G37-ro-PMR" secondAttribute="bottom" constant="1" id="5OV-AI-iSL"/>
+                                            <constraint firstItem="iui-i6-TXK" firstAttribute="top" secondItem="xrb-0Y-TjH" secondAttribute="top" type="default" id="6RP-xv-2oT"/>
+                                            <constraint firstItem="G37-ro-PMR" firstAttribute="top" secondItem="5vs-fE-Unr" secondAttribute="top" type="default" id="7Dx-aS-sC2"/>
+                                            <constraint firstItem="5vs-fE-Unr" firstAttribute="bottom" secondItem="G37-ro-PMR" secondAttribute="bottom" type="default" id="9HL-v0-qhV"/>
+                                            <constraint firstItem="iui-i6-TXK" firstAttribute="centerX" secondItem="xrb-0Y-TjH" secondAttribute="centerX" type="default" id="jL4-6r-gJR"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" rowHeight="109" id="Qzk-u6-spF">
+                                        <rect key="frame" x="0.0" y="775" width="320" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="108"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C13-9Z-Xos">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="qSK-K7-V04"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                </textView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Human Trafficking:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OR-hp-L3Y">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="113" id="mM1-DO-Tp9"/>
+                                                        <constraint firstAttribute="height" constant="43" id="snU-Qv-WR2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Law Enforcement Guide to Human Trafficking" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lhu-0I-44E">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="Blg-Nf-D3f"/>
+                                                        <constraint firstAttribute="height" constant="47" id="hG4-3S-E45"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="lhu-0I-44E" firstAttribute="trailing" secondItem="C13-9Z-Xos" secondAttribute="trailing" type="default" id="7Ta-CH-bR1"/>
+                                            <constraint firstItem="lhu-0I-44E" firstAttribute="centerX" secondItem="Qzk-u6-spF" secondAttribute="centerX" type="default" id="QkQ-bN-FBR"/>
+                                            <constraint firstItem="lhu-0I-44E" firstAttribute="leading" secondItem="8OR-hp-L3Y" secondAttribute="leading" type="default" id="RZW-ki-1ba"/>
+                                            <constraint firstItem="lhu-0I-44E" firstAttribute="top" secondItem="Qzk-u6-spF" secondAttribute="top" type="default" id="Tfc-jH-16z"/>
+                                            <constraint firstItem="8OR-hp-L3Y" firstAttribute="top" secondItem="C13-9Z-Xos" secondAttribute="top" type="default" id="YoB-lD-YIa"/>
+                                            <constraint firstAttribute="bottom" secondItem="8OR-hp-L3Y" secondAttribute="bottom" constant="2" id="ayj-hF-QFn"/>
+                                            <constraint firstItem="C13-9Z-Xos" firstAttribute="bottom" secondItem="8OR-hp-L3Y" secondAttribute="bottom" type="default" id="gKY-cG-N8r"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -1159,6 +1343,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Online Training Resources" id="Agu-ss-57E"/>
                     <connections>
+                        <outlet property="assess" destination="NrP-yr-1sf" id="YWf-Eh-VIV"/>
+                        <outlet property="cont" destination="1Wn-p2-hfd" id="XOP-pQ-iEx"/>
+                        <outlet property="enf" destination="C13-9Z-Xos" id="dxs-l8-nLW"/>
+                        <outlet property="prov" destination="5vs-fE-Unr" id="K3K-Sj-23c"/>
                         <outlet property="tVisa" destination="FK7-0K-16c" id="ZEj-ty-9cu"/>
                         <outlet property="traf" destination="c23-61-J4b" id="LsR-IW-6VZ"/>
                         <outlet property="uVisa" destination="dnw-tG-KsY" id="Iey-tV-EqH"/>
@@ -1527,6 +1715,99 @@
         <image name="social_services.png" width="32" height="32"/>
         <image name="users-icon.png" width="43" height="31"/>
     </resources>
+    <classes>
+        <class className="HTAllianceViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAllianceViewController.h"/>
+        </class>
+        <class className="HTAttGenTypeViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttGenTypeViewController.h"/>
+        </class>
+        <class className="HTAttStateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttStateViewController.h"/>
+        </class>
+        <class className="HTAttorneyViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttorneyViewController.h"/>
+        </class>
+        <class className="HTCityViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTCityViewController.h"/>
+        </class>
+        <class className="HTContactsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTContactsViewController.h"/>
+        </class>
+        <class className="HTDistStateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistStateViewController.h"/>
+        </class>
+        <class className="HTDistrictViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistrictViewController.h"/>
+        </class>
+        <class className="HTFedLawViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedLawViewController.h"/>
+        </class>
+        <class className="HTFedSerInfoViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedSerInfoViewController.h"/>
+        </class>
+        <class className="HTFedServiceViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedServiceViewController.h"/>
+        </class>
+        <class className="HTLawViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTLawViewController.h"/>
+        </class>
+        <class className="HTMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTMasterViewController.h"/>
+        </class>
+        <class className="HTSerAgencyViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerAgencyViewController.h"/>
+        </class>
+        <class className="HTSerCityViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerCityViewController.h"/>
+        </class>
+        <class className="HTSerGenderViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerGenderViewController.h"/>
+        </class>
+        <class className="HTSerStateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerStateViewController.h"/>
+        </class>
+        <class className="HTServiceViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTServiceViewController.h"/>
+        </class>
+        <class className="HTStateLawViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLawViewController.h"/>
+        </class>
+        <class className="HTStateLookViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLookViewController.h"/>
+        </class>
+        <class className="HTStateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateViewController.h"/>
+        </class>
+        <class className="HTTrainViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTTrainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="assess" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="cont" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="enf" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="prov" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="tVisa" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="traf" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="uVisa" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="vawa" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="HTUSattViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSattViewController.h"/>
+        </class>
+        <class className="HTUSjursViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSjursViewController.h"/>
+        </class>
+        <class className="HTUSstateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSstateViewController.h"/>
+        </class>
+        <class className="HTUSsubViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSsubViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

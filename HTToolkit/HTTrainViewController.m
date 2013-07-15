@@ -13,7 +13,7 @@
 @end
 
 @implementation HTTrainViewController
-@synthesize tVisa, uVisa, vawa, traf;
+@synthesize tVisa, uVisa, vawa, traf, cont, assess, prov, enf;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,7 +36,17 @@
     NSString *four = @"http://www.dhs.gov/blue-campaign/blue-campaign";
     traf.text = four;
     
+    NSString *five = @"http://c.na4.content.force.com/sfc/dist/version/download?operationContext=DELIVERY&oid=00D300000006E4S&ids=06860000000eh8x&d=aV4jmtVT5.WuBSHAg9wW1YEER.s%3D&viewId=05H60000000haw7";
+    cont.text = five;
     
+    NSString *six = @"http://c.na4.content.force.com/sfc/dist/version/download?operationContext=DELIVERY&oid=00D300000006E4S&ids=06860000000eh8x&d=aV4jmtVT5.WuBSHAg9wW1YEER.s%3D&viewId=05H60000000haw7";
+    assess.text = six;
+    
+    NSString *seven = @"https://c.na4.content.force.com/sfc/dist/version/download?oid=00D300000006E4S&viewId=05H60000000haw2&operationContext=DELIVERY&d=1MEGyVSfIjPpbqdH7MviHX1eGv4%3D&ids=06860000000HRrq";
+    prov.text = seven;
+    
+    NSString *eight = @"http://c.na4.content.force.com/sfc/dist/version/download?operationContext=DELIVERY&oid=00D300000006E4S&ids=068600000008UeI&viewId=05H60000000havj&d=JMzRrTHFyXqMiIiL.53Dsy.va74%3D";
+    enf.text = eight;
 }
 
 - (void)viewDidLoad

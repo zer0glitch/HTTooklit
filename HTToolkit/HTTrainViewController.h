@@ -14,4 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *uVisa;
 @property (weak, nonatomic) IBOutlet UITextView *vawa;
 @property (weak, nonatomic) IBOutlet UITextView *traf;
+@property (weak, nonatomic) IBOutlet UITextView *cont;
+@property (weak, nonatomic) IBOutlet UITextView *assess;
+@property (weak, nonatomic) IBOutlet UITextView *prov;
+@property (weak, nonatomic) IBOutlet UITextView *enf;
 @end
