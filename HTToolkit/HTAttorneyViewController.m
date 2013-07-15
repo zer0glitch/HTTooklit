@@ -62,19 +62,21 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if(section == 0 && entry.address)
+    if(section == 0 && entry.summary)
         return 1;
-    else if(section == 1 && entry.website)
+    if(section == 1 && entry.address)
         return 1;
-    else if(section == 2 && entry.email)
+    else if(section == 2 && entry.website)
         return 1;
-    else if(section == 3)
+    else if(section == 3 && entry.email)
+        return 1;
+    else if(section == 4)
         return entry.phoneNumbers.count;
     else
         return 0;
@@ -84,6 +86,18 @@
 {
     static NSString *CellIdentifier = @"Cell";
     if(indexPath.section == 0){
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 175)];
+        textview.text = entry.summary;
+        textview.editable = NO;
+        textview.scrollEnabled = NO;
+        textview.backgroundColor = [UIColor clearColor];
+        textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:textview];
+        [textview setFont: [UIFont systemFontOfSize:15]];
+        return cell;
+    }
+    else if(indexPath.section == 1){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 90)];
         textview.text = entry.address;
@@ -96,7 +110,7 @@
         [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
-    else if(indexPath.section == 1){
+    else if(indexPath.section == 2){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 50)];
         textview.text = entry.website;
@@ -109,7 +123,7 @@
         [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
-    else if(indexPath.section == 2){
+    else if(indexPath.section == 3){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 50)];
         textview.text = entry.email;
@@ -122,7 +136,7 @@
         [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
-    else if(indexPath.section == 3){
+    else if(indexPath.section == 4){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 50)];
         NSMutableArray* arr = [[NSMutableArray alloc]init];
@@ -144,13 +158,15 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if(section == 0 && entry.address)
+    if(section == 0 && entry.summary)
+        return @"Jurisdictions";
+    else if(section == 1 && entry.address)
         return @"Address";
-    else if(section == 1 && entry.website)
+    else if(section == 2 && entry.website)
         return @"Website";
-    else if(section == 2 && entry.email)
+    else if(section == 3 && entry.email)
         return @"Email";
-    else if(section == 3 && (entry.phoneNumbers.count >0))
+    else if(section == 4 && (entry.phoneNumbers.count >0))
         return @"Phone";
     else
         return nil;
@@ -159,6 +175,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0)
+        return 175;
+    if(indexPath.section == 1)
         return 90;
     else
         return 50;

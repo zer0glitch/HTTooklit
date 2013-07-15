@@ -8,6 +8,7 @@
 
 #import "HTUSsubViewController.h"
 #import "HTUSattViewController.h"
+#import "HTAllianceData.h"
 
 @interface HTUSsubViewController ()
 
@@ -108,10 +109,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showSub"]) {
+    if ([[segue identifier] isEqualToString:@"showData"]) {
         HTUSattViewController*detailViewController = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        detailViewController.entry = [list objectAtIndex:indexPath.row];
+        HTAllianceData *data = [list objectAtIndex:indexPath.row];
+        detailViewController.entry = data;
+        
     }
 }
 

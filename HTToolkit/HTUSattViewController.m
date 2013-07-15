@@ -7,6 +7,7 @@
 //
 
 #import "HTUSattViewController.h"
+#import "HTAllianceData.h"
 
 @interface HTUSattViewController ()
 
@@ -33,12 +34,16 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 60)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 90)];
     UITextView *labelView = [[UITextView alloc] initWithFrame:CGRectMake(10, 10, self.tableView.bounds.size.width, 50)];
+    UILabel *detail = [[UILabel alloc] initWithFrame:CGRectMake(20, 65, self.tableView.bounds.size.width-20, 20)];
     [headerView addSubview:labelView];
+    [headerView addSubview:detail];
     headerView.backgroundColor = [UIColor clearColor];
     labelView.backgroundColor = [UIColor clearColor];
-    labelView.text = entry.district;
+    detail.backgroundColor = [UIColor clearColor];
+    labelView.text = entry.title;
+    detail.text = entry.state;
     labelView.scrollEnabled = NO;
     labelView.editable = NO;
     [labelView setFont: [UIFont boldSystemFontOfSize:17]];
@@ -56,18 +61,24 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 3;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if(section == 0 && entry.summary.length < 2)
-        return 0;
-    if(section == 2)
+    if(section == 0 && entry.contact)
+        return 1;
+    else if(section == 1 && entry.summary)
+        return 1;
+    else if(section == 2 && entry.address)
+        return 1;
+    else if(section == 3 && entry.email)
+        return 1;
+    else if(section == 4)
         return entry.phoneNumbers.count;
     else
-        return 1;
+        return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,10 +86,10 @@
     static NSString *CellIdentifier = @"dataCell";
     if(indexPath.section == 0){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 100)];
-        textview.text = entry.summary;
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
+        textview.text = entry.contact;
         textview.editable = NO;
-        textview.scrollEnabled = YES;
+        textview.scrollEnabled = NO;
         textview.backgroundColor = [UIColor clearColor];
         textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:textview];
@@ -88,8 +99,7 @@
     else if(indexPath.section == 1){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 90)];
-        textview.text = entry.address;
-        textview.dataDetectorTypes = UIDataDetectorTypeAddress;
+        textview.text = entry.summary;
         textview.editable = NO;
         textview.scrollEnabled = NO;
         textview.backgroundColor = [UIColor clearColor];
@@ -99,6 +109,31 @@
         return cell;
     }
     else if(indexPath.section == 2){
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
+        textview.text = entry.address;
+        textview.editable = NO;
+        textview.scrollEnabled = NO;
+        textview.backgroundColor = [UIColor clearColor];
+        textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:textview];
+        [textview setFont: [UIFont systemFontOfSize:15]];
+        return cell;
+    }
+    else if(indexPath.section == 3){
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
+        textview.text = entry.email;
+        textview.dataDetectorTypes = UIDataDetectorTypeLink;
+        textview.editable = NO;
+        textview.scrollEnabled = NO;
+        textview.backgroundColor = [UIColor clearColor];
+        textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [cell.contentView addSubview:textview];
+        [textview setFont: [UIFont systemFontOfSize:15]];
+        return cell;
+    }
+    else if(indexPath.section == 4){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
         NSMutableArray* arr = [[NSMutableArray alloc]init];
@@ -119,11 +154,15 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if(section == 0 && entry.summary.length > 1)
-        return @"Contacts";
-    else if(section == 1)
-        return @"Address";
-    else if(section == 2)
+    if(section == 0 && entry.contact)
+        return @"Contact";
+    else if(section == 1 && entry.summary)
+        return @"Jurisdictions";
+    else if(section == 2 && entry.address)
+        return @"Sub-jurisdictions";
+    else if(section == 3 && entry.email)
+        return @"Email";
+    else if(section == 4 && entry.phoneNumbers)
         return @"Phone";
     else
         return nil;
@@ -131,10 +170,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 2)
-      return 50;
+    if(indexPath.section == 1)
+      return 90;
     else
-    return 100;
+      return 40;
 }
 
 

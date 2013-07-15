@@ -127,8 +127,8 @@
             HTAllianceData *dat = [lis objectAtIndex:0];
             [jurs addObject:dat.district];
         }
-            detailViewController.jurisdictions = jurs;
-            detailViewController.list = lis;
+        detailViewController.jurisdictions = jurs;
+        detailViewController.list = lis;
     }
 }
 

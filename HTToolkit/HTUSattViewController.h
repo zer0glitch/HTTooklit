@@ -11,6 +11,6 @@
 
 @interface HTUSattViewController : UITableViewController
 
-@property (weak, nonatomic) HTAllianceData* entry;
+@property (retain, nonatomic) HTAllianceData* entry;
 
 @end
