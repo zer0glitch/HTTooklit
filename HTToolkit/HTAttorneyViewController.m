@@ -90,7 +90,7 @@
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 175)];
         textview.text = entry.summary;
         textview.editable = NO;
-        textview.scrollEnabled = NO;
+        textview.scrollEnabled = YES;
         textview.backgroundColor = [UIColor clearColor];
         textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:textview];

@@ -63,6 +63,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"stateLawCell" forIndexPath:indexPath];
 	// Clean cell.contentView
+    
 	for (id subView in cell.contentView.subviews) {
 		[subView removeFromSuperview];
 	}
@@ -71,6 +72,8 @@
     textview.text = dat.caseName;
     textview.editable = NO;
     textview.scrollEnabled = NO;
+    [textview resignFirstResponder];
+    [textview setUserInteractionEnabled:NO];
     textview.backgroundColor = [UIColor clearColor];
     [textview setFont: [UIFont systemFontOfSize:15]];
     textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;

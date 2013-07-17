@@ -84,6 +84,7 @@
         textview.scrollEnabled = YES;
         textview.backgroundColor = [UIColor clearColor];
         textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        [textview setFont: [UIFont systemFontOfSize:15]];
         [cell.contentView addSubview:textview];
         return cell;
     }
@@ -97,7 +98,7 @@
         textview.backgroundColor = [UIColor clearColor];
         textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [cell.contentView addSubview:textview];
-        [textview setFont: [UIFont systemFontOfSize:14]];
+        [textview setFont: [UIFont systemFontOfSize:15]];
         return cell;
     }
     else if(indexPath.section == 2){

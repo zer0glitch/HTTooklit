@@ -293,32 +293,32 @@
     [self insertNewObject:one];
     one = [[HTStateLawData alloc]init:@"663-3-Cause of action for coercion into prostitution" summary:@"An individual has a cause of action against a person who coerced the individual into or to continue prostitution, used coercion to collect or recieve any of teh individual's earnings derived from prostitution, or hired the individual for prostitution." link:@"https://law.justia.com/codes/hawaii/2010/division4/title36/chapter663j/663j-3/" state:@"Hawaii"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"663-4-Evidence of coercion" summary:@"" link:@"http://law.justia.com/codes/hawaii/2011/division4/title36/chapter663j/663j-4" state:@"Hawaii"];
+    one = [[HTStateLawData alloc]init:@"663-4-Evidence of coercion" summary:@"Acts that may serve as evidence of a claim under section -3 include but are not limited to physical force or threats thereof, physical or mental torture, kidnapping, blackmail, extortion, isolation, etc." link:@"http://law.justia.com/codes/hawaii/2011/division4/title36/chapter663j/663j-4" state:@"Hawaii"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"663-5-Recovering Damages" summary:@"" link:@"http://law.justia.com/codes/hawaii/2011/division4/title36/chapter663j/663j-5" state:@"Hawaii"];
+    one = [[HTStateLawData alloc]init:@"663-5-Recovering Damages" summary:@"A person entitled to bring an action under section 663J-3 may recover all economic and noneconomic damages caused by coercion into prostitution, exemplary damages, attorney's fees, and costs of costs of suit." link:@"http://law.justia.com/codes/hawaii/2011/division4/title36/chapter663j/663j-5" state:@"Hawaii"];
     [self insertNewObject:one];
     
     
     
     
     //Idaho
-    one = [[HTStateLawData alloc]init:@"18-8602-Human trafficking defined" summary:@"" link:@"http://law.justia.com/codes/idaho/2011/title18/chapter86/18-8602" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-8602-Human trafficking defined" summary:@"Human trafficking is sex trafficking in which a commercial sex act is induced by force, fraud, or coercion, or the person incuded is under 18 years of age, or the recruitment, harboring, transport, or other obtaining persons for involuntary servitude." link:@"http://law.justia.com/codes/idaho/2011/title18/chapter86/18-8602" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-5601-Interstate trafficking in prostitution" summary:@"" link:@"http://law.justia.com/codes/idaho/2011/title18/chapter56/18-5601" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-5601-Interstate trafficking in prostitution" summary:@"Any person who imports persons into this state, or who exports persons from this state, for prostitution, or any person who induces, entices, or procures such activity, shall be guilty of a punishable felony." link:@"http://law.justia.com/codes/idaho/2011/title18/chapter56/18-5601" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-5602-Procurement - Definition and penalty" summary:@"" link:@"http://law.justia.com/codes/idaho/2012/title-18/chapter-56/section-18-5602/" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-5602-Procurement - Definition and penalty" summary:@"Any person who induces, compels, entices, or procures another person to engage in acts as a prostitute shall be guilty of a felony punishable by imprisonment for 2-20 years or a fine of $1,000-$50,000, or both." link:@"http://law.justia.com/codes/idaho/2012/title-18/chapter-56/section-18-5602/" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-5609-Inducing persons under eighteen years of age into prostitution" summary:@"" link:@"http://law.justia.com/codes/idaho/2010/title18/t18ch56sect18-5609.html" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-5609-Inducing persons under eighteen years of age into prostitution" summary:@"Every person who induces or attempts to induce a person under 18 years of age in prostitution shall be guilty of a felony punishable by imprisonment for 2 years to life, fined no more than $50,000, or both." link:@"http://law.justia.com/codes/idaho/2010/title18/t18ch56sect18-5609.html" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-8502(ff)-Criminal Gang Enforcement Act - Definitions" summary:@"" link:@"http://law.justia.com/codes/idaho/2011/title18/chapter85/18-8502" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-8502(ff)-Criminal Gang Enforcement Act - Definitions" summary:@"Provides information for terms used with gang enforcement and resources for definitions." link:@"http://law.justia.com/codes/idaho/2011/title18/chapter85/18-8502" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-8601-Legislative Intent (and law enforcement training)" summary:@"" link:@"http://law.justia.com/codes/idaho/2012/title-18/chapter-86/section-18-8601/" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-8601-Legislative Intent (and law enforcement training)" summary:@"It is the intent of hte legislature to address human trafficking and provide criminal sanctions for persons who engage in human trafficking in this state." link:@"http://law.justia.com/codes/idaho/2012/title-18/chapter-86/section-18-8601/" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-8603-Penalties" summary:@"" link:@"http://law.justia.com/codes/idaho/2011/title18/chapter86/18-8603" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-8603-Penalties" summary:@"Any person who commits  a crime listed in this statute as well as the crime of human trafficking shall be punished by imprinsonment in the state prison for not more than 25 years unless a more severe penalty is otherwise prescribed by law." link:@"http://law.justia.com/codes/idaho/2011/title18/chapter86/18-8603" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-8604-Restitution - Rehabilitation" summary:@"" link:@"https://law.justia.com/codes/idaho/2011/title18/chapter86/18-8604/" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-8604-Restitution - Rehabilitation" summary:@"In addition to any other loss resulting from a human trafficking violation, the court shall order restitution as applicable including the greater of the gross income or value to the defendant or the value of the victim's labor as garunteed under minimum wage, as well as feesfor mental and physical rehabilitation the the victim(s)." link:@"https://law.justia.com/codes/idaho/2011/title18/chapter86/18-8604/" state:@"Idaho"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-8605-Human trafficking victim protection" summary:@"" link:@"http://law.justia.com/codes/idaho/2011/title18/chapter86/18-8605" state:@"Idaho"];
+    one = [[HTStateLawData alloc]init:@"18-8605-Human trafficking victim protection" summary:@"The attorney general shall issue a report outlining how existing victim and witness laws respond to the needs of victims, and suggesting areas of improvement.  The deparment of health and welfare shall issure a report outlining how social service programs respond or fail to respond to the needs of victims and suggest ares of improvement." link:@"http://law.justia.com/codes/idaho/2011/title18/chapter86/18-8605" state:@"Idaho"];
     [self insertNewObject:one];
     
     
@@ -326,19 +326,19 @@
     
     
     //Illinois
-    one = [[HTStateLawData alloc]init:@"720 ILCS 5/10-9-Trafficking in persons, involuntary servitude, and related offenses" summary:@"" link:@"http://law.justia.com/codes/illinois/2012/chapter-720/act-720-ilcs-5/title-iii" state:@"Illinois"];
+    one = [[HTStateLawData alloc]init:@"720 ILCS 5/10-9-Trafficking in persons, involuntary servitude, and related offenses" summary:@"Provides definitions, classifications, considerations, and sentencint for offenses of human trafficking." link:@"http://law.justia.com/codes/illinois/2012/chapter-720/act-720-ilcs-5/title-iii" state:@"Illinois"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"720 ILCS 5/124B-300-Forfeiture; Involuntary servitude and trafficking of persons" summary:@"" link:@"http://law.justia.com/codes/illinois/2010/chapter725/072500050HArt_124B.html" state:@"Illinois"];
+    one = [[HTStateLawData alloc]init:@"720 ILCS 5/124B-300-Forfeiture; Involuntary servitude and trafficking of persons" summary:@"A person who commits the offense of involuntary servitude, involuntary servitude of a minor, or trafficking of persons for forces labor or services under section 10A-10 shall forfeit to the State of Illinois any profits or proceeds and any property acquired through the violation." link:@"http://law.justia.com/codes/illinois/2010/chapter725/072500050HArt_124B.html" state:@"Illinois"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"HB 1907 5/§ 33G-3.-Definitions" summary:@"" link:@"http://www.ilga.gov/legislation/fulltext.asp?DocName=&SessionId=84&GA=97&DocTypeId=HB&DocNum=1907&GAID=11&LegID=54594" state:@"Illinois"];
+    one = [[HTStateLawData alloc]init:@"HB 1907 5/§ 33G-3.-Definitions" summary:@"Provides definitions for the terms 'another state', 'enterprise', 'labor organization', operation or management', 'predicate activity', 'pattern of predicate activity', and 'unlawful death'." link:@"http://www.ilga.gov/legislation/fulltext.asp?DocName=&SessionId=84&GA=97&DocTypeId=HB&DocNum=1907&GAID=11&LegID=54594" state:@"Illinois"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"§725 ILCS 5/108B-3.-Authorization for the interception of private communication" summary:@"" link:@"http://law.justia.com/codes/illinois/2010/chapter725/072500050HArt_108B.html" state:@"Illinois"];
+    one = [[HTStateLawData alloc]init:@"§725 ILCS 5/108B-3.-Authorization for the interception of private communication" summary:@"The State's Attorney may authorize, in writing,  an ex parte application to the chief judge of a court of competent jurisdiction for an order authorizing the inerception of a private communication when no party has consented if the results may provide evidence of major crime." link:@"http://law.justia.com/codes/illinois/2010/chapter725/072500050HArt_108B.html" state:@"Illinois"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"Sec. 11-14-Prostitution" summary:@"" link:@"http://law.justia.com/codes/illinois/2010/chapter720/072000050HArt_11.html" state:@"Illinois"];
+    one = [[HTStateLawData alloc]init:@"Sec. 11-14-Prostitution" summary:@"Any person who performs, offers or agrees to perform any act of sexual penetration as definded in section 12-12 or touching/fondling of sex organs for money, property, toey, object, or article of value commits the act of prostitution." link:@"http://law.justia.com/codes/illinois/2010/chapter720/072000050HArt_11.html" state:@"Illinois"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"Sec. 3-The Abused and Neglected Child Reporting Act" summary:@"" link:@"http://law.justia.com/codes/illinois/2005/chapter32/1460.html" state:@"Illinois"];
+    one = [[HTStateLawData alloc]init:@"Sec. 3-The Abused and Neglected Child Reporting Act" summary:@"Provides definitions and classifications for abuse and neglect of children." link:@"http://law.justia.com/codes/illinois/2005/chapter32/1460.html" state:@"Illinois"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"Sec. 2-3-Neglected or abused minor" summary:@"" link:@"http://law.justia.com/codes/illinois/2005/chapter50/60384.html" state:@"Illinois"];
+    one = [[HTStateLawData alloc]init:@"Sec. 2-3-Neglected or abused minor" summary:@"Gives specifications to classify how a minor may come to be considered neglected or abused." link:@"http://law.justia.com/codes/illinois/2005/chapter50/60384.html" state:@"Illinois"];
     [self insertNewObject:one];
     one = [[HTStateLawData alloc]init:@"Sec. 2-18-Evidence" summary:@"" link:@"http://law.justia.com/codes/illinois/2005/chapter50/60384.html" state:@"Illinois"];
     [self insertNewObject:one];

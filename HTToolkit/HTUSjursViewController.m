@@ -9,6 +9,7 @@
 #import "HTUSjursViewController.h"
 #import "HTAllianceData.h"
 #import "HTUSsubViewController.h"
+#import "HTAttorneyViewController.h"
 
 @interface HTUSjursViewController ()
 
@@ -107,7 +108,7 @@
  }
  */
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showSub"]) {
         HTUSsubViewController*detailViewController = [segue destinationViewController];
@@ -137,7 +138,7 @@
         detailViewController.list = lis;
         
     }
-}
+}*/
 
 #pragma mark - Table view delegate
 
@@ -150,6 +151,40 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSMutableArray *subs = [[NSMutableArray alloc]init];
+    NSMutableArray *lis = [[NSMutableArray alloc]init];
+    NSString *jurisdiction = [jurisdictions objectAtIndex:indexPath.row];
+    for(int i = 0; i<list.count; i++){
+        HTAllianceData *data = [list objectAtIndex:i];
+        NSString *sub = data.address;
+        if((![subs containsObject:sub]) && (data.summary == jurisdiction)){
+            [subs addObject:sub];
+        }
+        if(data.summary == jurisdiction)
+            [lis addObject:data];
+    }
+    if(lis.count == 1){
+        HTAllianceData *dat = [lis objectAtIndex:0];
+        [subs addObject:dat.summary];
+    }
+    else if(lis.count == 0){
+        HTAllianceData *dat = [list objectAtIndex:0];
+        [lis addObject:dat];
+        [subs addObject:dat.district];
+    }
+    if(lis.count == 1){
+        HTAttorneyViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"attorney"];
+        HTAllianceData* dat = [lis objectAtIndex:0];
+        detailViewController.entry = dat;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+    else{
+        HTUSsubViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"sub"];
+        detailViewController.subjurs = subs;
+        detailViewController.list = lis;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+
 }
 
 @end

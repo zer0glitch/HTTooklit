@@ -9,6 +9,7 @@
 #import "HTUSstateViewController.h"
 #import "HTAllianceData.h"
 #import "HTUSjursViewController.h"
+#import "HTAttorneyViewController.h"
 
 @interface HTUSstateViewController ()
 
@@ -107,7 +108,7 @@
  }
  */
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showJurs"]) {
         HTUSjursViewController*detailViewController = [segue destinationViewController];
@@ -130,7 +131,12 @@
         detailViewController.jurisdictions = jurs;
         detailViewController.list = lis;
     }
-}
+    if([[segue identifier] isEqualToString:@"showData"]){
+        HTAttorneyViewController*detailViewController = [segue destinationViewController];
+        HTAllianceData *dat = [list objectAtIndex:0];
+        detailViewController.entry = dat;
+    }
+}*/
 
 #pragma mark - Table view delegate
 
@@ -143,6 +149,33 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSMutableArray *jurs = [[NSMutableArray alloc]init];
+    NSMutableArray *lis = [[NSMutableArray alloc]init];
+    NSString *district = [districts objectAtIndex:indexPath.row];
+    for(int i = 0; i<list.count; i++){
+        HTAllianceData *data = [list objectAtIndex:i];
+        if((![jurs containsObject:data.summary]) && (data.district == district) && data.summary){
+            [jurs insertObject:data.summary atIndex:0];
+        }
+        if(data.district == district)
+            [lis insertObject:data atIndex:0];
+    }
+    if(lis.count == 1){
+        HTAllianceData *dat = [lis objectAtIndex:0];
+        [jurs addObject:dat.district];
+    }
+    if(lis.count == 1){
+        HTAttorneyViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"attorney"];
+        HTAllianceData* dat = [lis objectAtIndex:0];
+        detailViewController.entry = dat;        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+    else{
+        HTUSjursViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"jurs"];
+        detailViewController.jurisdictions = jurs;
+        detailViewController.list = lis;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+
 }
 
 @end

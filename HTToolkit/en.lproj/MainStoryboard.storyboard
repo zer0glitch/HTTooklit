@@ -643,9 +643,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="SdK-gO-yOo" kind="push" identifier="showDistricts" id="rrd-Q0-RuB"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -654,6 +651,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="States" id="Ibz-Z3-Vhf"/>
+                    <connections>
+                        <segue destination="vSh-ka-VXZ" kind="push" identifier="showData" id="aBc-I5-5Lv"/>
+                        <segue destination="SdK-gO-yOo" kind="push" identifier="showDistricts" id="pyI-2g-2J3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VA-6g-EMM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -662,7 +663,7 @@
         <!--Sstate View Controller - Districts-->
         <scene sceneID="bdP-Vc-eip">
             <objects>
-                <tableViewController id="SdK-gO-yOo" customClass="HTUSstateViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="state" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SdK-gO-yOo" customClass="HTUSstateViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fbv-7V-8aZ">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -683,9 +684,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="74A-gM-6dl" kind="push" identifier="showJurs" id="eLT-Tz-lsD"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -694,6 +692,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Districts" id="48a-aS-3a0"/>
+                    <connections>
+                        <segue destination="vSh-ka-VXZ" kind="push" identifier="showData" id="LU3-0O-HmU"/>
+                        <segue destination="74A-gM-6dl" kind="push" identifier="showJurs" id="DfR-Mg-RWa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gde-gr-L5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -702,7 +704,7 @@
         <!--Sjurs View Controller - Jurisdictions-->
         <scene sceneID="Gxd-6y-n6U">
             <objects>
-                <tableViewController id="74A-gM-6dl" customClass="HTUSjursViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="jurs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="74A-gM-6dl" customClass="HTUSjursViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="BOB-4c-J0u">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -723,9 +725,6 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="Maq-OM-Wdz" kind="push" identifier="showSub" id="7k4-pX-yMi"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -734,6 +733,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Jurisdictions" id="Xps-r6-KbE"/>
+                    <connections>
+                        <segue destination="vSh-ka-VXZ" kind="push" identifier="showData" id="AIh-AD-NQH"/>
+                        <segue destination="Maq-OM-Wdz" kind="push" identifier="showSub" id="vwz-1z-2qh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elp-Qd-fp0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -772,7 +775,7 @@
         <!--Ssub View Controller - Sub-Jurisdictions-->
         <scene sceneID="BDB-YB-H2v">
             <objects>
-                <tableViewController id="Maq-OM-Wdz" customClass="HTUSsubViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="sub" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Maq-OM-Wdz" customClass="HTUSsubViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="bb3-KU-bWF">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -812,7 +815,7 @@
         <!--Satt View Controller - US Attorney-->
         <scene sceneID="Bpj-DG-WWZ">
             <objects>
-                <tableViewController id="vSh-ka-VXZ" customClass="HTUSattViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="attorney" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vSh-ka-VXZ" customClass="HTUSattViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="48" sectionHeaderHeight="10" sectionFooterHeight="10" id="0fu-IF-150">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1715,102 +1718,12 @@
         <image name="social_services.png" width="32" height="32"/>
         <image name="users-icon.png" width="43" height="31"/>
     </resources>
-    <classes>
-        <class className="HTAllianceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAllianceViewController.h"/>
-        </class>
-        <class className="HTAttGenTypeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttGenTypeViewController.h"/>
-        </class>
-        <class className="HTAttStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttStateViewController.h"/>
-        </class>
-        <class className="HTAttorneyViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttorneyViewController.h"/>
-        </class>
-        <class className="HTCityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTCityViewController.h"/>
-        </class>
-        <class className="HTContactsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTContactsViewController.h"/>
-        </class>
-        <class className="HTDistStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistStateViewController.h"/>
-        </class>
-        <class className="HTDistrictViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistrictViewController.h"/>
-        </class>
-        <class className="HTFedLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedLawViewController.h"/>
-        </class>
-        <class className="HTFedSerInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedSerInfoViewController.h"/>
-        </class>
-        <class className="HTFedServiceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedServiceViewController.h"/>
-        </class>
-        <class className="HTLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTLawViewController.h"/>
-        </class>
-        <class className="HTMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTMasterViewController.h"/>
-        </class>
-        <class className="HTSerAgencyViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerAgencyViewController.h"/>
-        </class>
-        <class className="HTSerCityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerCityViewController.h"/>
-        </class>
-        <class className="HTSerGenderViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerGenderViewController.h"/>
-        </class>
-        <class className="HTSerStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerStateViewController.h"/>
-        </class>
-        <class className="HTServiceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTServiceViewController.h"/>
-        </class>
-        <class className="HTStateLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLawViewController.h"/>
-        </class>
-        <class className="HTStateLookViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLookViewController.h"/>
-        </class>
-        <class className="HTStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateViewController.h"/>
-        </class>
-        <class className="HTTrainViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTTrainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="assess" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="cont" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="enf" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="prov" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="tVisa" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="traf" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="uVisa" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="vawa" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="HTUSattViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSattViewController.h"/>
-        </class>
-        <class className="HTUSjursViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSjursViewController.h"/>
-        </class>
-        <class className="HTUSstateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSstateViewController.h"/>
-        </class>
-        <class className="HTUSsubViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSsubViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="AIh-AD-NQH"/>
+    </inferredMetricsTieBreakers>
 </document>

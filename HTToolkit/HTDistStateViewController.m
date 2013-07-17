@@ -9,6 +9,7 @@
 #import "HTDistStateViewController.h"
 #import "HTAllianceData.h"
 #import "HTUSstateViewController.h"
+#import "HTAttorneyViewController.h"
 
 @interface HTDistStateViewController ()
 
@@ -105,7 +106,7 @@
 */
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDistricts"]) {
         HTUSstateViewController *detailViewController = [segue destinationViewController];
@@ -125,7 +126,7 @@
         detailViewController.districts = dist;
         detailViewController.list = lis;
     }
-}
+}*/
 
 
 
@@ -140,6 +141,30 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSMutableArray *dist = [[NSMutableArray alloc]init];
+    NSMutableArray *lis = [[NSMutableArray alloc]init];
+    NSString *state = [states objectAtIndex:indexPath.row];
+    for(int i = 0; i<list.count; i++){
+        HTAllianceData *data = [list objectAtIndex:i];
+        NSString *dis = data.district;
+        if((![dist containsObject:dis]) && (data.state == state)){
+            [dist insertObject:dis atIndex:0];
+        }
+        if(data.state == state)
+            [lis insertObject:data atIndex:0];
+    }
+    if(lis.count == 1){
+        HTAttorneyViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"attorney"];
+        HTAllianceData* dat = [lis objectAtIndex:0];
+        detailViewController.entry = dat;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
+    else{
+        HTUSstateViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"state"];
+        detailViewController.districts = dist;
+        detailViewController.list = lis;
+        [self.navigationController pushViewController:detailViewController animated:YES];
+    }
 }
 
 @end

@@ -31,49 +31,49 @@
     masterList = [[NSMutableArray alloc]init];
     
     HTFullData *one = [[HTFullData alloc] initWithName:@"California" jurisdiction:@"Los Angeles" agencyName:@"Los Angeles Police Department" contact:@"Lt. Andrea Grossman" email:@"30231@lapd.lacity.org"];
-    [one addNumber:@"(562)624-4028"];
+    [one addNumber:@"Phone: (562) 624-4028"];
     [self insertNewObject:one];
     one = [[HTFullData alloc]initWithName:@"California" jurisdiction:@"Los Angeles" agencyName:@"SAC Office" contact:@"Liz Mitchell" email:@"liz.e.mitchell@ice.dhs.gov"];
-    [one addNumber:@"(213)633-6262"];
+    [one addNumber:@"Phone: (213) 633-6262"];
     [self insertNewObject:one];
     
     one = [[HTFullData alloc] initWithName:@"Florida" jurisdiction:@"South Florida" agencyName:@"Broward County Sheriff's Office" contact:@"Lieutenant Charlotte Ross" email:@"leachtaskforce@bsosid.org"];
-    [one addNumber:@"(954) 888-5299"];
+    [one addNumber:@"Phone: (954) 888-5299"];
     [self insertNewObject:one];
     one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami" agencyName:@"SAC Office" contact:@"Mariano Aponte" email:@"mariano.L.Aponte@ice.dhs.gov"];
-    [one addNumber:@"(305)597-6614"];
+    [one addNumber:@"Phone: (305) 597-6614"];
     [self insertNewObject:one];
     
     one = [[HTFullData alloc]initWithName:@"Georgia" jurisdiction:@"Atlanta" agencyName:@"SAC Office" contact:@"Brian Ramsey" email:@"brian.e.ramsey@ice.dhs.gov"];
-    [one addNumber:@"(404)346-2885"];
+    [one addNumber:@"Phone: (404) 346-2885"];
     [self insertNewObject:one];
     one = [[HTFullData alloc] initWithName:@"Georgia" jurisdiction:@"Georgia" agencyName:@"Georgia Bureau of investigation" contact:@"Special Agent in Charge Sandra Putnam" email:@"Sandra.Putnam@gbi.ga.gov"];
-    [one addNumber:@"(404)270-8870"];
+    [one addNumber:@"Phone: (404) 270-8870"];
     [self insertNewObject:one];
     
     one = [[HTFullData alloc] initWithName:@"Kansas" jurisdiction:@"Kansas" agencyName:@"Sedgwick County's Sheriff's Office" contact:@"Lt. Jeff Weible" email:@"jweible@sedgwick.gov"];
-    [one addNumber:@"(316)337-6552"];
+    [one addNumber:@"Phone: (316) 337-6552"];
     [self insertNewObject:one];
     one = [[HTFullData alloc]initWithName:@"Kansas" jurisdiction:@"Kansas City" agencyName:@"SAC Office" contact:@"Mark Fox" email:@"mark.e.fox@ice.dhs.gov"];
-    [one addNumber:@"(816)584-1054"];
+    [one addNumber:@"Phone: (816) 584-1054"];
     [self insertNewObject:one];
     
     one = [[HTFullData alloc] initWithName:@"Louisiana" jurisdiction:@"Louisiana" agencyName:@"Louisiana Department of Justice" contact:@"Computer Forensic Lab Manager Corey Bourgeois" email:@"bourgeoisc@ag.state.la.us"];
-    [one addNumber:@"(225)326-6145"];
+    [one addNumber:@"Phone: (225) 326-6145"];
     [self insertNewObject:one];
     
     one = [[HTFullData alloc]initWithName:@"Tennessee" jurisdiction:@"Memphis" agencyName:@"SAC Office" contact:@"James Shires" email:@"james.a.shires@ice.dhs.gove"];
-    [one addNumber:@"(504)310-8865"];
+    [one addNumber:@"Phone: (504) 310-8865"];
     [self insertNewObject:one];
     one = [[HTFullData alloc] initWithName:@"Tennessee" jurisdiction:@"Tennessee" agencyName:@"Knoxville Police Department" contact:@"Captain Monty Houk" email:@"mhouk@cityofknoxville.org"];
-    [one addNumber:@"(865)215-7020"];
+    [one addNumber:@"Phone: (865) 215-7020"];
     [self insertNewObject:one];
     
     one = [[HTFullData alloc]initWithName:@"Texas" jurisdiction:@"El Paso" agencyName:@"SAC Office" contact:@"Gustavo Correa" email:@"gustavo.e.correa@ice.dhs.gov"];
-    [one addNumber:@"(915)881-5560"];
+    [one addNumber:@"Phone: (915) 881-5560"];
     [self insertNewObject:one];
     one = [[HTFullData alloc] initWithName:@"Texas" jurisdiction:@"Texas, Southern" agencyName:@"Office of the Attorney General of Texas" contact:@"Captain Kimberly Bustos" email:@"kimberly.bustos@texasattorneygeneral.gov"];
-    [one addNumber:@"(512)936-2896"];
+    [one addNumber:@"Phone: (512) 936-2896"];
     [self insertNewObject:one];   
 }
 
