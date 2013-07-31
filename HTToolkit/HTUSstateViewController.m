@@ -155,10 +155,10 @@
     for(int i = 0; i<list.count; i++){
         HTAllianceData *data = [list objectAtIndex:i];
         if((![jurs containsObject:data.summary]) && (data.district == district) && data.summary){
-            [jurs insertObject:data.summary atIndex:0];
+            [jurs addObject:data.summary];
         }
         if(data.district == district)
-            [lis insertObject:data atIndex:0];
+            [lis addObject:data];
     }
     if(lis.count == 1){
         HTAllianceData *dat = [lis objectAtIndex:0];

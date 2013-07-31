@@ -148,10 +148,10 @@
         HTAllianceData *data = [list objectAtIndex:i];
         NSString *dis = data.district;
         if((![dist containsObject:dis]) && (data.state == state)){
-            [dist insertObject:dis atIndex:0];
+            [dist addObject:dis];
         }
         if(data.state == state)
-            [lis insertObject:data atIndex:0];
+            [lis addObject:data];
     }
     if(lis.count == 1){
         HTAttorneyViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"attorney"];

@@ -75,7 +75,7 @@
     [textview resignFirstResponder];
     [textview setUserInteractionEnabled:NO];
     textview.backgroundColor = [UIColor clearColor];
-    [textview setFont: [UIFont systemFontOfSize:15]];
+    [textview setFont: [UIFont boldSystemFontOfSize:15]];
     textview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [cell.contentView addSubview:textview];
     return cell;

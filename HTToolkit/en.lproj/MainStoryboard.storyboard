@@ -363,19 +363,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="dataCell" id="aMO-Sc-uZe">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addressCell" rowHeight="90" id="yHh-TL-5rB">
-                                <rect key="frame" x="0.0" y="91" width="320" height="91"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="0.0" width="300" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -533,9 +524,7 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="States" id="36">
-                        <barButtonItem key="backBarButtonItem" title="States" id="lnO-EH-Y01"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="States" id="36"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
@@ -576,9 +565,7 @@
                             <outlet property="delegate" destination="ZE3-7n-t1B" id="45g-Qv-YxV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Jurisdictions" id="Xbw-yC-RWH">
-                        <barButtonItem key="backBarButtonItem" title="Jurs" id="2In-Dn-Ao0"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Jurisdictions" id="Xbw-yC-RWH"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXu-yN-Ujy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -618,9 +605,7 @@
                             <outlet property="delegate" destination="y0m-p5-N0g" id="ryx-BJ-kaT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Agencies" id="QWP-r4-Cgu">
-                        <barButtonItem key="backBarButtonItem" title="Agencies" id="nhX-hf-1dk"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Agencies" id="QWP-r4-Cgu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D96-BV-eBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1724,6 +1709,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="AIh-AD-NQH"/>
+        <segue reference="Itg-dA-mL4"/>
     </inferredMetricsTieBreakers>
 </document>

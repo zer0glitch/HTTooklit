@@ -62,7 +62,7 @@
     [one addNumber:@"Phone: (225) 326-6145"];
     [self insertNewObject:one];
     
-    one = [[HTFullData alloc]initWithName:@"Tennessee" jurisdiction:@"Memphis" agencyName:@"SAC Office" contact:@"James Shires" email:@"james.a.shires@ice.dhs.gove"];
+    one = [[HTFullData alloc]initWithName:@"Tennessee" jurisdiction:@"Memphis" agencyName:@"SAC Office" contact:@"James Shires" email:@"james.a.shires@ice.dhs.gov"];
     [one addNumber:@"Phone: (504) 310-8865"];
     [self insertNewObject:one];
     one = [[HTFullData alloc] initWithName:@"Tennessee" jurisdiction:@"Tennessee" agencyName:@"Knoxville Police Department" contact:@"Captain Monty Houk" email:@"mhouk@cityofknoxville.org"];

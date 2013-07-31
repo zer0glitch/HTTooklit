@@ -85,8 +85,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    for (id subView in cell.contentView.subviews) {
+        [subView removeFromSuperview];
+    }
     if(indexPath.section == 0){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 175)];
         textview.text = entry.summary;
         textview.editable = NO;
@@ -98,7 +101,6 @@
         return cell;
     }
     else if(indexPath.section == 1){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 90)];
         textview.text = entry.address;
         textview.dataDetectorTypes = UIDataDetectorTypeAddress;
@@ -111,7 +113,6 @@
         return cell;
     }
     else if(indexPath.section == 2){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 50)];
         textview.text = entry.website;
         textview.dataDetectorTypes = UIDataDetectorTypeLink;
@@ -124,7 +125,6 @@
         return cell;
     }
     else if(indexPath.section == 3){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 50)];
         textview.text = entry.email;
         textview.dataDetectorTypes = UIDataDetectorTypeLink;
@@ -137,7 +137,6 @@
         return cell;
     }
     else if(indexPath.section == 4){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 50)];
         NSMutableArray* arr = [[NSMutableArray alloc]init];
         arr = entry.phoneNumbers;
@@ -176,7 +175,7 @@
 {
     if(indexPath.section == 0)
         return 175;
-    if(indexPath.section == 1)
+    else if(indexPath.section == 1)
         return 90;
     else
         return 50;

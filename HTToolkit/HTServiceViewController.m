@@ -75,8 +75,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    for(id subView in cell.contentView.subviews) {
+        [subView removeFromSuperview];
+    }
     if(indexPath.section == 0){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 175)];
         textview.text = entry.info;
         textview.dataDetectorTypes = UIDataDetectorTypeLink;
@@ -89,8 +92,7 @@
         return cell;
     }
     else if(indexPath.section == 1){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,5, cell.contentView.bounds.size.width, 40)];
         textview.text = entry.address;
         textview.dataDetectorTypes = UIDataDetectorTypeLink;
         textview.editable = NO;
@@ -102,8 +104,7 @@
         return cell;
     }
     else if(indexPath.section == 2){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 40)];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,5, cell.contentView.bounds.size.width, 40)];
         NSMutableArray* arr = [[NSMutableArray alloc]init];
         arr = entry.phoneNumbers;
         textview.text = [arr objectAtIndex:indexPath.row];
