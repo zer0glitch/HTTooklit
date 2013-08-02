@@ -851,7 +851,7 @@
     [self insertNewObject:one];
     one = [[HTStateLawData alloc]init:@"HB-950-15.3A.-Establishing Human Trafficking Commission" summary:@"There is established in the Department of Justice the North Carolina Human Trafficking Commission. The commission should conduct research, provide suggestions and assist with human trafficking policies." link:@"http://votesmart.org/static/billtext/41058.pdf" state:@"North Carolina"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"15A-831-Responsibilities of law enforcement agency" summary:@"As soon as practicable, but within 72 hours after after " link:@"http://law.justia.com/codes/north-carolina/2010/chapter15a/article46/section15a-831/" state:@"North Carolina"];
+    one = [[HTStateLawData alloc]init:@"15A-831-Responsibilities of law enforcement agency" summary:@"As soon as practicable, but within 72 hours after identifying a victim covered by this Article, the investigating law enforcement agency shall provide the victim with information such as availability of medical services, availability of victim compensation, contact information of the district attorney's office, and other pertinent contact information." link:@"http://law.justia.com/codes/north-carolina/2010/chapter15a/article46/section15a-831/" state:@"North Carolina"];
     [self insertNewObject:one];
     
     
@@ -859,50 +859,44 @@
     
     
     //North Dakota
-    one = [[HTStateLawData alloc]init:@"12.1-06.1-01-Racketeering Crime" summary:@"" link:@"http://law.justia.com/codes/north-dakota/2012/title-12.1/chapter-12.1-06.1/" state:@"North Dakota"];
+    one = [[HTStateLawData alloc]init:@"12.1-06.1-01-Racketeering Crime" summary:@"Provides meanings for terms commonly used in cases of racketeering crime for certain sections." link:@"http://law.justia.com/codes/north-dakota/2012/title-12.1/chapter-12.1-06.1/" state:@"North Dakota"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"12.1-40-01-Human trafficking penalty" summary:@"" link:@"http://law.justia.com/codes/north-dakota/2012/title-12.1/chapter-12.1-40/" state:@"North Dakota"];
+    one = [[HTStateLawData alloc]init:@"12.1-40-01-Human trafficking penalty" summary:@"A person is guilty of human trafficking if they benefit financially or receive anything of value from knowing participation in human trafficking or if they promote, recruit, entice, harbor, transport, or obtains another person by any means, knowing they will be subject to human trafficking." link:@"http://law.justia.com/codes/north-dakota/2012/title-12.1/chapter-12.1-40/" state:@"North Dakota"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"12.1-40-02-Definitions" summary:@"" link:@"http://law.justia.com/codes/north-dakota/2012/title-12.1/chapter-12.1-40/" state:@"North Dakota"];
+    one = [[HTStateLawData alloc]init:@"12.1-40-02-Definitions" summary:@"Provides meaning for the terms 'forced labor or services', 'debt bondage', 'human trafficking', 'labor trafficking', and 'sex trafficking'." link:@"http://law.justia.com/codes/north-dakota/2012/title-12.1/chapter-12.1-40/" state:@"North Dakota"];
     [self insertNewObject:one];
     
     
     
     
     //Ohio
-    one = [[HTStateLawData alloc]init:@"2905.01-Kidnapping" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-01/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2905.01-Kidnapping" summary:@"No person, by force, threat, or deception shall remove another and restrain their liberty for the purpose of holding for ransom or hostage, terrorize, engage in physical activity, or to hold them in a condition of involuntary servitude." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-01/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2905.02(A)(3)-Abduction for the purpose of involuntary servitude" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-02/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2905.02(A)(3)-Abduction for the purpose of involuntary servitude" summary:@"No person, without privilege to do so, shall knowingly by force or threat, move a person from a place where they can be found, by force or threat, restrain the liberty of another person under circumstances that risk physical harm, or hold another person in a condition of involuntary servitude." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-02/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2905.31-Definitions" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-31/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2905.31-Definitions" summary:@"Provides meaning for the terms 'involuntary servitude' and 'material that is obscene, sexually oriented, or nudity oriented'." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-31/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2905.32-Trafficking in persons" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-32/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2905.32-Trafficking in persons" summary:@"No person shall knowingly recruit, lure, entice, isolate, harbor, transport, provide, obtain, or maintain another person knowingly that the person will be subject to involuntary servitude or be compelled to perform sexually explicit acts." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-32/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2905.33-Unlawful conduct with respect to documents" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-33/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2905.33-Unlawful conduct with respect to documents" summary:@"No person, without privilege to do so, shall knowingly destroy, conceal, remove, confiscate, or possess any actual or purported government identification document or passport of another person in the course of a violation of, with intent to violate, or with intent to facilitate a violation of listed sections." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2905/section2905-33/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2929.01-Definitions" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2929/section2929-01/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2929.01-Definitions" summary:@"Provides meaning for terms commonly used in penalties and sentencing, including 'basic probation supervision', 'community control', 'curfew', and 'mandatory prison term'." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2929/section2929-01/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2929.14-Definite prison terms" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2929/section2929-14/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2929.14-Definite prison terms" summary:@"Documents the appropriate sentencing times for for different classes and degrees of crime." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2929/section2929-14/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2923.32-Engaging in pattern of corrupt activity" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2923/section2923-32/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2923.32-Engaging in pattern of corrupt activity" summary:@"No person employed by, or associated with, any enterprise shall conduct or participate in, directly or indirectly, the affairs of the enterprise through a pattern of correct activity or the collection of an unlawful debt, and no such money should be used for any personal gain." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2923/section2923-32/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2941.1422-Human trafficking specification" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2941/section2941-1422/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2941.1422-Human trafficking specification" summary:@"Imposition of a mandatory prison term of the Revised Code is precluded unless the offender is convicted of or pleads guilty to a felony violation of certain sections and unless the indictment, count in the indictment, or information charging specifies a human trafficking offense." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2941/section2941-1422/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2981.02-Asset Forfeiture" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2981/section2981-02/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2981.02-Asset Forfeiture" summary:@"Property subject to forfeiture to the state or a political subdivision include contraband involved in an offense,  proceeds derived from or acquired through the commission of an offense,  or instrument of crime, felony, or misdemeanor." link:@"http://law.justia.com/codes/ohio/2011/title29/chapter2981/section2981-02/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"109.745-Training for Law Enforcement" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title1/chapter109/section109-745/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"109.73-Rule recommendations" summary:@"The Ohio peace officer training commission shall recommend rules to the attorney general with respect to certain circumstances, including approval or disapproval of officer training schools, minimum qualifications for instructors, and establishing minimum qualifications and requirements for certification for dogs utilized by law enforcement agencies." link:@"http://law.justia.com/codes/ohio/2011/title1/chapter109/section109-73/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"109.73-Training in peace office training schools" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title1/chapter109/section109-73/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"5502.63-Posting of NHTRC Hotline" summary:@"Criminal justice services in the department of public safety shall prepare a poster and brochure that describe safe firearms practices and contains typeface that is at least one-quarter inch tall. Copies will be provided free of charge to federally licensed firearms dealers." link:@"http://law.justia.com/codes/ohio/2011/title55/chapter5502/section5502-63/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"5502.63-Posting of NHTRC Hotline" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title55/chapter5502/section5502-63/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2151.358-Expungment of Record for children" summary:@"The juvenile court shall expunge all records sealed under section 2151.356 of the Revised Code five years after the court issues a sealing order or upon the twenty-third birthday of the person who is the subject of the sealing order, whichever date is earlier." link:@"http://law.justia.com/codes/ohio/2011/title21/chapter2151/section2151-358/" state:@"Ohio"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2151.358-Expungment of Record for children" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title21/chapter2151/section2151-358/" state:@"Ohio"];
-    [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2152.021-Safe Harbor Provisions" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title21/chapter2152/section2152-021/" state:@"Ohio"];
-    [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"5101.87-Human Trafficking Fund" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title51/chapter5101/section5101-87to5101-90/" state:@"Ohio"];
-    [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"2307.51-Civil Remedy" summary:@"" link:@"http://law.justia.com/codes/ohio/2011/title23/chapter2307/section2307-51/" state:@"Ohio"];
+    one = [[HTStateLawData alloc]init:@"2152.021-Safe Harbor Provisions" summary:@"Any person having knowledge of a child who appears to be a juvenile traffick offender or to be a delinquent child may file a sworn complaint with respect to that child in the juvenile court of the county in which the child has a residence or legal settlement or in which the traffick offense or delinquent act allegedly occurred." link:@"http://law.justia.com/codes/ohio/2011/title21/chapter2152/section2152-021/" state:@"Ohio"];
     [self insertNewObject:one];
     
     
@@ -910,19 +904,19 @@
     
     
     //Oklahoma
-    one = [[HTStateLawData alloc]init:@"21-446-Unlawful transport of alien - Concealing, harboring, or sheltering from detection - Destroying, hiding, altering, or keeping documentation" summary:@"" link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
+    one = [[HTStateLawData alloc]init:@"21-446-Unlawful transport of alien - Concealing, harboring, or sheltering from detection - Destroying, hiding, altering, or keeping documentation" summary:@"It shall be unlawful for any person to transport, move, conceal, harbor, or shelter any alien from the State of Oklahoma with knowledge of illegal entry." link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"21-748-Human trafficking for forced labor or forced sexual exploitation" summary:@"" link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
+    one = [[HTStateLawData alloc]init:@"21-748-Human trafficking for forced labor or forced sexual exploitation" summary:@"Provides meaning for the terms 'coercion', 'commercial sex', 'debt bondage', 'human trafficking', 'human trafficking for labor', 'human trafficking for commercial sex', 'legal process', and 'minor'." link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"21-748.2vl-Guidelines for treatment of human trafficking victims - Right to civil action" summary:@"" link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
+    one = [[HTStateLawData alloc]init:@"21-748.2vl-Guidelines for treatment of human trafficking victims - Right to civil action" summary:@"Human trafficking victims shall be housed in an appropriate shelter as soon as practicable, not be inappropriately detained, not be penalized for the trafficking, receive prompt medical attention, and be provided with protection if necessary." link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"21-748.2v2-Guidelines for treatment of human trafficking victims - Right to civil action" summary:@"" link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
+    one = [[HTStateLawData alloc]init:@"21-748.2v2-Guidelines for treatment of human trafficking victims - Right to civil action" summary:@"Any person aggrieved by a violation of subsection B Section 748 may bring a civil action against the person or persons who committed the violation to recover actual and punitive damages and reasonable attorney fees." link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
     [self insertNewObject:one];
     one = [[HTStateLawData alloc]init:@"21-1738-Seizure and forfeiture proceedings- Vehicles, airplanes, vessels, etc. used in attempt or commission of certain crimes" summary:@"" link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"21-866-Offense of Trafficking in Children" summary:@"" link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
+    one = [[HTStateLawData alloc]init:@"21-866-Offense of Trafficking in Children" summary:@"The crime of trafficking in children is defined to consist of acts such as the acceptance, solicitation, offer, or payment for the legal or physical transfer of a minor child, advertising of services for compensation for assistance, and bringing a child to the state for the purpose of trafficking." link:@"http://law.justia.com/codes/oklahoma/2012/title-21/" state:@"Oklahoma"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"22-1402-Definitions for Racketeer-Influenced and Corrupt Organizations Act" summary:@"" link:@"http://law.justia.com/codes/oklahoma/2012/title-22/" state:@"Oklahoma"];
+    one = [[HTStateLawData alloc]init:@"22-1402-Definitions for Racketeer-Influenced and Corrupt Organizations Act" summary:@"Provides meaning for the terms 'beneficial interest', 'enterprise', 'innocent party', 'lien notice', 'pattern of racketeering activity', 'pecuniary value', 'person', 'personal property', 'principal', 'racketeering activity', 'real property', 'trustee', and 'unlawful debt'." link:@"http://law.justia.com/codes/oklahoma/2012/title-22/" state:@"Oklahoma"];
     [self insertNewObject:one];
     
     
@@ -931,23 +925,21 @@
     
     
     //Oregon
-    one = [[HTStateLawData alloc]init:@"131.602-Asset Forfeiture" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/131/131-602/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"163.261-Definitions for ORS 163.263 and 163.264" summary:@"As used in ORS 163.263 and 163.264, services means activities performed by one person under the supervision or for the benefit of another person." link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-261/" state:@"Oregon"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"163.261-Definitions for ORS 163.263 and 163.264" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-261/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"163.263-Subject another person to involuntary servitude in second degree" summary:@"A person commits the crime of subjecting another to involuntary servitude in the second degree if  the person knowingly and without lawful authority forces or attempts to force the other to engage in services by abuse, destroying government identification, threatening to collect unlawful debt, or instilling fear that the actor will withhold essential necessities." link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-263/" state:@"Oregon"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"163.263-Subject another person to involuntary servitude in second degree" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-263/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"163.264-Involuntary servitude in the first degree" summary:@"A person commits the crime of subjecting another to involuntary servitude in the first degree if they knowingly and without lawful authority force or attempt to force another to engage in services by causing physical harm or threatening death, or physically restraining another." link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-264/" state:@"Oregon"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"163.264-Involuntary servitude in the first degree" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-264/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"163.266-Trafficking in persons" summary:@"A person commits the crime of trafficking in persons if the person knowingly recruits, entices, harbors, or obtains by any means another person knowing they will be subject to involuntary servitude, or benefits from a venture of such a crime." link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-266/" state:@"Oregon"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"163.266-Trafficking in persons" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-266/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"163.269-Victim assertation of defense of duress" summary:@"A person who is the victim of a crime described in ORS 163.263, 163.264, or 163.266 may assert the defense of duress, as described in ORS 161.270, if the person is prosecuted for conduct that constitutes services under ORS 163.261, that the person was caused to provide." link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-269/" state:@"Oregon"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"163.269-Victim assertation of defense of duress" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/163/163-269/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"166.715-Definitions for Racketeering activity" summary:@"Provides clarification for what is written in ORS 166.715 to 166.735." link:@"http://law.justia.com/codes/oregon/2011/vol4/166/166-715/" state:@"Oregon"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"166.715-Definitions for Racketeering activity" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/166/166-715/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"167.017-Compelling Prostitution" summary:@"A person commits the crime of compelling prostitution if the person knowingly uses force or intimidation to compel another to engage in prostitution, induces or cashes a person under 18 years of age to engage in prostitution, aids or facilitate the commission of prostitution by a person under 18 years of age, or induces a spouse or dependent to engage in prostitution." link:@"http://law.justia.com/codes/oregon/2011/vol4/167/167-017/" state:@"Oregon"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"167.017-Compelling Prostitution" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol4/167/167-017/" state:@"Oregon"];
-    [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"192.854-Services for Human Trafficking Victims" summary:@"" link:@"http://law.justia.com/codes/oregon/2011/vol5/192/192-854/" state:@"Oregon"];
+    one = [[HTStateLawData alloc]init:@"192.854-Services for Human Trafficking Victims" summary:@"The Attorney General may designate employees of or volunteers serving public or private entities that provide counseling and shelter services to victims of domestic violence, a sexual offense, stalking or human trafficking as application assistants to assist individuals applying to participate in the Address Confidentiality Program." link:@"http://law.justia.com/codes/oregon/2011/vol5/192/192-854/" state:@"Oregon"];
     [self insertNewObject:one];
     
     
@@ -955,15 +947,15 @@
     
     
     //Pennsylvania
-    one = [[HTStateLawData alloc]init:@"18-911-Definition of Racketeering Activity" summary:@"" link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-9/section-911/" state:@"Pennsylvania"];
+   // one = [[HTStateLawData alloc]init:@"18-911-Definition of Racketeering Activity" summary:@"" link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-9/section-911/" state:@"Pennsylvania"];
+   // [self insertNewObject:one];
+    one = [[HTStateLawData alloc]init:@"18-3001-Definition" summary:@"Provides meaning for the terms 'criminal coercion', 'forced labor or services', and 'traffics'." link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3001/" state:@"Pennsylvania"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-3001-Definition" summary:@"" link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3001/" state:@"Pennsylvania"];
+    one = [[HTStateLawData alloc]init:@"18-3002-Trafficking of persons subjected to forced labor" summary:@"A person commits an offense if the person knowingly traffics or knowingly attempts to traffic another person, knowing that the other person will be subjected to forced labor or services." link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3002/" state:@"Pennsylvania"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-3002-Trafficking of persons subjected to forced labor" summary:@"" link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3002/" state:@"Pennsylvania"];
+    one = [[HTStateLawData alloc]init:@"18-3003-Restitution for offenses" summary:@"A person convicted of an offense under this chapter shall, in addition to any other remedy deemed appropriate by the court, be sentenced to pay the victim restitution including the greater of the gross income or value of the labor or services performed by the victim or the value of the victim's labor based on minimum wage." link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3003/" state:@"Pennsylvania"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-3003-Restitution for offenses" summary:@"" link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3003/" state:@"Pennsylvania"];
-    [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"18-3004-Forfeiture" summary:@"" link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3004/" state:@"Pennsylvania"];
+    one = [[HTStateLawData alloc]init:@"18-3004-Forfeiture" summary:@"Provides the circumstances of forfeiture, rules of forfeiture, custody and transfer of property, and the processes and procedures for forfeiture." link:@"http://law.justia.com/codes/pennsylvania/2012/title-18/chapter-30/section-3004/" state:@"Pennsylvania"];
     [self insertNewObject:one];
     
     
@@ -971,9 +963,9 @@
     
     
     //Rhode Island
-    one = [[HTStateLawData alloc]init:@"11-67-1-Definitions" summary:@"" link:@"http://law.justia.com/codes/rhode-island/2012/title-11/chapter-11-67/chapter-11-67-1/" state:@"Rhode Island"];
+    one = [[HTStateLawData alloc]init:@"11-67-1-Definitions" summary:@"Provides meanings for the terms 'intimidation', 'commercial sexual activity', 'forced labor', 'labor', 'maintain', 'obtain', 'sex act', and 'victim'." link:@"http://law.justia.com/codes/rhode-island/2012/title-11/chapter-11-67/chapter-11-67-1/" state:@"Rhode Island"];
     [self insertNewObject:one];
-    one = [[HTStateLawData alloc]init:@"11-67-2-Involuntary servitude" summary:@"" link:@"http://law.justia.com/codes/rhode-island/2012/title-11/chapter-11-67/chapter-11-67-2/" state:@"Rhode Island"];
+    one = [[HTStateLawData alloc]init:@"11-67-2-Involuntary servitude" summary:@"Whoever knowingly subjects, attempts to subject, or engages in a conspiracy to subject another person to forced labor or commercial sexual activity by physical harm, restraint, abuse, or destroying government identification, or intimidation is guilty of a felony." link:@"http://law.justia.com/codes/rhode-island/2012/title-11/chapter-11-67/chapter-11-67-2/" state:@"Rhode Island"];
     [self insertNewObject:one];
     one = [[HTStateLawData alloc]init:@"11-67-3-Trafficking of persons for forced labor or commercial sexual activity" summary:@"" link:@"http://law.justia.com/codes/rhode-island/2012/title-11/chapter-11-67/chapter-11-67-3/" state:@"Rhode Island"];
     [self insertNewObject:one];
