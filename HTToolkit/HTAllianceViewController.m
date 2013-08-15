@@ -694,7 +694,7 @@
     [one addNumber:@"Phone: (334) 737-3446"];
     [USattorneys addObject:one];
     one = [[HTAllianceData alloc]init:@"Circuit 39 District Attorney's Office" state:@"Alabama" district:@"Circuit 39" contact:@"Brian C Jones" summary:@"Limestone County" address:nil website:nil email: nil];
-    [one addNumber:@"Phone: (256) 23-6416"];
+    [one addNumber:@"Phone: (256) 233-6416"];
     [USattorneys addObject:one];
     one = [[HTAllianceData alloc]init:@"Circuit 23 District Attorney's Office" state:@"Alabama" district:@"Circuit 23" contact:@"Robert L Broussard" summary:@"Madison County" address:nil website:nil email: nil];
     [one addNumber:@"Phone: (256) 532-3460"];
@@ -1065,7 +1065,7 @@
     [one addNumber:@"Fax:(303) 271-6888"];
     [USattorneys addObject:one];
     one = [[HTAllianceData alloc]init:@"2nd Judicial District Attorney's Office" state:@"Colorado" district:@"2nd Judicial" contact:@"Mitchell R. Morrissey" summary:@"Adams" address:nil website:nil email:@"www.denverda.org"];
-    [one addNumber:@"Phone: (720) 913-90000"];
+    [one addNumber:@"Phone: (720) 913-9000"];
     [one addNumber:@"Fax:(720) 913-9035"];
     [USattorneys addObject:one];
     one = [[HTAllianceData alloc]init:@"3rd Judicial District Attorney's Office" state:@"Colorado" district:@"3rd Judicial" contact:@"Frank Ruybalid" summary:@"Huerfano, Las Animas" address:nil website:nil email: nil];

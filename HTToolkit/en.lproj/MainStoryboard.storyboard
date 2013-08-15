@@ -856,7 +856,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJH-bq-vfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473" y="4305"/>
+            <point key="canvasLocation" x="1442" y="4314"/>
         </scene>
         <!--Contacts View Controller-->
         <scene sceneID="T2i-uS-WLB">
@@ -1713,7 +1713,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOd-iM-2ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="3562"/>
+            <point key="canvasLocation" x="1442" y="3563"/>
         </scene>
         <!--Attorney View Controller - Attorney General-->
         <scene sceneID="Aaj-6u-irb">
@@ -1744,7 +1744,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnU-c2-6Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913" y="3561"/>
+            <point key="canvasLocation" x="1887" y="3562"/>
         </scene>
         <!--Attorney View Controller - District Attorney-->
         <scene sceneID="Snb-T7-yZ6">
@@ -1784,106 +1784,6 @@
         <image name="social_services.png" width="32" height="32"/>
         <image name="users-icon.png" width="43" height="31"/>
     </resources>
-    <classes>
-        <class className="HTAllianceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAllianceViewController.h"/>
-        </class>
-        <class className="HTAttGenTypeViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttGenTypeViewController.h"/>
-        </class>
-        <class className="HTAttStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttStateViewController.h"/>
-        </class>
-        <class className="HTAttorneyViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTAttorneyViewController.h"/>
-        </class>
-        <class className="HTCityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTCityViewController.h"/>
-        </class>
-        <class className="HTContactsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTContactsViewController.h"/>
-        </class>
-        <class className="HTDistStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistStateViewController.h"/>
-        </class>
-        <class className="HTDistrictViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTDistrictViewController.h"/>
-        </class>
-        <class className="HTFedLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedLawViewController.h"/>
-        </class>
-        <class className="HTFedSerInfoViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedSerInfoViewController.h"/>
-        </class>
-        <class className="HTFedServiceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTFedServiceViewController.h"/>
-        </class>
-        <class className="HTLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTLawViewController.h"/>
-        </class>
-        <class className="HTLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="authenticate:"/>
-                <relationship kind="outlet" name="text" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="HTMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTMasterViewController.h"/>
-        </class>
-        <class className="HTSerAgencyViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerAgencyViewController.h"/>
-        </class>
-        <class className="HTSerCityViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerCityViewController.h"/>
-        </class>
-        <class className="HTSerGenderViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerGenderViewController.h"/>
-        </class>
-        <class className="HTSerStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTSerStateViewController.h"/>
-        </class>
-        <class className="HTServiceViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTServiceViewController.h"/>
-        </class>
-        <class className="HTStateLawViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLawViewController.h"/>
-        </class>
-        <class className="HTStateLookViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateLookViewController.h"/>
-        </class>
-        <class className="HTStateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTStateViewController.h"/>
-        </class>
-        <class className="HTTrainViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTTrainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="assess" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="cont" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="enf" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="prov" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="tVisa" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="traf" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="uVisa" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="vawa" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="HTUSattViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSattViewController.h"/>
-        </class>
-        <class className="HTUSjursViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSjursViewController.h"/>
-        </class>
-        <class className="HTUSstateViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSstateViewController.h"/>
-        </class>
-        <class className="HTUSsubViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HTUSsubViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
