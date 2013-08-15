@@ -44,4 +44,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL
+                                                                *)url {
+    if ([[url host] isEqualToString:@"htttoolkit://org.zeroglitch.httoolkit"]) // e.g
+        htttoolkit://org.zeroglitch.httoolkit
+    {
+
+        seturlState:YES;
+        //appDelegate
+        HTAppDelegate *appDelegate = (HTAppDelegate
+                                                *)[[UIApplication sharedApplication] delegate];
+       
+//        //load new screen
+//        BT_item *mynextScreen = [appDelegate.self
+//                                 getScreenDataByItemId:@"YOURSCREENID"];
+//        //load next screen if it's not nil
+//        [BT_viewControllerManager
+//         handleTapToLoadScreen:nil:nil:mynextScreen];
+    } return YES;
+}
+
 @end
