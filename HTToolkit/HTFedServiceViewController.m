@@ -35,6 +35,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //All federal Services are input here
     data = [[NSMutableArray alloc]init];
     HTServiceData *ser = [[HTServiceData alloc] init:nil city:nil gender:nil agency:@"ICE's Tip Line" address:@"ICE Victim Assistance Program\nOffice of Investigations\n500 12th St. SW, Mail Stop 5101\nWashington, D.C. 20536-5101" info:@"online tip form:  http://www.ice.gov/exec/forms/hsi-tips/tips.asp   Victim Assistance Program helps coordinate services to help human trafficking victims, such as crisis intervention, counseling and emotional support."];
     [ser addNumber:@"To Report: 1-866-347-2423"];

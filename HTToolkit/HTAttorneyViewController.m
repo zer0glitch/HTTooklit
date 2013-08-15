@@ -5,6 +5,8 @@
 //  Created by Everett Williams on 6/28/13.
 //  Copyright (c) 2013 SRC. All rights reserved.
 //
+//  Sets up the view for displaying the contact information for any attorney.
+//
 
 #import "HTAttorneyViewController.h"
 #import "HTAllianceData.h"
@@ -68,6 +70,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    // If there is no data for a section, it is removed from the contact view.
     if(section == 0 && entry.summary)
         return 1;
     if(section == 1 && entry.address)
@@ -82,6 +85,7 @@
         return 0;
 }
 
+// Places data in table view of each secion of the contact.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -156,6 +160,7 @@
 
 }
 
+//Places a title at the top of each section.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0 && entry.summary)
         return @"Jurisdictions";

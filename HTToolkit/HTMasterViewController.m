@@ -40,6 +40,14 @@
     one = [[HTFullData alloc] initWithName:@"Florida" jurisdiction:@"South Florida" agencyName:@"Broward County Sheriff's Office" contact:@"Lieutenant Charlotte Ross" email:@"leachtaskforce@bsosid.org"];
     [one addNumber:@"Phone: (954) 888-5299"];
     [self insertNewObject:one];
+    one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami" agencyName:@"Miami Beach Police" contact:@"Captain Mark Causey" email:@"Markcausey@miamibeachfl.gov"];
+    [one addNumber:@"Phone: (305) 673-7776;5662"];
+    [one addNumber:@"Cell: (305) 498-7438"];
+    [self insertNewObject:one];
+    one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami-Dade" agencyName:@"Miami-Dade Police" contact:@"Sargent Nicole Donnelly & Detective Peter Caracilio" email:@"pcaracilio@mdpd.com"];
+    [one addNumber:@"Sargent Nicole Donnelly: (305) 216-2591"];
+    [one addNumber:@"Detective Peter Caracilio: (305) 297-6067"];
+    [self insertNewObject:one];
     one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami" agencyName:@"SAC Office" contact:@"Mariano Aponte" email:@"mariano.L.Aponte@ice.dhs.gov"];
     [one addNumber:@"Phone: (305) 597-6614"];
     [self insertNewObject:one];
@@ -83,6 +91,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Adds objects to the master list and creates a list of labels.
 - (void)insertNewObject:(HTFullData *) obj
 {
     if (!labels) {

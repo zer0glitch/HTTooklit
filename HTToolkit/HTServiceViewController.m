@@ -72,6 +72,7 @@
         return 1;
 }
 
+// Configures cells for each section with data from the entry.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -122,6 +123,7 @@
     }
 }
 
+// Adds a title over each section.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0)
         return @"Services";

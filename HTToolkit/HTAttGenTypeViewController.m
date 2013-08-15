@@ -77,6 +77,7 @@
         return nil;
 }
 
+// Either separates the attorney generals by state or shows Eric Holder's contact information, depending on the user's choice.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showStates"]) {

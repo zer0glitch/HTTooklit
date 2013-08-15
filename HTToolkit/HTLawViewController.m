@@ -68,7 +68,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    // Return the number of rows in the section, removing the section if there is no data for the section.
     if(section == 0 && data.summary.length > 1)
         return 1;
     else if(section == 1 && data.link.length > 1)
@@ -77,6 +77,7 @@
         return 0;
 }
 
+// Convigures cells for each section with the data provided.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"dataCell";
@@ -112,6 +113,7 @@
     }
 }
 
+// Adds a title to each section.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0 && data.summary.length > 1)
         return @"Summary";

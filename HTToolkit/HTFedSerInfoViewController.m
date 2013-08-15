@@ -66,7 +66,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    // Return the number of rows in each section, removing a section if there is no data.
     if(section == 2)
         return entry.phoneNumbers.count;
     else if(section == 0 && entry.info)
@@ -77,6 +77,7 @@
         return 0;
 }
 
+// Places data into the cells of each section
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"dataCell";
@@ -127,6 +128,7 @@
     }
 }
 
+// Adds a title over each section.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
    if(section == 0 && entry.info)
        return @"Services";

@@ -140,6 +140,7 @@
 
 #pragma mark - Table view delegate
 
+// Chooses path to next view, moving to either separate by jurisdiction or show the contact if no jurisdictions are available.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.

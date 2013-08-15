@@ -5,6 +5,8 @@
 //  Created by Everett Williams on 6/4/13.
 //  Copyright (c) 2013 SRC. All rights reserved.
 //
+//  Creates the view for all Persons of Contact added to the app.
+//
 
 #import "HTContactsViewController.h"
 #import "HTFullData.h"
@@ -66,6 +68,7 @@
         return 1;
 }
 
+// Put all data into the sections of the contact for an agency.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"dataCell";
@@ -74,7 +77,7 @@
         [subView removeFromSuperview];
     }
     if(indexPath.section == 0){
-        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,5, cell.contentView.bounds.size.width, 50)];
+        UITextView *textview = [[UITextView alloc] initWithFrame:CGRectMake(0,0, cell.contentView.bounds.size.width, 50)];
         textview.text = data.contact;
         textview.editable = NO;
         textview.scrollEnabled = NO;
@@ -115,6 +118,7 @@
     }
 }
 
+// Places titles over each section of the contact.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0)
         return @"Contact";

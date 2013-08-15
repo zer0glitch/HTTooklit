@@ -61,7 +61,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
+    // Return the number of rows in each section, removing the address or state sectio if one does not exist.
     if((section == 2 && entry.address.length < 2) || (section == 0 && entry.state.length < 2))
         return 0;
     if(section == 3)
@@ -70,6 +70,8 @@
         return 1;
 }
 
+
+// Inputs data for cells in each section.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"dataCell";
@@ -131,6 +133,7 @@
     }
 }
 
+// Adds a title above each section.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0 && entry.state.length > 1)
         return @"Contact";
