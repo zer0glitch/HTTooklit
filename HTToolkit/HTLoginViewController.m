@@ -62,7 +62,7 @@
 
 - (IBAction)authenticate:(id)sender {
     BOOL correct = FALSE;
-    if([text.text isEqual: @"toolkit"]){
+    if([text.text isEqual: @"ice"]){
         correct = TRUE;
     }
     else{

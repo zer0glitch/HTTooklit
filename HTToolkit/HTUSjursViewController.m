@@ -30,7 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -158,7 +157,7 @@
     for(int i = 0; i<list.count; i++){
         HTAllianceData *data = [list objectAtIndex:i];
         NSString *sub = data.address;
-        if((![subs containsObject:sub]) && (data.summary == jurisdiction)){
+        if((![subs containsObject:sub]) && (data.summary == jurisdiction) && (sub != nil)){
             [subs addObject:sub];
         }
         if(data.summary == jurisdiction)
@@ -168,7 +167,7 @@
         HTAllianceData *dat = [lis objectAtIndex:0];
         [subs addObject:dat.summary];
     }
-    else if(lis.count == 0){
+    if(lis.count == 0){
         HTAllianceData *dat = [list objectAtIndex:0];
         [lis addObject:dat];
         [subs addObject:dat.district];

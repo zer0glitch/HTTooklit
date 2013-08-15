@@ -161,10 +161,10 @@
         if(data.district == district)
             [lis addObject:data];
     }
-    if(lis.count == 1){
-        HTAllianceData *dat = [lis objectAtIndex:0];
-        [jurs addObject:dat.district];
-    }
+    //if(lis.count == 1){
+     //   HTAllianceData *dat = [lis objectAtIndex:0];
+    //    [jurs addObject:dat.district];
+    //}
     if(lis.count == 1){
         HTAttorneyViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"attorney"];
         HTAllianceData* dat = [lis objectAtIndex:0];
