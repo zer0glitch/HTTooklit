@@ -132,6 +132,8 @@
 
 #pragma mark - Table view delegate
 
+
+// Separates the attorneys by district, showing the contact if only one district exists.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.

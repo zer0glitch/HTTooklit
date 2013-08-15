@@ -24,6 +24,7 @@
     return self;
 }
 
+// Configures links for cells in the training view.
 - (void)configureView
 {
     NSString *one = @"http://www.uscis.gov/portal/site/uscis/menuitem.eb1d4c2a3e5b9ac89243c6a7543f6d1a/?vgnextoid=02ed3e4d77d73210VgnVCM100000082ca60aRCRD&vgnextchannel=02ed3e4d77d73210VgnVCM100000082ca60aRCRD";

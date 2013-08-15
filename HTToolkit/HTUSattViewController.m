@@ -64,6 +64,7 @@
     return 5;
 }
 
+// Separates data into sections, removing sections if no data is available.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -81,6 +82,7 @@
         return 0;
 }
 
+// Configures cells for each section with data from entry.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"dataCell";
@@ -152,6 +154,7 @@
     }
 }
 
+// Adds titles above each section.
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if(section == 0 && entry.contact)
         return @"Contact";

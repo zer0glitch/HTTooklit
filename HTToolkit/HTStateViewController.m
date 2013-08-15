@@ -50,6 +50,7 @@
     return jurs.count;
 }
 
+// Configures cells to represent the jurisdictions within a state that have contacts available.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cityCell";

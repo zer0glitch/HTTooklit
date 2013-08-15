@@ -5,6 +5,8 @@
 //  Created by Everett Williams on 6/14/13.
 //  Copyright (c) 2013 SRC. All rights reserved.
 //
+//  This view controller separates the services by victim type.
+//
 
 #import "HTSerGenderViewController.h"
 #import "HTSerAgencyViewController.h"

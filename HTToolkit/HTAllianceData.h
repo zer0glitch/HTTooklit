@@ -5,6 +5,8 @@
 //  Created by Everett Williams on 6/5/13.
 //  Copyright (c) 2013 SRC. All rights reserved.
 //
+//  Used in all alliance information, such as district attorneys, attorney generals, and US attorneys.
+//
 
 #import <Foundation/Foundation.h>
 

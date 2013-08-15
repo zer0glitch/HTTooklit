@@ -58,6 +58,7 @@
     return Laws.count;
 }
 
+// Puts all laws from the selected state into a table to be selected for viewing.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
