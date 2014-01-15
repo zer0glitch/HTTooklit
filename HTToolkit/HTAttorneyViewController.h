@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "HTAllianceData.h"
+#import <iAd/iAd.h>
 
 @interface HTAttorneyViewController : UITableViewController
+ <ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 
 @property (weak, nonatomic) HTAllianceData* entry;
 

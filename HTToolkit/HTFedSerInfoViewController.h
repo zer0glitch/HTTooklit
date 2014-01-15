@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "HTServiceData.h"
+#import <iAd/iAd.h>
 
-@interface HTFedSerInfoViewController : UITableViewController
+@interface HTFedSerInfoViewController : UITableViewController <ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
+
 
 @property (nonatomic, weak) HTServiceData* entry;
 

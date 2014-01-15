@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HTFedLawData.h"
+#import <iAd/iAd.h>
 
-@interface HTLawViewController : UITableViewController
+@interface HTLawViewController : UITableViewController <ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 
 @property (retain, nonatomic) HTFedLawData* data;
 

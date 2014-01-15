@@ -26,7 +26,19 @@
 }
 
 -(void)addNumber:(NSString *) num{
+    
+    if (!_phoneNumbers) {
+        _phoneNumbers = [[NSMutableArray alloc]init];
+    }
+    NSLog(@"Adding Phone Number %@ to %@", num, _contact);
     [self.phoneNumbers addObject:num];
+}
+
+-(void)printNumbers {
+    NSLog(@"print %d numbers", _phoneNumbers.count);
+    for (int i=0;i<self.phoneNumbers.count;i++) {
+        NSLog(@"Phone : %@", [self.phoneNumbers objectAtIndex:i]);
+    }
 }
 
 @end

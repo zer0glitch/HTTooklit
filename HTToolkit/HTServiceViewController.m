@@ -34,8 +34,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 90)];
-    UITextView *labelView = [[UITextView alloc] initWithFrame:CGRectMake(10, 10, self.tableView.bounds.size.width, 50)];
-    UILabel *detail = [[UILabel alloc] initWithFrame:CGRectMake(20, 65, self.tableView.bounds.size.width-20, 20)];
+    UITextView *labelView = [[UITextView alloc] initWithFrame:CGRectMake(10, 45, self.tableView.bounds.size.width, 50)];
+    UILabel *detail = [[UILabel alloc] initWithFrame:CGRectMake(20, 85, self.tableView.bounds.size.width-20, 20)];
     [headerView addSubview:labelView];
     [headerView addSubview:detail];
     headerView.backgroundColor = [UIColor clearColor];

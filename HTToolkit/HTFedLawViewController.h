@@ -9,8 +9,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface HTFedLawViewController : UITableViewController
+@interface HTFedLawViewController : UITableViewController  <ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 
 @property (nonatomic, copy) NSMutableArray *Laws;
 

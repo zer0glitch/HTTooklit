@@ -16,7 +16,7 @@
 @end
 
 @implementation HTUSstateViewController
-@synthesize districts, list;
+@synthesize districts, list, bannerIsVisible;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,8 +27,20 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
+    adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    //adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height-30);
+    if (!self.bannerIsVisible) {
+        adView.frame = CGRectOffset(adView.frame, 0, 30);
+    }
+    
+    [adView setDelegate:self];
+    
+    self.bannerIsVisible = NO;
+    //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    [self.view addSubview:adView];
+    
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -178,5 +190,63 @@
     }
 
 }
+
+// Banner
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    NSLog(@"USstate bannerViewDidLoad");
+    if (!self.bannerIsVisible) {
+        NSLog(@"should load banner");
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, 30);// banner.frame.size.height+10);
+        // [adView setFrame:CGRectOffset([adView frame], 20,-[self getBannerHeight]-20)];
+        [UIView commitAnimations];
+        self.bannerIsVisible = YES;
+    }
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    NSLog(@"Banner view is beginning an ad bannerViewActionShouldBegin");
+    //    BOOL shouldExecuteAction = [self allowActionToRun]; // your application implements this method
+    //    if (!willLeave && shouldExecuteAction)
+    //    {
+    //        // insert code here to suspend any services that might conflict with the advertisement
+    //    }
+    //    return shouldExecuteAction;
+    NSLog(@"bannerViewActionShouldBegin");
+    return YES;
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"bannerView");
+    //    if (self.bannerIsVisible)
+    //    {
+    //        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+    //
+    //        banner.frame = CGRectOffset(banner.frame, 0, 30); // banner.frame.size.height+10);
+    //
+    //        [UIView commitAnimations];
+    //        self.bannerIsVisible = NO;
+    //    }
+}
+
+
+- (int)getBannerHeight:(UIDeviceOrientation)orientation {
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        return 32;
+    } else {
+        return 50;
+    }
+}
+
+- (int)getBannerHeight {
+    return [self getBannerHeight:[UIDevice currentDevice].orientation];
+}
+
+
 
 @end

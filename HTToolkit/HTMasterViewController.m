@@ -10,25 +10,53 @@
 #import "HTFullData.h"
 #import "HTStateViewController.h"
 
+
+
 @interface HTMasterViewController () {
 }
 @end
 
 @implementation HTMasterViewController
-@synthesize masterList, labels;
+@synthesize masterList, labels, bannerIsVisible;
+
+NSMutableString *currentElementValue;
+ HTFullData *one;
+
+NSMutableString *state;
+NSMutableString *agency;
+NSMutableString *jurisdiction;
+NSMutableString *contact;
+NSMutableString *email;
+
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
+    adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    //adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height-30);
+    if (!self.bannerIsVisible) {
+        adView.frame = CGRectOffset(adView.frame, 0, 0);
+    }
+    
+    [adView setDelegate:self];
+    
+    
+    self.bannerIsVisible = NO;
+    //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    [self.view addSubview:adView];
+    
+    
     //self.view.backgroundColor = [UIColor blackColor];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     labels = [[NSMutableArray alloc]init];
     masterList = [[NSMutableArray alloc]init];
+    
+    /*
     
     HTFullData *one = [[HTFullData alloc] initWithName:@"California" jurisdiction:@"Los Angeles" agencyName:@"Los Angeles Police Department" contact:@"Lt. Andrea Grossman" email:@"30231@lapd.lacity.org"];
     [one addNumber:@"Phone: (562) 624-4028"];
@@ -80,9 +108,109 @@
     one = [[HTFullData alloc]initWithName:@"Texas" jurisdiction:@"El Paso" agencyName:@"SAC Office" contact:@"Gustavo Correa" email:@"gustavo.e.correa@ice.dhs.gov"];
     [one addNumber:@"Phone: (915) 881-5560"];
     [self insertNewObject:one];
-    one = [[HTFullData alloc] initWithName:@"Texas" jurisdiction:@"Texas, Southern" agencyName:@"Office of the Attorney General of Texas" contact:@"Captain Kimberly Bustos" email:@"kimberly.bustos@texasattorneygeneral.gov"];
+    one = [[HTFullData alloc] initWithName:@"Texas" jurisdiction:@"Texas, Southern" agencyName:@" Attorney General of Texas" contact:@"Captain Kimberly Bustos" email:@"kimberly.bustos@texasattorneygeneral.gov"];
     [one addNumber:@"Phone: (512) 936-2896"];
     [self insertNewObject:one];   
+     */
+    
+    [self loadData];
+}
+
+// Get Data
+- (void)loadData {
+    NSURL *url = [NSURL URLWithString:@"http://www.zeroglitch.org/ht/ht_data.xml"];
+   
+    NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
+
+    [xml setDelegate:self];
+    [xml parse];
+}
+
+
+#pragma mark NSXMLParserDelegate
+
+#define ELTYPE(typeName) (NSOrderedSame == [elementName caseInsensitiveCompare:@#typeName])
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName
+    attributes:(NSDictionary *)attributeDict {
+    //  NSString *ident = [attributeDict objectForKey:@"id"];
+    
+    if([elementName isEqualToString:@"Record"]) {
+        ////NSLog(@"found record");
+        NSLog(@"Start Record");
+        
+        one = [[HTFullData alloc] init];
+        
+    } else if([elementName isEqualToString:@"Agency"]) {
+       // ////NSLog(@"found Agency");
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName {
+    
+
+    if([elementName isEqualToString:@"Record"]) {
+      //  [twitterAlerts addObject:alert];
+       // [alert release];
+      //  HTFullData *one = [[HTFullData alloc] initWithName:state jurisdiction:jurisdiction agencyName:agency contact:contact email:email];
+        NSLog(@"End Record");
+        
+        [self insertNewObject:one];
+    } else  if([elementName isEqualToString:@"Agency"]) {
+     //   alert.title = currentElementValue;
+        
+       // ////NSLog(@"agency current %@", currentElementValue);
+        one.agencyName = currentElementValue;
+       // ////NSLog(@"agency on. %@", one.agencyName);
+    } else if([elementName isEqualToString:@"State"]) {
+      //state = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.state = currentElementValue;
+            ////NSLog(@"state on. %@", state);
+
+    } else if([elementName isEqualToString:@"Jurisdiction"]) {
+    //  jurisdiction = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.jurisdiction = currentElementValue;
+        
+    } else if([elementName isEqualToString:@"Contact"]) {
+        contact = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.contact = currentElementValue;
+        
+    } else if([elementName isEqualToString:@"eMail"]) {
+        email = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.email = currentElementValue;
+  
+    } else if([elementName isEqualToString:@"Number"]) {
+        NSLog(@"found phone: %@", currentElementValue);
+        [one addNumber:[[NSMutableString alloc] initWithString:currentElementValue]];
+      //  [one.phoneNumbers addObject:currentElementValue];
+        
+    } else {
+        // ////NSLog(@"%@", elementName);
+    }
+    
+   //  [one printNumbers];
+    currentElementValue = nil;
+    
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if(!currentElementValue)  {
+        string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        currentElementValue = [[NSMutableString alloc] initWithString:string];
+        
+       // [currentElementValue appendString:string];
+    } else {
+        string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [currentElementValue appendString:string];
+         // ////NSLog(@"Processing Value: %@", currentElementValue);
+    }
+    
+     // ////NSLog(@"Processing Value: %@", currentElementValue);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,23 +219,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 // Adds objects to the master list and creates a list of labels.
-- (void)insertNewObject:(HTFullData *) obj
-{
+- (void)insertNewObject:(HTFullData *) obj {
     if (!labels) {
         labels = [labels init];
     }
-    if(![labels containsObject:obj.state]){
-        [labels addObject:obj.state];
+    if(![labels containsObject:one.state]){
+        [labels addObject:one.state];
+        ////NSLog(@"adding state%@", obj.state);
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
     if(!masterList){
         masterList = [masterList init];
     }
-    if(![masterList containsObject:obj]){
-        [masterList addObject:obj];
+    if(![masterList containsObject:one]){
+        [masterList addObject:one];
     }
+    
+    [one printNumbers];
+    
+    //NSLog(@"adding %d state %@ jurisdiction %@", masterList.count, obj.state, obj.jurisdiction);
 }
 
 #pragma mark - Table View
@@ -130,14 +264,12 @@
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [labels removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -146,31 +278,17 @@
     }
 }
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showCity"]) {
         NSMutableArray *temp = [[NSMutableArray alloc] init];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSString *state = [labels objectAtIndex:indexPath.row];
         for(int i = 0; i<masterList.count; i++){
             HTFullData *data = [masterList objectAtIndex:i];
-            if(state == data.state){
+            //NSLog(@"the state x%@x data.state x%@x", state, data.state);
+            if([state isEqualToString:data.state]){
+                //NSLog(@"equal");
                 [temp insertObject:data atIndex:0];
             }
         }
@@ -186,6 +304,79 @@
         detailViewController.jurs = plac;
     }
   
+}
+
+
+// Banner
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    ////NSLog(@"bannerViewDidLoad");
+    if (!self.bannerIsVisible) {
+        ////NSLog(@"should load banner");
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, 0);// banner.frame.size.height+10);
+        // [adView setFrame:CGRectOffset([adView frame], 20,-[self getBannerHeight]-20)];
+        [UIView commitAnimations];
+        self.bannerIsVisible = YES;
+    }
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    ////NSLog(@"Banner view is beginning an ad bannerViewActionShouldBegin");
+    //    BOOL shouldExecuteAction = [self allowActionToRun]; // your application implements this method
+    //    if (!willLeave && shouldExecuteAction)
+    //    {
+    //        // insert code here to suspend any services that might conflict with the advertisement
+    //    }
+    //    return shouldExecuteAction;
+    ////NSLog(@"bannerViewActionShouldBegin");
+    return YES;
+}
+- (IBAction)buttonPress:(id)sender {
+    
+//    for (int i=0;i<labels.count;i++) {
+//        [self.tableView delete:0];
+//    }
+//    masterList = [masterList init];
+//    labels = [labels init];
+//    
+    [masterList removeAllObjects];
+    [labels removeAllObjects];
+    [self.tableView reloadData];
+    [self loadData];
+
+    [self.tableView reloadData];
+}
+
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    ////NSLog(@"bannerView");
+    //    if (self.bannerIsVisible)
+    //    {
+    //        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+    //
+    //        banner.frame = CGRectOffset(banner.frame, 0, 30); // banner.frame.size.height+10);
+    //
+    //        [UIView commitAnimations];
+    //        self.bannerIsVisible = NO;
+    //    }
+}
+
+
+- (int)getBannerHeight:(UIDeviceOrientation)orientation {
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        return 32;
+    } else {
+        return 50;
+    }
+}
+
+- (int)getBannerHeight {
+    return [self getBannerHeight:[UIDevice currentDevice].orientation];
 }
 
 @end

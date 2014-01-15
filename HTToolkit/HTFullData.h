@@ -19,5 +19,6 @@
 
 -(id)initWithName: (NSString *)state jurisdiction:(NSString *) jurisdiction agencyName:(NSString *) agencyName contact:(NSString *)contact email:(NSString *)email;
 -(void)addNumber: (NSString *)num;
+-(void)printNumbers;
 
 @end

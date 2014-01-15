@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HTFullData.h"
+#import <iAd/iAd.h>
 
-@interface HTContactsViewController : UITableViewController
+@interface HTContactsViewController : UITableViewController  <ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 
 @property (nonatomic, weak) HTFullData* data;
 
