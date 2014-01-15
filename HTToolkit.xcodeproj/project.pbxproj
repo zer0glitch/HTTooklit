@@ -56,6 +56,13 @@
 		5CB0F9AF17834B8F007AF505 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0F9AE17834B8F007AF505 /* Default@2x.png */; };
 		5CB0F9B117834BA4007AF505 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CB0F9B017834BA4007AF505 /* Default-568h@2x.png */; };
 		5CFC166617BA84B400208C1B /* HTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFC166517BA84B100208C1B /* HTLoginViewController.m */; };
+		7D4D194718687C8E008D796B /* src-blue-tall.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D194618687C8E008D796B /* src-blue-tall.png */; };
+		7D4D194C187662C1008D796B /* htt-logo-152.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1948187662C0008D796B /* htt-logo-152.png */; };
+		7D4D194D187662C1008D796B /* htt-logo-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1949187662C1008D796B /* htt-logo-76.png */; };
+		7D4D194E187662C1008D796B /* htt-logo-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D194A187662C1008D796B /* htt-logo-60.png */; };
+		7D4D194F187662C1008D796B /* htt-logo-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D194B187662C1008D796B /* htt-logo-120.png */; };
+		7D4D1951187662E8008D796B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1950187662E8008D796B /* Images.xcassets */; };
+		7DDD5C3618445817009DDACA /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDD5C3518445817009DDACA /* iAd.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +155,13 @@
 		5CB0F9B017834BA4007AF505 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5CFC166417BA84AC00208C1B /* HTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLoginViewController.h; sourceTree = "<group>"; };
 		5CFC166517BA84B100208C1B /* HTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginViewController.m; sourceTree = "<group>"; };
+		7D4D194618687C8E008D796B /* src-blue-tall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "src-blue-tall.png"; sourceTree = "<group>"; };
+		7D4D1948187662C0008D796B /* htt-logo-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo-152.png"; sourceTree = "<group>"; };
+		7D4D1949187662C1008D796B /* htt-logo-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo-76.png"; sourceTree = "<group>"; };
+		7D4D194A187662C1008D796B /* htt-logo-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo-60.png"; sourceTree = "<group>"; };
+		7D4D194B187662C1008D796B /* htt-logo-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo-120.png"; sourceTree = "<group>"; };
+		7D4D1950187662E8008D796B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7DDD5C3518445817009DDACA /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DDD5C3618445817009DDACA /* iAd.framework in Frameworks */,
 				5C6F5DE81754FEC3003B1927 /* UIKit.framework in Frameworks */,
 				5C6F5DEA1754FEC3003B1927 /* Foundation.framework in Frameworks */,
 				5C6F5DEC1754FEC3003B1927 /* CoreGraphics.framework in Frameworks */,
@@ -167,6 +182,11 @@
 		5C6F5DDB1754FEC3003B1927 = {
 			isa = PBXGroup;
 			children = (
+				7D4D1948187662C0008D796B /* htt-logo-152.png */,
+				7D4D1949187662C1008D796B /* htt-logo-76.png */,
+				7D4D194A187662C1008D796B /* htt-logo-60.png */,
+				7D4D194B187662C1008D796B /* htt-logo-120.png */,
+				7D4D194618687C8E008D796B /* src-blue-tall.png */,
 				5CB0F9B017834BA4007AF505 /* Default-568h@2x.png */,
 				5CB0F9AE17834B8F007AF505 /* Default@2x.png */,
 				5CB0F9AC17834B86007AF505 /* Default.png */,
@@ -189,6 +209,7 @@
 		5C6F5DE61754FEC3003B1927 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DDD5C3518445817009DDACA /* iAd.framework */,
 				5C6F5DE71754FEC3003B1927 /* UIKit.framework */,
 				5C6F5DE91754FEC3003B1927 /* Foundation.framework */,
 				5C6F5DEB1754FEC3003B1927 /* CoreGraphics.framework */,
@@ -199,9 +220,12 @@
 		5C6F5DED1754FEC3003B1927 /* HTToolkit */ = {
 			isa = PBXGroup;
 			children = (
+				7DDD5C5518467E64009DDACA /* http */,
 				5C6F5DFF1754FEC3003B1927 /* MainStoryboard.storyboard */,
-				5CFC166417BA84AC00208C1B /* HTLoginViewController.h */,
+				7DDD5C3718450DBC009DDACA /* Contacts */,
+				7DDD5C381845ACEA009DDACA /* Laws */,
 				5CFC166517BA84B100208C1B /* HTLoginViewController.m */,
+				5CFC166417BA84AC00208C1B /* HTLoginViewController.h */,
 				5C6F5DF61754FEC3003B1927 /* HTAppDelegate.h */,
 				5C6F5DF71754FEC3003B1927 /* HTAppDelegate.m */,
 				5C85B2D9175F8E3D00C30057 /* HTAllianceData.h */,
@@ -216,32 +240,18 @@
 				5C85B2E0175F9C6400C30057 /* HTAttStateViewController.m */,
 				5C6F5E161757A2CC003B1927 /* HTCityViewController.h */,
 				5C6F5E171757A2CC003B1927 /* HTCityViewController.m */,
-				5C85B2D4175E543500C30057 /* HTContactsViewController.h */,
-				5C85B2D5175E543500C30057 /* HTContactsViewController.m */,
 				5C85B2E2175FA27200C30057 /* HTDistrictViewController.h */,
 				5C85B2E3175FA27200C30057 /* HTDistrictViewController.m */,
 				5C30CE351781F0D300D3AA8C /* HTDistStateViewController.h */,
 				5C30CE361781F0D300D3AA8C /* HTDistStateViewController.m */,
 				5C2A5F32177B59B600167331 /* HTFedAllianceViewController.h */,
 				5C2A5F33177B59B600167331 /* HTFedAllianceViewController.m */,
-				5C6F5E681759052A003B1927 /* HTFedLawData.h */,
-				5C6F5E691759052A003B1927 /* HTFedLawData.m */,
-				5C6F5E65175904CE003B1927 /* HTFedLawViewController.h */,
-				5C6F5E66175904CE003B1927 /* HTFedLawViewController.m */,
 				5C85B2F71768E1BA00C30057 /* HTFedSerInfoViewController.h */,
 				5C85B2F81768E1BC00C30057 /* HTFedSerInfoViewController.m */,
 				5C85B2F417678A0400C30057 /* HTFedServiceViewController.h */,
 				5C85B2F517678A0500C30057 /* HTFedServiceViewController.m */,
-				5C6F5E1317552CF8003B1927 /* HTFullData.h */,
-				5C6F5E1417552CF8003B1927 /* HTFullData.m */,
-				5C85B2EB1760DACA00C30057 /* HTLawViewController.h */,
-				5C85B2EC1760DACC00C30057 /* HTLawViewController.m */,
-				5C6F5E021754FEC3003B1927 /* HTMasterViewController.h */,
-				5C6F5E031754FEC3003B1927 /* HTMasterViewController.m */,
 				5C85B306176B90D900C30057 /* HTSerAgencyViewController.h */,
 				5C85B307176B90DA00C30057 /* HTSerAgencyViewController.m */,
-				5C85B2FD176B68C600C30057 /* HTSerCityViewController.h */,
-				5C85B2FE176B68C900C30057 /* HTSerCityViewController.m */,
 				5C85B300176B738600C30057 /* HTSerGenderViewController.h */,
 				5C85B301176B738700C30057 /* HTSerGenderViewController.m */,
 				5C85B2FA176A25CA00C30057 /* HTSerStateViewController.h */,
@@ -250,22 +260,14 @@
 				5C85B2F21767847B00C30057 /* HTServiceData.m */,
 				5C85B309176B9DC300C30057 /* HTServiceViewController.h */,
 				5C85B30A176B9DC400C30057 /* HTServiceViewController.m */,
-				5C85B2B8175CFAA500C30057 /* HTStateLawData.h */,
-				5C85B2B9175CFAA500C30057 /* HTStateLawData.m */,
-				5C85B2BB175CFD8000C30057 /* HTStateLawViewController.h */,
-				5C85B2BC175CFD8000C30057 /* HTStateLawViewController.m */,
 				5C85B2B5175CFA5C00C30057 /* HTStateLookViewController.h */,
 				5C85B2B6175CFA5C00C30057 /* HTStateLookViewController.m */,
-				5C6F5E1017552256003B1927 /* HTStateViewController.h */,
-				5C6F5E1117552256003B1927 /* HTStateViewController.m */,
 				5C85B2D1175E322300C30057 /* HTTrainViewController.h */,
 				5C85B2D2175E322400C30057 /* HTTrainViewController.m */,
 				5C2A5F2F177B3E4600167331 /* HTUSattViewController.h */,
 				5C2A5F30177B3E4600167331 /* HTUSattViewController.m */,
 				5C1B16C1178DF0F400D87662 /* HTUSjursViewController.h */,
 				5C1B16C2178DF0F600D87662 /* HTUSjursViewController.m */,
-				5C1B16BE178DE2C500D87662 /* HTUSstateViewController.h */,
-				5C1B16BF178DE2C700D87662 /* HTUSstateViewController.m */,
 				5C1B16C4178E01E500D87662 /* HTUSsubViewController.h */,
 				5C1B16C5178E01E700D87662 /* HTUSsubViewController.m */,
 				5C85B2C6175D0FDB00C30057 /* icon_books.png */,
@@ -273,6 +275,7 @@
 				5CA6110117738A930033E1E1 /* social_services.png */,
 				5C6F5DEE1754FEC3003B1927 /* Supporting Files */,
 				5C85B2D7175E65FA00C30057 /* users-icon.png */,
+				7D4D1950187662E8008D796B /* Images.xcassets */,
 			);
 			path = HTToolkit;
 			sourceTree = "<group>";
@@ -289,6 +292,49 @@
 				5C6F5DFD1754FEC3003B1927 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DDD5C3718450DBC009DDACA /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				5C6F5E1017552256003B1927 /* HTStateViewController.h */,
+				5C6F5E1117552256003B1927 /* HTStateViewController.m */,
+				5C85B2D4175E543500C30057 /* HTContactsViewController.h */,
+				5C85B2D5175E543500C30057 /* HTContactsViewController.m */,
+				5C85B2FD176B68C600C30057 /* HTSerCityViewController.h */,
+				5C85B2FE176B68C900C30057 /* HTSerCityViewController.m */,
+				5C1B16BE178DE2C500D87662 /* HTUSstateViewController.h */,
+				5C1B16BF178DE2C700D87662 /* HTUSstateViewController.m */,
+				5C6F5E021754FEC3003B1927 /* HTMasterViewController.h */,
+				5C6F5E031754FEC3003B1927 /* HTMasterViewController.m */,
+				5C6F5E1317552CF8003B1927 /* HTFullData.h */,
+				5C6F5E1417552CF8003B1927 /* HTFullData.m */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
+		7DDD5C381845ACEA009DDACA /* Laws */ = {
+			isa = PBXGroup;
+			children = (
+				5C6F5E681759052A003B1927 /* HTFedLawData.h */,
+				5C6F5E691759052A003B1927 /* HTFedLawData.m */,
+				5C6F5E65175904CE003B1927 /* HTFedLawViewController.h */,
+				5C6F5E66175904CE003B1927 /* HTFedLawViewController.m */,
+				5C85B2EB1760DACA00C30057 /* HTLawViewController.h */,
+				5C85B2EC1760DACC00C30057 /* HTLawViewController.m */,
+				5C85B2B8175CFAA500C30057 /* HTStateLawData.h */,
+				5C85B2B9175CFAA500C30057 /* HTStateLawData.m */,
+				5C85B2BB175CFD8000C30057 /* HTStateLawViewController.h */,
+				5C85B2BC175CFD8000C30057 /* HTStateLawViewController.m */,
+			);
+			name = Laws;
+			sourceTree = "<group>";
+		};
+		7DDD5C5518467E64009DDACA /* http */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = http;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +366,11 @@
 				CLASSPREFIX = HT;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = SRC;
+				TargetAttributes = {
+					5C6F5DE31754FEC3003B1927 = {
+						DevelopmentTeam = X3P4CNJ487;
+					};
+				};
 			};
 			buildConfigurationList = 5C6F5DDF1754FEC3003B1927 /* Build configuration list for PBXProject "HTToolkit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -343,7 +394,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D4D194D187662C1008D796B /* htt-logo-76.png in Resources */,
+				7D4D194F187662C1008D796B /* htt-logo-120.png in Resources */,
 				5C6F5DF21754FEC3003B1927 /* InfoPlist.strings in Resources */,
+				7D4D194E187662C1008D796B /* htt-logo-60.png in Resources */,
 				5C6F5E011754FEC3003B1927 /* MainStoryboard.storyboard in Resources */,
 				5C85B2C3175D0D2500C30057 /* Scale---Weight-Balance-Icon.png in Resources */,
 				5C85B2C7175D0FDC00C30057 /* icon_books.png in Resources */,
@@ -351,9 +405,12 @@
 				5CA6110217738A930033E1E1 /* social_services.png in Resources */,
 				5CB0F9A917834AA7007AF505 /* image001.png in Resources */,
 				5CB0F9AB17834B11007AF505 /* image002.png in Resources */,
+				7D4D1951187662E8008D796B /* Images.xcassets in Resources */,
 				5CB0F9AD17834B87007AF505 /* Default.png in Resources */,
 				5CB0F9AF17834B8F007AF505 /* Default@2x.png in Resources */,
 				5CB0F9B117834BA4007AF505 /* Default-568h@2x.png in Resources */,
+				7D4D194718687C8E008D796B /* src-blue-tall.png in Resources */,
+				7D4D194C187662C1008D796B /* htt-logo-152.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,11 +540,16 @@
 		5C6F5E0B1754FEC3003B1927 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HTToolkit/HTToolkit-Prefix.pch";
 				INFOPLIST_FILE = "HTToolkit/HTToolkit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -496,11 +558,16 @@
 		5C6F5E0C1754FEC3003B1927 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HTToolkit/HTToolkit-Prefix.pch";
 				INFOPLIST_FILE = "HTToolkit/HTToolkit-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
