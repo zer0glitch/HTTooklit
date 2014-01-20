@@ -10,6 +10,8 @@
 #import <Foundation/Foundation.h>
 #import <iAd/iAd.h>
 
+#import "HTContactUsViewController.h"
+
 @interface HTMasterViewController : UITableViewController <ADBannerViewDelegate, NSXMLParserDelegate> {
     
     ADBannerView *adView;
@@ -24,6 +26,9 @@
 @property (nonatomic, copy) NSMutableArray *masterList;
 @property (nonatomic, copy) NSMutableArray *labels;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *contactUsButtonItem;
+
+- (IBAction)contactUsButtonClick:(id)sender;
 - (void)loadData;
 
 @end

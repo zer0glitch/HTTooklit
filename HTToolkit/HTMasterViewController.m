@@ -117,6 +117,19 @@ NSMutableString *email;
 }
 
 // Get Data
+
+- (IBAction)contactUsButtonClick:(id)sender {
+    HTContactUsViewController *controller = [[HTContactUsViewController alloc]
+                                                initWithNibName:@"HTContactUsViewController" bundle:nil];
+    
+    if (controller) [self presentViewController:controller animated:YES completion:nil];
+    // Show
+    
+  //  [controller release];
+    
+   // self.window.controller = controller;
+}
+
 - (void)loadData {
     NSURL *url = [NSURL URLWithString:@"http://www.zeroglitch.org/ht/ht_data.xml"];
    

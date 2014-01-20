@@ -44,7 +44,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Federal Level" id="DBb-4W-uv5">
-                        <barButtonItem key="rightBarButtonItem" title="State Laws" id="cjV-Hh-ND0">
+                        <barButtonItem key="leftBarButtonItem" title="State Laws" id="cjV-Hh-ND0">
                             <connections>
                                 <segue destination="ce9-VP-SjU" kind="push" id="Wts-Q7-994"/>
                             </connections>
@@ -377,7 +377,7 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Federal Services" id="YPF-ak-71Z">
-                        <barButtonItem key="rightBarButtonItem" title="States" id="JeV-Zs-p94">
+                        <barButtonItem key="leftBarButtonItem" title="States" id="JeV-Zs-p94">
                             <connections>
                                 <segue destination="Bbo-F7-Jbi" kind="push" identifier="showstate" id="a9W-Qn-TEz"/>
                             </connections>
@@ -419,7 +419,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a48-91-3Bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="-1512"/>
+            <point key="canvasLocation" x="-69" y="-2332"/>
         </scene>
         <!--Navigation Controller - Social Services-->
         <scene sceneID="tMP-qv-gfS">
@@ -571,14 +571,20 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="UrG-8P-zrd">
-                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="d8Q-rW-EdY">
+                    <navigationItem key="navigationItem" title="Contacts" id="UrG-8P-zrd">
+                        <barButtonItem key="leftBarButtonItem" title="Refresh" id="d8Q-rW-EdY">
                             <connections>
                                 <action selector="buttonPress:" destination="12" id="Dzf-Dm-yzO"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="leftbg.jpg" style="plain" id="Max-4U-eeu">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="12" id="nX8-zY-oLD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="contactUsButtonItem" destination="Max-4U-eeu" id="Mu1-GA-Otn"/>
                         <outlet property="refreshButton" destination="d8Q-rW-EdY" id="XYb-aO-TB6"/>
                         <outlet property="tableView" destination="13" id="aC0-4d-s5k"/>
                     </connections>
@@ -1726,6 +1732,7 @@
     <resources>
         <image name="Scale---Weight-Balance-Icon.png" width="36" height="36"/>
         <image name="icon_books.png" width="41" height="41"/>
+        <image name="leftbg.jpg" width="94" height="37"/>
         <image name="social_services.png" width="32" height="32"/>
         <image name="users-icon.png" width="43" height="31"/>
     </resources>
