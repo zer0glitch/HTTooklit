@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
+
 #import "TextBoxViewController.h"
 
 #define kOFFSET_FOR_KEYBOARD .8;
@@ -20,6 +22,8 @@
     NSMutableArray *textFields;
     NSMutableArray *labels;
     
+     NSIndexPath *activeCellIndexPath;
+    
     int nextTagValue;
     
     TextBoxViewController *viewController;
@@ -31,6 +35,9 @@
 @property (retain, nonatomic) NSMutableArray *fieldHeaders;
 @property (retain, nonatomic) UITextField *_textField;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@property (nonatomic) BOOL keyboardShown;
+@property (nonatomic) int keyboardOverlap;
+@property (retain, nonatomic) NSIndexPath *activeCellIndexPath;
 
 - (IBAction)closeWindow:(id)sender;
 - (IBAction)closeDataWindow:(id)sender;

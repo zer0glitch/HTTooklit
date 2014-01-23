@@ -25,11 +25,16 @@
                                     <action selector="closeWindow:" destination="-1" id="4cV-uU-I5Q"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Save" id="gKb-ex-q3w">
+                                <connections>
+                                    <action selector="saveData:" destination="-1" id="b6O-Va-A3k"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" directionalLockEnabled="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="9" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UOo-zQ-NPc">
-                    <rect key="frame" x="0.0" y="59" width="338" height="157"/>
+                    <rect key="frame" x="0.0" y="59" width="338" height="502"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="separatorColor" red="0.78844980060000003" green="0.85400114100000002" blue="0.89758831520000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,16 +43,6 @@
                         <outlet property="delegate" destination="-1" id="0Bx-KH-sb3"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZJ-an-WiU">
-                    <rect key="frame" x="233" y="230" width="78" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Send Email">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="saveData:" destination="-1" eventType="touchUpInside" id="dv6-3M-qHS"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

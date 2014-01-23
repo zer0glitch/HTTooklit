@@ -14,7 +14,7 @@
 @implementation HTContactUsViewController
 //@synthesize saveButton;
 //@synthesize tableViewOutlet;
-@synthesize headers, fields, _textField, fieldHeaders;
+@synthesize headers, fields, _textField, fieldHeaders, keyboardShown, keyboardOverlap, activeCellIndexPath;
 
 int currentRow = 0;
 
@@ -31,6 +31,10 @@ int currentRow = 0;
     fields = [[NSMutableArray alloc] init];
     textFields = [[NSMutableArray alloc] init];
     labels = [[NSMutableArray alloc] init];
+    headers = [[NSMutableArray alloc] init];
+    
+    [headers addObject:@"General Info"];
+    [headers addObject:@"Address"];
     
     
     DataElement *de = [[DataElement alloc] init];
@@ -38,7 +42,7 @@ int currentRow = 0;
     de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
-    NSLog(@"fields lengt %d", [fields count]);
+    // NSLog(@"fields lengt %d", [fields count]);
     
     de = [[DataElement alloc] init];
     de.fieldName = @"Department";
@@ -89,7 +93,7 @@ int currentRow = 0;
     de.fieldType = 1;
     [fields addObject:de];
     
-    NSLog(@"fields lengt %d", [fields count]);
+    // NSLog(@"fields lengt %d", [fields count]);
     
     // Initalize the fields and labels
     
@@ -128,7 +132,12 @@ int currentRow = 0;
         [textFields addObject:txt];
         
     }
-    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    
+
     
     // tableView = [[UITableView init] alloc];
     if (self) {
@@ -143,6 +152,7 @@ int currentRow = 0;
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
+    //return NO;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -152,13 +162,14 @@ int currentRow = 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
+   // if (section == 0)
+       // return 5;
     return [fields count];
 }
 
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section {
-    //NSLog(@"Header %@", [headers objectAtIndex:section]);
-    //return [headers objectAtIndex:section];
+    //// NSLog(@"Header %@", [headers objectAtIndex:section]);
+   // return [headers objectAtIndex:section];
     return @"";
 }
 
@@ -183,13 +194,13 @@ int currentRow = 0;
 //        else [cell setSelectionStyle:UITableViewCellStateDefaultMask];
 //
         
-        NSLog(@"The cell is nil");
+        // NSLog(@"The cell is nil");
 
 	} else {
-        NSLog(@"The cell is not nil");
+        // NSLog(@"The cell is not nil");
     }
     
-    NSLog(@"size... height %f width %f", [cell.contentView bounds].size.height, [cell.contentView bounds].size.width);
+    // NSLog(@"size... height %f width %f", [cell.contentView bounds].size.height, [cell.contentView bounds].size.width);
     
     for (UIView *subview in cell.contentView.subviews) {
         [subview removeFromSuperview];
@@ -199,53 +210,9 @@ int currentRow = 0;
     [cell.contentView addSubview:[textFields objectAtIndex:indexPath.row]];
     
     if (indexPath.row == 0) {
-        [[textFields objectAtIndex:indexPath.row] becomeFirstResponder];
+       // [[textFields objectAtIndex:indexPath.row] becomeFirstResponder];
     }
-
-    
-//    CGRect bound2 = [cell.contentView bounds];
-//    bound2.origin.y = bound2.origin.y - 5;
-//    CGRect rect2 = CGRectInset(bound2, 10.0, 10.0);
-//    rect2.size.width=220;
-//    rect2.size.height=20;
-//    
-//    UILabel *label = [[UILabel alloc] init] ;
-//    label.frame = rect2;
-//    label.text = data.fieldName;
-//     [cell.contentView addSubview:label];
-//    
-//    if (data.fieldType == 1) {
-//        CGRect bounds = [cell.contentView bounds];
-//        bounds.origin.y = bounds.origin.y + 20;
-//        CGRect rect = CGRectInset(bounds, 10.0, 10.0);
-//        NSString *tag = @"13234"; //[NSString stringWithFormat:@"%d%d%d",DCallSection+1,indexPath.row+1,3];
-//        int _tag = indexPath.row;
-//        [tag intValue];
-//        UITextField *txt = [self setTextField:rect setTag:_tag];
-//       // [txt setBorderStyle:UITextBorderStyleRoundedRect];
-//        NSString *placeholder = [NSString stringWithFormat:@"Tap here to enter %@", data.fieldName];
-//        [txt setPlaceholder:placeholder];
-//        // txt.text = @"other"; //[mutdict objectForKey:@"tollfree"];
-//        if (data.fieldName == data.value) txt.placeholder= data.fieldName;
-//        else txt.text = data.value; // [fields objectAtIndex:indexPath.row + indexPath.section];
-//        txt.returnKeyType = UIReturnKeyDone;
-//        [cell.contentView addSubview:txt];
-//        
-//    } else {
-//        CGRect bound3 = [cell.contentView bounds];
-//        bound3.origin.y = bound3.origin.y + 20;
-//        CGRect rect3 = CGRectInset(bound3, 10.0, 10.0);
-//        rect3.size.width=220;
-//        rect3.size.height=20;
-//        
-//        
-//        UILabel *label2 = [[UILabel alloc] init];
-//        label2.frame = rect3;
-//        label2.text = data.value;
-//        [cell.contentView addSubview:label2];
-//        
-//    }
-//    
+  
     return cell;
 }
 
@@ -255,10 +222,10 @@ int currentRow = 0;
     rect.size.height=20;
 	txtcell.frame = rect;
 	txtcell.tag = _tag;
-    NSLog(@"tag == %d", _tag);
+    // NSLog(@"tag == %d", _tag);
     //  txtcell.enabled = FALSE;
     // [txtcell setEnabled:YES];
-	//[txtcell setReturnKeyType:UIReturnKeyDone];
+	[txtcell setReturnKeyType:UIReturnKeyDone];
 	[txtcell setDelegate:self];
 	[txtcell setBackgroundColor:[UIColor whiteColor]];
 	[txtcell setOpaque:YES];
@@ -267,11 +234,11 @@ int currentRow = 0;
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
-    NSLog(@"text: %@", text);
+     NSLog(@"text: %@", text);
     // Any new character added is passed in as the "text" parameter
     if ([text isEqualToString:@"\n"]) {
         // Be sure to test for equality using the "isEqualToString" message
-       // [textView resignFirstResponder];
+        [textView resignFirstResponder];
         
         // Return FALSE so that the final '\n' character doesn't get added
         return FALSE;
@@ -292,16 +259,16 @@ int currentRow = 0;
 - (void) tableView: (UITableView *) tableView accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    NSLog(@"select: %d", indexPath.row);
+    // NSLog(@"select: %d", indexPath.row);
     
     DataElement *de = [fields objectAtIndex: indexPath.row];
     
-    if (de == Nil) NSLog(@"it's nil");
+    if (de == Nil) // NSLog(@"it's nil");
     
     @try {
-        NSLog(@"select: %d", de.groupKey);
+        // NSLog(@"select: %d", de.groupKey);
     } @catch (NSException *e) {
-        NSLog(@"select: %@", e);
+        // NSLog(@"select: %@", e);
     }
     
     
@@ -315,21 +282,21 @@ int currentRow = 0;
     
     //  [de release];
     //
-    //    NSLog(@"row %d", indexPath.row);
+    //    // NSLog(@"row %d", indexPath.row);
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)sender {
-    // NSLog(@"text field editing begins here");
+    // // NSLog(@"text field editing begins here");
     
     _textField = sender;
     
     // if ([sender isEqual:_textField]) {
-    NSLog(@"text field editing should begins here %d ", sender.tag);
+    // NSLog(@"text field editing should begins here %d ", sender.tag);
     //move the main view, so that the keyboard does not hide it.
-    NSLog(@"orgin y %f", self.view.frame.origin.y);
+    // NSLog(@"orgin y %f", self.view.frame.origin.y);
     if  (self.view.frame.origin.y >= 0) {
         currentRow = sender.tag;
-        [self setViewMovedUp:YES];
+       // [self setViewMovedUp:YES];
     }
     // }
 }
@@ -339,15 +306,13 @@ int currentRow = 0;
     DataElement *de = [fields objectAtIndex:textField.tag];
     
     de.value = textField.text;
-    NSLog(@"update the value text feild %d value %@", textField.tag, textField.text);
+    // NSLog(@"update the value text feild %d value %@", textField.tag, textField.text);
     
     
 }
 
--(BOOL)textFieldShouldBeginEditing: (UITextField *)textField
-
-{
-    UIToolbar * keyboardToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+-(BOOL)textFieldShouldBeginEditing: (UITextField *)textField {
+    UIToolbar * keyboardToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
     
     keyboardToolBar.barStyle = UIBarStyleDefault;
     [keyboardToolBar setItems: [NSArray arrayWithObjects:
@@ -364,13 +329,14 @@ int currentRow = 0;
 }
 
 
-
 -(void) buttonPressed : (id) sender{
+    
+  //  if (1==1) return;
     UIBarButtonItem *clicked = (UIBarButtonItem *) sender;
     
-    NSLog(@"button label: %@", clicked.title);
+    // NSLog(@"button label: %@", clicked.title);
     
-    NSLog(@"xxxxx compare xxxxxx %d",[@"Next" compare:clicked.title] );
+    // NSLog(@"xxxxx compare xxxxxx %d",[@"Next" compare:clicked.title] );
     
     if ([@"Next" compare:clicked.title] == 0) {
         nextTagValue = _textField.tag + 1;
@@ -380,7 +346,32 @@ int currentRow = 0;
     } else {
         nextTagValue = 100;
     }
-     NSLog(@" tag %d",_textField.tag);//Here you know which button has pressed
+     // NSLog(@" tag %d",_textField.tag);//Here you know which button has pressed
+    
+    NSInteger nextTag = nextTagValue;  //textField.tag + 1;
+    
+    // NSLog(@"nxt tag value %d", nextTag);
+    // Try to find next responder
+    // UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    
+    // // NSLog(@"Next Tag %@", nextResponder);
+    if (nextTag < [textFields count]) {
+       NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:(nextTagValue) inSection:0];
+        [[self tableViewOutlet] scrollToRowAtIndexPath:scrollIndexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        UIResponder *nextResponder = [textFields objectAtIndex:nextTag];
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
+    } else {
+        // Not found, so remove keyboard.
+         NSLog(@"CLOSE THIS THING");
+        [_textField resignFirstResponder];
+       // [self setViewMovedUp:NO];
+    }
+    
+   
+    
+    nextTagValue = 100;
+    
 
 //    [self textFieldShouldReturn:_textField];
    
@@ -394,11 +385,11 @@ int currentRow = 0;
 
     NSInteger nextTag = nextTagValue;  //textField.tag + 1;
     
-    NSLog(@"nxt tag value %d", nextTag);
+    // NSLog(@"nxt tag value %d", nextTag);
     // Try to find next responder
    // UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
     
-   // NSLog(@"Next Tag %@", nextResponder);
+   // // NSLog(@"Next Tag %@", nextResponder);
     if (nextTag < [textFields count]) {
        UIResponder *nextResponder = [textFields objectAtIndex:nextTag];
        // Found next responder, so set it.
@@ -406,8 +397,8 @@ int currentRow = 0;
     } else {
             // Not found, so remove keyboard.
         NSLog(@"CLOSE THIS THING");
-    //  [textField resignFirstResponder];
-      [self setViewMovedUp:NO];
+      [textField resignFirstResponder];
+     // [self setViewMovedUp:NO];
     }
     
     nextTagValue = 100;
@@ -419,63 +410,154 @@ int currentRow = 0;
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5]; // if you want to slide up the view
     
-//    float moveAmount = currentRow * 80.0;
-//    
-//    //if (moveAmount > 250)
-//        moveAmount = 250;
-//    
-//    CGRect rect = self.view.frame;
-//    if (movedUp) {
-//        // 1. move the view's origin up so that the text field that will be hidden come above the keyboard
-//        // 2. increase the size of the view so that the area behind the keyboard is covered up.
-//        rect.origin.y -= moveAmount;
-//        rect.size.height += moveAmount;
-//        
-//    } else {
-//        // revert back to the normal state.
-//        rect.origin.y += moveAmount;
-//        rect.size.height -=  moveAmount;
-//    }
-//    
-//   // _tableViewOutlet.frame = rect;
-//   self.view.frame = rect;
-    
     [UIView commitAnimations];
 }
 
-- (void)keyboardWillShow:(NSNotification *)notif {
-    //keyboard will be shown now. depending for which textfield is active, move up or move down the view appropriately
+
+- (void)keyboardWillShow:(NSNotification *)aNotification {
+     NSLog(@"keyboardWillShow");
     
-    if ([_textField isFirstResponder] && self.view.frame.origin.y >= 0) {
-        [self setViewMovedUp:YES];
-    } else if (![_textField isFirstResponder] && self.view.frame.origin.y < 0) {
-        //  [self setViewMovedUp:NO];
+    if(keyboardShown)
+        return;
+    
+    keyboardShown = YES;
+    
+    // Get the keyboard size
+    UIScrollView *tableView;
+    if([self.tableViewOutlet.superview isKindOfClass:[UIScrollView class]])
+        tableView = (UIScrollView *)self.tableViewOutlet.superview;
+    else tableView = self.tableViewOutlet;
+    
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [tableView.superview convertRect:[aValue CGRectValue] fromView:nil];
+    
+    // Get the keyboard's animation details
+    NSTimeInterval animationDuration;
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    UIViewAnimationCurve animationCurve;
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    
+    // Determine how much overlap exists between tableView and the keyboard
+    CGRect tableFrame = tableView.frame;
+    CGFloat tableLowerYCoord = tableFrame.origin.y + tableFrame.size.height;
+   
+    keyboardOverlap = tableLowerYCoord - keyboardRect.origin.y;
+    if(self.inputAccessoryView && keyboardOverlap>0)
+    {
+        CGFloat accessoryHeight = self.inputAccessoryView.frame.size.height;
+        keyboardOverlap -= accessoryHeight;
+        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, accessoryHeight, 0);
+        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, accessoryHeight, 0);
+    }
+    
+    if(keyboardOverlap < 0)
+        keyboardOverlap = 0;
+    
+    if(keyboardOverlap != 0)
+    {
+        tableFrame.size.height -= keyboardOverlap;
+        
+        NSTimeInterval delay = 0;
+        if(keyboardRect.size.height)
+        {
+            delay = (1 - keyboardOverlap/keyboardRect.size.height)*animationDuration;
+            animationDuration = animationDuration * keyboardOverlap/keyboardRect.size.height;
+        }
+        
+        [UIView animateWithDuration:animationDuration delay:delay
+                            options:UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{ tableView.frame = tableFrame; }
+                         completion:^(BOOL finished){ [self tableAnimationEnded:nil finished:nil contextInfo:nil]; }];
+    }
+    
+   // [self.tableViewOutlet reloadData];
+}
+
+- (void)keyboardWillHide:(NSNotification *)aNotification {
+    
+     NSLog(@"keyboardWillHide");
+    if (!keyboardShown) return;
+    
+    keyboardShown = NO;
+    
+    UIScrollView *tableView;
+    if([self.tableViewOutlet.superview isKindOfClass:[UIScrollView class]])
+        tableView = (UIScrollView *)self.tableViewOutlet.superview;
+    else
+        tableView = self.tableViewOutlet;
+    if(self.inputAccessoryView) {
+        tableView.contentInset = UIEdgeInsetsZero;
+        tableView.scrollIndicatorInsets = UIEdgeInsetsZero;
+    }
+    
+    if (keyboardOverlap == 0) return;
+    
+    // Get the size & animation details of the keyboard
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [tableView.superview convertRect:[aValue CGRectValue] fromView:nil];
+    
+    NSTimeInterval animationDuration;
+    [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] getValue:&animationDuration];
+    UIViewAnimationCurve animationCurve;
+    [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] getValue:&animationCurve];
+    
+    CGRect tableFrame = tableView.frame;
+    tableFrame.size.height += keyboardOverlap;
+    
+    if(keyboardRect.size.height)
+        animationDuration = animationDuration * keyboardOverlap/keyboardRect.size.height;
+    
+    [UIView animateWithDuration:animationDuration delay:0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{ tableView.frame = tableFrame; }
+                     completion:nil];
+}
+
+- (void) tableAnimationEnded:(NSString*)animationID finished:(NSNumber *)finished contextInfo:(void *)context {
+    // Scroll to the active cell
+    
+     activeCellIndexPath = [NSIndexPath indexPathForRow:(currentRow) inSection:0];
+
+    if (self.activeCellIndexPath) {
+        [self.tableViewOutlet scrollToRowAtIndexPath:self.activeCellIndexPath atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        [self.tableViewOutlet selectRowAtIndexPath:self.activeCellIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
 }
 
+- (void) didDismissSecondViewController {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     // register for keyboard notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification object:self.view.window];
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+
     
     if (viewController) {
-        NSLog(@"the view controller is real %d", viewController.row);
+        // NSLog(@"the view controller is real %d", viewController.row);
         DataElement *de = [fields objectAtIndex:viewController.row];
         
         de.value = (NSString *)viewController.fieldValue.text;
         
-        [self.tableViewOutlet reloadData];
+        //[self.tableViewOutlet reloadData];
     }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     // unregister for keyboard notifications while not visible.
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (IBAction)closeDataWindow:(id)sender {
-    NSLog(@"HERE HER EHERE");
+    // NSLog(@"HERE HER EHERE");
     [viewController dismissModalViewControllerAnimated:YES];
     
 }
@@ -487,23 +569,44 @@ int currentRow = 0;
 
 - (IBAction)saveData:(id)sender {
     
+    NSString *emailData = @"";
+    
     for (DataElement *data in fields) {
-        NSLog(@"Data Name %@ = %@", data.fieldName, data.value);
+      //   NSLog(@"Data Name %@ = %@", data.fieldName, data.value);
+        
+        emailData = [emailData stringByAppendingFormat:@"%@: %@\n", data.fieldName, data.value];
+        
     }
     
-//    if (_textField.text != nil) [self textFieldDidEndEditing:_textField];
-//    
-//    SQLManager *sqlManager = [[SQLManager alloc] init];
-//    NSLog(@"Calling Save Data");
-//    [sqlManager saveData:fields];
-//    NSLog(@"After Save Data Called");
-//    
-//    [sqlManager release];
-//    // [sqlManager dealloc];
-//    [self dismissModalViewControllerAnimated:YES];
+    NSLog(@"email String %@", emailData);
+    
+    NSArray *tos = [NSArray arrayWithObjects:@"dharold@scires.com", @"jdwfoo@gmail.com", nil];
+    
+    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    controller.mailComposeDelegate = self;
+    [controller setSubject:@"HTT Agency Request"];
+    [controller setToRecipients:tos];
+    [controller setMessageBody:emailData isHTML:NO];
+    if (controller) [self presentModalViewController:controller animated:YES];
+    
 }
 
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error; {
 
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissViewControllerAnimated:YES completion:^ {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(didDismissSecondViewController)
+//                                                 name:@"SecondViewControllerDismissed"
+//                                               object:nil];
+}
 
 @end
 
