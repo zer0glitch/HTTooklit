@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HTToolkit/HTUSjursViewController.h"
-            timestampString = "407178741.636716"
+            timestampString = "412224306.259885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "@interface HTUSjursViewController"
             landmarkType = "2">
          </BreakpointContent>

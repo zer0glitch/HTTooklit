@@ -49,6 +49,11 @@
                                 <segue destination="ce9-VP-SjU" kind="push" id="Wts-Q7-994"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="Vev-ZN-I7l">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="W9b-fx-6Zo" id="S7W-hm-haI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8vd-Vc-wPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -83,7 +88,16 @@
                             <outlet property="delegate" destination="hct-5x-H9U" id="tlc-tb-Qr0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7Lp-hz-1U8"/>
+                    <navigationItem key="navigationItem" id="7Lp-hz-1U8">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="Z5q-tr-ZcT">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="hct-5x-H9U" id="xy3-DH-Sr0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contactUsButtonItem" destination="Z5q-tr-ZcT" id="GzD-hj-9sj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhY-yi-j1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,7 +141,13 @@
                             <outlet property="delegate" destination="ce9-VP-SjU" id="AoT-ua-ZO3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="States" id="J5O-3s-wU4"/>
+                    <navigationItem key="navigationItem" title="States" id="J5O-3s-wU4">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="Oib-Q6-vSO">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="ce9-VP-SjU" id="vPW-2F-FdH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jou-9J-ycu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,7 +191,13 @@
                             <outlet property="delegate" destination="Bbo-F7-Jbi" id="5ba-lH-l08"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="States" id="5L2-d0-OoT"/>
+                    <navigationItem key="navigationItem" title="States" id="5L2-d0-OoT">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="BVg-pc-gLW">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="Bbo-F7-Jbi" id="KCR-59-Uke"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEa-1E-Y1G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,7 +241,13 @@
                             <outlet property="delegate" destination="pgm-iI-EHg" id="97m-He-XtR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cities" id="77v-OJ-Z0Z"/>
+                    <navigationItem key="navigationItem" title="Cities" id="77v-OJ-Z0Z">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="lsA-A7-riP">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="pgm-iI-EHg" id="V3e-d2-Dsr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sem-Qc-bD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,7 +291,13 @@
                             <outlet property="delegate" destination="t5B-LV-I4y" id="Z77-4S-oe2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Victim Category" id="xsI-Ai-hva"/>
+                    <navigationItem key="navigationItem" title="Victim Category" id="xsI-Ai-hva">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="Egw-Ay-9Bv">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="t5B-LV-I4y" id="rLS-AT-9Bi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k73-ay-etQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -303,7 +341,13 @@
                             <outlet property="delegate" destination="TlP-OL-Rmh" id="Sug-c0-w3h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Services" id="Ohh-jJ-WmD"/>
+                    <navigationItem key="navigationItem" title="Services" id="Ohh-jJ-WmD">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="dYT-6w-lBa">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="TlP-OL-Rmh" id="UBa-YN-3gN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ht-Oe-e6f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -336,7 +380,13 @@
                             <outlet property="delegate" destination="lGT-HK-1jr" id="gFO-6o-bBw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Service" id="g9d-vU-cqF"/>
+                    <navigationItem key="navigationItem" title="Service" id="g9d-vU-cqF">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="IQM-RK-jt1">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="lGT-HK-1jr" id="qRV-1s-Vsn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkX-ij-fYn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -382,6 +432,11 @@
                                 <segue destination="Bbo-F7-Jbi" kind="push" identifier="showstate" id="a9W-Qn-TEz"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="95d-Xg-kof">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="I9Y-O4-wAY" id="AxJ-ba-FyS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4c6-iY-Zaz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -415,7 +470,13 @@
                             <outlet property="delegate" destination="n5Z-tn-ETw" id="Zhh-8c-Ue5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2we-vJ-b85"/>
+                    <navigationItem key="navigationItem" id="2we-vJ-b85">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="V5w-cq-l4j">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="n5Z-tn-ETw" id="Pph-gq-Kyb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a48-91-3Bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -467,7 +528,13 @@
                             <outlet property="delegate" destination="ISH-hy-sPt" id="oNe-JD-WI1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Case Name" id="4I2-j8-Dmd"/>
+                    <navigationItem key="navigationItem" title="Case Name" id="4I2-j8-Dmd">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="zZF-CX-vVH">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="ISH-hy-sPt" id="GhN-Dp-ESw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CrS-74-NR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -577,7 +644,7 @@
                                 <action selector="buttonPress:" destination="12" id="Dzf-Dm-yzO"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="leftbg.jpg" style="plain" id="Max-4U-eeu">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="src-contact.png" style="plain" id="Max-4U-eeu">
                             <connections>
                                 <action selector="contactUsButtonClick:" destination="12" id="nX8-zY-oLD"/>
                             </connections>
@@ -591,7 +658,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="672"/>
+            <point key="canvasLocation" x="529" y="705"/>
         </scene>
         <!--State View Controller - Jurisdictions-->
         <scene sceneID="lD4-Tw-tHb">
@@ -632,7 +699,13 @@
                             <outlet property="delegate" destination="ZE3-7n-t1B" id="45g-Qv-YxV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Jurisdictions" id="Xbw-yC-RWH"/>
+                    <navigationItem key="navigationItem" title="Jurisdictions" id="Xbw-yC-RWH">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="oi2-jY-sfs">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="ZE3-7n-t1B" id="Yq6-Er-UOb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXu-yN-Ujy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -676,7 +749,13 @@
                             <outlet property="delegate" destination="y0m-p5-N0g" id="ryx-BJ-kaT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Agencies" id="QWP-r4-Cgu"/>
+                    <navigationItem key="navigationItem" title="Agencies" id="QWP-r4-Cgu">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="WTZ-Za-WiS">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="y0m-p5-N0g" id="2NB-q3-bru"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D96-BV-eBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -709,7 +788,9 @@
                             <outlet property="delegate" destination="Mde-rg-eTr" id="foE-Je-xWp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="States" id="Ibz-Z3-Vhf"/>
+                    <navigationItem key="navigationItem" title="States" id="Ibz-Z3-Vhf">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="djZ-DF-uC5"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="vSh-ka-VXZ" kind="push" identifier="showData" id="aBc-I5-5Lv"/>
                         <segue destination="SdK-gO-yOo" kind="push" identifier="showDistricts" id="pyI-2g-2J3"/>
@@ -754,7 +835,13 @@
                             <outlet property="delegate" destination="SdK-gO-yOo" id="JDZ-Mn-vsP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Districts" id="48a-aS-3a0"/>
+                    <navigationItem key="navigationItem" title="Districts" id="48a-aS-3a0">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="TDC-Nl-82W">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="SdK-gO-yOo" id="Aga-0Z-IQV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="vSh-ka-VXZ" kind="push" identifier="showData" id="LU3-0O-HmU"/>
                         <segue destination="74A-gM-6dl" kind="push" identifier="showJurs" id="DfR-Mg-RWa"/>
@@ -799,7 +886,13 @@
                             <outlet property="delegate" destination="74A-gM-6dl" id="7OL-ab-mZC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Jurisdictions" id="Xps-r6-KbE"/>
+                    <navigationItem key="navigationItem" title="Jurisdictions" id="Xps-r6-KbE">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="7c3-hp-vzS">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="74A-gM-6dl" id="8Te-Mq-Fpp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="vSh-ka-VXZ" kind="push" identifier="showData" id="AIh-AD-NQH"/>
                         <segue destination="Maq-OM-Wdz" kind="push" identifier="showSub" id="vwz-1z-2qh"/>
@@ -836,7 +929,9 @@
                             <outlet property="delegate" destination="Mvb-dI-BCF" id="3Xy-wn-jrB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Llr-bp-nJK"/>
+                    <navigationItem key="navigationItem" id="Llr-bp-nJK">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="5qr-qQ-7pk"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJu-Fm-rXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -880,7 +975,13 @@
                             <outlet property="delegate" destination="Maq-OM-Wdz" id="tTR-JZ-h2N"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Sub-Jurisdictions" id="lwx-Rm-gE3"/>
+                    <navigationItem key="navigationItem" title="Sub-Jurisdictions" id="lwx-Rm-gE3">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="TV5-uZ-SRm">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="Maq-OM-Wdz" id="6Sv-dR-fhe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrQ-YK-4mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -914,7 +1015,13 @@
                             <outlet property="delegate" destination="vSh-ka-VXZ" id="MXE-ET-47D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="US Attorney" id="bLR-ym-BkL"/>
+                    <navigationItem key="navigationItem" title="US Attorney" id="bLR-ym-BkL">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="CLJ-Lj-nYm">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="vSh-ka-VXZ" id="BLX-oo-qgM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPy-My-FGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -947,7 +1054,13 @@
                             <outlet property="delegate" destination="SaI-hg-WkL" id="TDI-lA-lOf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bzt-Ya-PZl"/>
+                    <navigationItem key="navigationItem" id="bzt-Ya-PZl">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="54c-Z1-8A3">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="SaI-hg-WkL" id="QPY-4O-gsm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJH-bq-vfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -981,7 +1094,13 @@
                             <outlet property="delegate" destination="O5m-41-x5e" id="aEE-Kw-KIn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aRZ-vM-6jf"/>
+                    <navigationItem key="navigationItem" id="aRZ-vM-6jf">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="PZB-vG-48C">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="O5m-41-x5e" id="aYT-YW-tfc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ce-91-s1D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1041,7 +1160,7 @@
             </objects>
             <point key="canvasLocation" x="3" y="1383"/>
         </scene>
-        <!--Train View Controller - Online Training Resources-->
+        <!--Train View Controller - Online Training-->
         <scene sceneID="KhH-vl-Vtu">
             <objects>
                 <tableViewController id="Nu4-Hk-peW" customClass="HTTrainViewController" sceneMemberID="viewController">
@@ -1270,7 +1389,13 @@
                             <outlet property="delegate" destination="Nu4-Hk-peW" id="dyq-lG-a0a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Online Training Resources" id="Agu-ss-57E"/>
+                    <navigationItem key="navigationItem" title="Online Training" id="Agu-ss-57E">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="HUs-9D-Sja">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="Nu4-Hk-peW" id="0j5-Xz-B44"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="assess" destination="NrP-yr-1sf" id="YWf-Eh-VIV"/>
                         <outlet property="cont" destination="1Wn-p2-hfd" id="XOP-pQ-iEx"/>
@@ -1378,7 +1503,13 @@
                         </prototypes>
                         <sections/>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Alliance Information" id="Dtg-bT-TGI"/>
+                    <navigationItem key="navigationItem" title="Alliance Information" id="Dtg-bT-TGI">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="tSC-yU-Keu">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="EsH-DV-BBA" id="hmq-Fs-NDG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMP-rX-tgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1422,7 +1553,9 @@
                             <outlet property="delegate" destination="z8X-a1-5MH" id="CvZ-eM-NCL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="States" id="o25-U6-eDK"/>
+                    <navigationItem key="navigationItem" title="States" id="o25-U6-eDK">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="igk-fy-iIQ"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4k-55-4EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1466,7 +1599,13 @@
                             <outlet property="delegate" destination="Eid-ll-N2W" id="Zf1-J4-a1s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Districts" id="deb-uR-ZbA"/>
+                    <navigationItem key="navigationItem" title="Districts" id="deb-uR-ZbA">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="w1p-39-oxz">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="Eid-ll-N2W" id="u4h-J4-Tm1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFp-wn-WyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1492,8 +1631,8 @@
             <objects>
                 <viewController id="W62-xp-6uq" customClass="HTLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XMH-l5-h1h"/>
-                        <viewControllerLayoutGuide type="bottom" id="SnK-na-SvE"/>
+                        <viewControllerLayoutGuide type="top" id="wky-3y-ITD"/>
+                        <viewControllerLayoutGuide type="bottom" id="D9J-Ke-7Ue"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="H6x-VW-H4C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -1610,7 +1749,9 @@
                             <outlet property="delegate" destination="3Nq-66-dlk" id="Djz-ad-bM8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Vkd-T1-3GP"/>
+                    <navigationItem key="navigationItem" id="Vkd-T1-3GP">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="008-Ke-1ux"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSE-Sz-su1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1654,7 +1795,13 @@
                             <outlet property="delegate" destination="2Ne-iP-4pj" id="j3x-VL-0dw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="States" id="Gj1-Ed-PRf"/>
+                    <navigationItem key="navigationItem" title="States" id="Gj1-Ed-PRf">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="aY7-WS-gDk">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="2Ne-iP-4pj" id="OR9-A0-H6Q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOd-iM-2ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1688,7 +1835,9 @@
                             <outlet property="delegate" destination="9aF-yF-4xA" id="2XA-z7-IK5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Attorney General" id="3ig-FY-8uz"/>
+                    <navigationItem key="navigationItem" title="Attorney General" id="3ig-FY-8uz">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="YBv-mT-L9U"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnU-c2-6Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1722,7 +1871,13 @@
                             <outlet property="delegate" destination="klP-aS-cVG" id="Var-iG-5Tx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="District Attorney" id="U0R-R3-Dr1"/>
+                    <navigationItem key="navigationItem" title="District Attorney" id="U0R-R3-Dr1">
+                        <barButtonItem key="rightBarButtonItem" image="src-contact.png" id="9r3-AI-ogq">
+                            <connections>
+                                <action selector="contactUsButtonClick:" destination="klP-aS-cVG" id="dg1-aL-PUm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CP-TJ-hm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1732,8 +1887,37 @@
     <resources>
         <image name="Scale---Weight-Balance-Icon.png" width="36" height="36"/>
         <image name="icon_books.png" width="41" height="41"/>
-        <image name="leftbg.jpg" width="94" height="37"/>
         <image name="social_services.png" width="32" height="32"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
+        <image name="src-contact.png" width="75" height="23"/>
         <image name="users-icon.png" width="43" height="31"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1742,6 +1926,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LU3-0O-HmU"/>
+        <segue reference="AIh-AD-NQH"/>
     </inferredMetricsTieBreakers>
 </document>

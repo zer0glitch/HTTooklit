@@ -66,6 +66,7 @@
 		7D1A960B189094F7005C8CEE /* htt-logo3-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1A9609189094F7005C8CEE /* htt-logo3-40.png */; };
 		7D1A960C189094F7005C8CEE /* htt-logo3-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1A960A189094F7005C8CEE /* htt-logo3-29.png */; };
 		7D4D1951187662E8008D796B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1950187662E8008D796B /* Images.xcassets */; };
+		7D99824F1891F27700116F2E /* src-contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D99824E1891F27600116F2E /* src-contact.png */; };
 		7DDD5C3618445817009DDACA /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDD5C3518445817009DDACA /* iAd.framework */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +174,7 @@
 		7D1A9609189094F7005C8CEE /* htt-logo3-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-40.png"; sourceTree = "<group>"; };
 		7D1A960A189094F7005C8CEE /* htt-logo3-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-29.png"; sourceTree = "<group>"; };
 		7D4D1950187662E8008D796B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7D99824E1891F27600116F2E /* src-contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "src-contact.png"; sourceTree = "<group>"; };
 		7DDD5C3518445817009DDACA /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -195,6 +197,7 @@
 		5C6F5DDB1754FEC3003B1927 = {
 			isa = PBXGroup;
 			children = (
+				7D99824E1891F27600116F2E /* src-contact.png */,
 				7D1A9609189094F7005C8CEE /* htt-logo3-40.png */,
 				7D1A960A189094F7005C8CEE /* htt-logo3-29.png */,
 				7D1A960118909201005C8CEE /* htt-logo3-152.png */,
@@ -433,6 +436,7 @@
 				7D1A95E81888E1BD005C8CEE /* leftbg.jpg in Resources */,
 				7D4D1951187662E8008D796B /* Images.xcassets in Resources */,
 				7D1A960518909201005C8CEE /* htt-logo3-152.png in Resources */,
+				7D99824F1891F27700116F2E /* src-contact.png in Resources */,
 				7D1A960818909201005C8CEE /* htt-logo3-60.png in Resources */,
 				7D1A960C189094F7005C8CEE /* htt-logo3-29.png in Resources */,
 				7D1A95F318896BA4005C8CEE /* HTContactUsViewController.xib in Resources */,
