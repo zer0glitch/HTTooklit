@@ -68,6 +68,8 @@
 		7D4D1951187662E8008D796B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4D1950187662E8008D796B /* Images.xcassets */; };
 		7D99824F1891F27700116F2E /* src-contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D99824E1891F27600116F2E /* src-contact.png */; };
 		7DDD5C3618445817009DDACA /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDD5C3518445817009DDACA /* iAd.framework */; };
+		7DF1772F18B783BF00447F18 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1772E18B783BF00447F18 /* Default@2x.png */; };
+		7DF1773118B783CB00447F18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF1773018B783CB00447F18 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,8 +100,6 @@
 		5C6F5DF61754FEC3003B1927 /* HTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAppDelegate.h; sourceTree = "<group>"; };
 		5C6F5DF71754FEC3003B1927 /* HTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAppDelegate.m; sourceTree = "<group>"; };
 		5C6F5DF91754FEC3003B1927 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		5C6F5DFB1754FEC3003B1927 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		5C6F5DFD1754FEC3003B1927 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5C6F5E001754FEC3003B1927 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5C6F5E021754FEC3003B1927 /* HTMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMasterViewController.h; sourceTree = "<group>"; };
 		5C6F5E031754FEC3003B1927 /* HTMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMasterViewController.m; sourceTree = "<group>"; };
@@ -167,15 +167,17 @@
 		7D1A95FC188A18EB005C8CEE /* DataElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataElement.h; sourceTree = "<group>"; };
 		7D1A95FD188A18EB005C8CEE /* DataElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataElement.m; sourceTree = "<group>"; };
 		7D1A95FF188E324B005C8CEE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		7D1A960118909201005C8CEE /* htt-logo3-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-152.png"; sourceTree = "<group>"; };
-		7D1A960218909201005C8CEE /* htt-logo3-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-120.png"; sourceTree = "<group>"; };
-		7D1A960318909201005C8CEE /* htt-logo3-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-76.png"; sourceTree = "<group>"; };
-		7D1A960418909201005C8CEE /* htt-logo3-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-60.png"; sourceTree = "<group>"; };
-		7D1A9609189094F7005C8CEE /* htt-logo3-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-40.png"; sourceTree = "<group>"; };
-		7D1A960A189094F7005C8CEE /* htt-logo3-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "htt-logo3-29.png"; sourceTree = "<group>"; };
+		7D1A960118909201005C8CEE /* htt-logo3-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "htt-logo3-152.png"; path = "../htt-logo3-152.png"; sourceTree = "<group>"; };
+		7D1A960218909201005C8CEE /* htt-logo3-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "htt-logo3-120.png"; path = "../htt-logo3-120.png"; sourceTree = "<group>"; };
+		7D1A960318909201005C8CEE /* htt-logo3-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "htt-logo3-76.png"; path = "../htt-logo3-76.png"; sourceTree = "<group>"; };
+		7D1A960418909201005C8CEE /* htt-logo3-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "htt-logo3-60.png"; path = "../htt-logo3-60.png"; sourceTree = "<group>"; };
+		7D1A9609189094F7005C8CEE /* htt-logo3-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "htt-logo3-40.png"; path = "../htt-logo3-40.png"; sourceTree = "<group>"; };
+		7D1A960A189094F7005C8CEE /* htt-logo3-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "htt-logo3-29.png"; path = "../htt-logo3-29.png"; sourceTree = "<group>"; };
 		7D4D1950187662E8008D796B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7D99824E1891F27600116F2E /* src-contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "src-contact.png"; sourceTree = "<group>"; };
+		7D99824E1891F27600116F2E /* src-contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "src-contact.png"; path = "../src-contact.png"; sourceTree = "<group>"; };
 		7DDD5C3518445817009DDACA /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		7DF1772E18B783BF00447F18 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7DF1773018B783CB00447F18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,13 +199,6 @@
 		5C6F5DDB1754FEC3003B1927 = {
 			isa = PBXGroup;
 			children = (
-				7D99824E1891F27600116F2E /* src-contact.png */,
-				7D1A9609189094F7005C8CEE /* htt-logo3-40.png */,
-				7D1A960A189094F7005C8CEE /* htt-logo3-29.png */,
-				7D1A960118909201005C8CEE /* htt-logo3-152.png */,
-				7D1A960218909201005C8CEE /* htt-logo3-120.png */,
-				7D1A960318909201005C8CEE /* htt-logo3-76.png */,
-				7D1A960418909201005C8CEE /* htt-logo3-60.png */,
 				5C6F5DED1754FEC3003B1927 /* HTToolkit */,
 				5C6F5DE61754FEC3003B1927 /* Frameworks */,
 				5C6F5DE51754FEC3003B1927 /* Products */,
@@ -298,13 +293,20 @@
 		5C6F5DEE1754FEC3003B1927 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7DF1773018B783CB00447F18 /* Default-568h@2x.png */,
+				7DF1772E18B783BF00447F18 /* Default@2x.png */,
+				7D99824E1891F27600116F2E /* src-contact.png */,
+				7D1A9609189094F7005C8CEE /* htt-logo3-40.png */,
+				7D1A960A189094F7005C8CEE /* htt-logo3-29.png */,
+				7D1A960118909201005C8CEE /* htt-logo3-152.png */,
+				7D1A960218909201005C8CEE /* htt-logo3-120.png */,
+				7D1A960318909201005C8CEE /* htt-logo3-76.png */,
+				7D1A960418909201005C8CEE /* htt-logo3-60.png */,
 				5C6F5DEF1754FEC3003B1927 /* HTToolkit-Info.plist */,
 				5C6F5DF01754FEC3003B1927 /* InfoPlist.strings */,
 				5C6F5DF31754FEC3003B1927 /* main.m */,
 				5C6F5DF51754FEC3003B1927 /* HTToolkit-Prefix.pch */,
 				5C6F5DF91754FEC3003B1927 /* Default.png */,
-				5C6F5DFB1754FEC3003B1927 /* Default@2x.png */,
-				5C6F5DFD1754FEC3003B1927 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -400,7 +402,7 @@
 				ORGANIZATIONNAME = SRC;
 				TargetAttributes = {
 					5C6F5DE31754FEC3003B1927 = {
-						DevelopmentTeam = X3P4CNJ487;
+						DevelopmentTeam = 4GLDN6B2R8;
 					};
 				};
 			};
@@ -438,6 +440,8 @@
 				7D1A960518909201005C8CEE /* htt-logo3-152.png in Resources */,
 				7D99824F1891F27700116F2E /* src-contact.png in Resources */,
 				7D1A960818909201005C8CEE /* htt-logo3-60.png in Resources */,
+				7DF1773118B783CB00447F18 /* Default-568h@2x.png in Resources */,
+				7DF1772F18B783BF00447F18 /* Default@2x.png in Resources */,
 				7D1A960C189094F7005C8CEE /* htt-logo3-29.png in Resources */,
 				7D1A95F318896BA4005C8CEE /* HTContactUsViewController.xib in Resources */,
 				7D1A960718909201005C8CEE /* htt-logo3-76.png in Resources */,
@@ -576,7 +580,6 @@
 		5C6F5E0B1754FEC3003B1927 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -593,8 +596,8 @@
 		5C6F5E0C1754FEC3003B1927 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HTToolkit/HTToolkit-Prefix.pch";
