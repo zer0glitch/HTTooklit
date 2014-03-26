@@ -28,6 +28,7 @@
 //
 
 #import "HTLoginViewController.h"
+#import "HTMasterViewController.h"
 
 @interface HTLoginViewController ()
 
@@ -83,7 +84,7 @@
 
 - (IBAction)authenticate:(id)sender {
     BOOL correct = FALSE;
-    if([text.text isEqual: @"ice"]){
+    if([text.text isEqual: @"password"]){
         correct = TRUE;
     }
     else{
@@ -99,10 +100,8 @@
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
         [rootObj writeToFile:path atomically:YES];
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-        UITabBarController *obj=[storyboard instantiateViewControllerWithIdentifier:@"tab"];
-        self.navigationController.navigationBarHidden=YES;
-        [self.navigationController pushViewController:obj animated:YES];
+        HTMasterViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HTMasterViewController"];
+        [self.navigationController pushViewController:detailViewController animated:YES];
     }
 }
 @end

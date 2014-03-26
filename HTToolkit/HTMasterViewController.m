@@ -30,6 +30,7 @@
 #import "HTMasterViewController.h"
 #import "HTFullData.h"
 #import "HTStateViewController.h"
+#import "HTLoginViewController.h"
 
 
 
@@ -48,6 +49,7 @@ NSMutableString *agency;
 NSMutableString *jurisdiction;
 NSMutableString *contact;
 NSMutableString *email;
+NSString *code = @"";
 
 
 - (void)awakeFromNib
@@ -56,6 +58,14 @@ NSMutableString *email;
     }
 
 - (void)viewDidLoad {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
+    if([[NSFileManager defaultManager] fileExistsAtPath:path]){
+        NSDictionary *properties = [[NSDictionary alloc]init];
+        properties = [NSDictionary dictionaryWithContentsOfFile:path];
+        code = [properties objectForKey:@"passcode"];
+    }
     
     adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
     //adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height-30);
@@ -152,12 +162,15 @@ NSMutableString *email;
 }
 
 - (void)loadData {
+    
+    if([code isEqualToString:@"password"]){
     NSURL *url = [NSURL URLWithString:@"http://www.zeroglitch.org/ht/ht_data.xml"];
    
     NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
 
     [xml setDelegate:self];
     [xml parse];
+    }
 }
 
 
@@ -287,15 +300,24 @@ NSMutableString *email;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return labels.count;
+    if(![code isEqualToString:@"password"])
+       return 1;
+    else
+       return labels.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    NSString *str = [labels objectAtIndex:indexPath.row];
-    cell.textLabel.text = str;
-    return cell;
+    if(![code isEqualToString:@"password"]){
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"loginCell" forIndexPath:indexPath];
+        return cell;
+    }
+    else{
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+        NSString *str = [labels objectAtIndex:indexPath.row];
+        cell.textLabel.text = str;
+        return cell;
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -336,6 +358,9 @@ NSMutableString *email;
         }
         detailViewController.List = temp;
         detailViewController.jurs = plac;
+    }
+    if ([[segue identifier] isEqualToString:@"password"]) {
+        HTLoginViewController *detailViewController = [segue destinationViewController];
     }
   
 }
