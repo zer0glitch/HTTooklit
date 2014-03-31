@@ -60,7 +60,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     gender = [[NSMutableArray alloc]init];
     [gender addObject:@"Family"];
-    [gender addObject:@"Child"];
+    [gender addObject:@"Juvenile"];
     [gender addObject:@"Adult - Female"];
     [gender addObject:@"Adult - Male"];
 }
