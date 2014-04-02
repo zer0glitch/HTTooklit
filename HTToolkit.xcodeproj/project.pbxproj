@@ -15,6 +15,8 @@
 		5C30CE2B177DDAA000D3AA8C /* HTAttGenTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE2A177DDAA000D3AA8C /* HTAttGenTypeViewController.m */; };
 		5C30CE34177DFF6800D3AA8C /* HTAttorneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE33177DFF6800D3AA8C /* HTAttorneyViewController.m */; };
 		5C30CE371781F0D400D3AA8C /* HTDistStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE361781F0D300D3AA8C /* HTDistStateViewController.m */; };
+		5C58645118EA1FE00046C208 /* HTCorrespondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C58645018EA1FE00046C208 /* HTCorrespondViewController.xib */; };
+		5C58645418EA2A6D0046C208 /* HTCorrespondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C58645318EA2A6D0046C208 /* HTCorrespondViewController.m */; };
 		5C6F5DE81754FEC3003B1927 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6F5DE71754FEC3003B1927 /* UIKit.framework */; };
 		5C6F5DEA1754FEC3003B1927 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6F5DE91754FEC3003B1927 /* Foundation.framework */; };
 		5C6F5DEC1754FEC3003B1927 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6F5DEB1754FEC3003B1927 /* CoreGraphics.framework */; };
@@ -89,6 +91,9 @@
 		5C30CE33177DFF6800D3AA8C /* HTAttorneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAttorneyViewController.m; sourceTree = "<group>"; };
 		5C30CE351781F0D300D3AA8C /* HTDistStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDistStateViewController.h; sourceTree = "<group>"; };
 		5C30CE361781F0D300D3AA8C /* HTDistStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDistStateViewController.m; sourceTree = "<group>"; };
+		5C58645018EA1FE00046C208 /* HTCorrespondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTCorrespondViewController.xib; sourceTree = "<group>"; };
+		5C58645218EA2A6D0046C208 /* HTCorrespondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCorrespondViewController.h; sourceTree = "<group>"; };
+		5C58645318EA2A6D0046C208 /* HTCorrespondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCorrespondViewController.m; sourceTree = "<group>"; };
 		5C6F5DE41754FEC3003B1927 /* HTToolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTToolkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6F5DE71754FEC3003B1927 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5C6F5DE91754FEC3003B1927 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -316,6 +321,9 @@
 				7D1A95F018896BA4005C8CEE /* HTContactUsViewController.m */,
 				7D1A95F118896BA4005C8CEE /* HTContactUsViewController.xib */,
 				7D1A95F4188A1129005C8CEE /* PITableViewCell.h */,
+				5C58645018EA1FE00046C208 /* HTCorrespondViewController.xib */,
+				5C58645218EA2A6D0046C208 /* HTCorrespondViewController.h */,
+				5C58645318EA2A6D0046C208 /* HTCorrespondViewController.m */,
 				7D1A95F5188A1129005C8CEE /* PITableViewCell.m */,
 				7D1A95F7188A1303005C8CEE /* TextBoxViewController.h */,
 				7D1A95F8188A1303005C8CEE /* TextBoxViewController.m */,
@@ -339,10 +347,10 @@
 				5C1B16BF178DE2C700D87662 /* HTUSstateViewController.m */,
 				5C6F5E021754FEC3003B1927 /* HTMasterViewController.h */,
 				5C6F5E031754FEC3003B1927 /* HTMasterViewController.m */,
-				5C6F5E1317552CF8003B1927 /* HTFullData.h */,
-				5C6F5E1417552CF8003B1927 /* HTFullData.m */,
 				5CFC166517BA84B100208C1B /* HTLoginViewController.m */,
 				5CFC166417BA84AC00208C1B /* HTLoginViewController.h */,
+				5C6F5E1317552CF8003B1927 /* HTFullData.h */,
+				5C6F5E1417552CF8003B1927 /* HTFullData.m */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 				5C6F5E011754FEC3003B1927 /* MainStoryboard.storyboard in Resources */,
 				5C85B2C3175D0D2500C30057 /* Scale---Weight-Balance-Icon.png in Resources */,
 				5C85B2C7175D0FDC00C30057 /* icon_books.png in Resources */,
+				5C58645118EA1FE00046C208 /* HTCorrespondViewController.xib in Resources */,
 				5C85B2D8175E65FA00C30057 /* users-icon.png in Resources */,
 				5CA6110217738A930033E1E1 /* social_services.png in Resources */,
 				7D1A95E81888E1BD005C8CEE /* leftbg.jpg in Resources */,
@@ -474,6 +483,7 @@
 				5C85B2DE175F8F9E00C30057 /* HTAllianceViewController.m in Sources */,
 				5C85B2E1175F9C6500C30057 /* HTAttStateViewController.m in Sources */,
 				5C85B2E4175FA27300C30057 /* HTDistrictViewController.m in Sources */,
+				5C58645418EA2A6D0046C208 /* HTCorrespondViewController.m in Sources */,
 				7D1A95F6188A1129005C8CEE /* PITableViewCell.m in Sources */,
 				7D1A95F218896BA4005C8CEE /* HTContactUsViewController.m in Sources */,
 				5C85B2ED1760DAD100C30057 /* HTLawViewController.m in Sources */,

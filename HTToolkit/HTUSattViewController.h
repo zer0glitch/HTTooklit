@@ -31,8 +31,9 @@
 #import "HTAllianceData.h"
 #import <iAd/iAd.h>
 #import "HTContactsViewController.h"
+#import "HTMasterViewController.h"
 
-@interface HTUSattViewController : UITableViewController <ADBannerViewDelegate> {
+@interface HTUSattViewController : UITableViewController <ADBannerViewDelegate, UIAlertViewDelegate> {
     
     ADBannerView *adView;
     BOOL bannerIsVisible;
@@ -42,5 +43,6 @@
 @property (retain, nonatomic) HTAllianceData* entry;
 
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)modifyButtonClick:(id)sender;
 
 @end

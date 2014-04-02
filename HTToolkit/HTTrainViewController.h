@@ -29,7 +29,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HTCorrespondViewController.h"
 #import "HTContactUsViewController.h"
+#import "HTLoginViewController.h"
 
 @interface HTTrainViewController : UITableViewController
 
@@ -43,5 +45,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *enf;
 
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)modifyButtonClick:(id)sender;
 
 @end

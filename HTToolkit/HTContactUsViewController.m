@@ -153,6 +153,7 @@ int currentRow = 0;
         [textFields addObject:txt];
         
     }
+    
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
 //
 //    
@@ -199,6 +200,7 @@ int currentRow = 0;
     
     if (de.fieldType == 1) return 60 ;
     else return 60;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -589,7 +591,6 @@ int currentRow = 0;
 }
 
 - (IBAction)saveData:(id)sender {
-    
     NSString *emailData = @"";
     
     for (DataElement *data in fields) {
@@ -601,11 +602,11 @@ int currentRow = 0;
     
     NSLog(@"email String %@", emailData);
     
-    NSArray *tos = [NSArray arrayWithObjects:@"dharold@scires.com", @"jdwfoo@gmail.com", nil];
+    NSArray *tos = [NSArray arrayWithObjects:@"httapp.contact@srcle.com", nil];
     
     MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
     controller.mailComposeDelegate = self;
-    [controller setSubject:@"HTT Agency Request"];
+    [controller setSubject:@"Request Access"];
     [controller setToRecipients:tos];
     [controller setMessageBody:emailData isHTML:NO];
     if (controller) [self presentModalViewController:controller animated:YES];

@@ -155,4 +155,25 @@
     // self.window.controller = controller;
 }
 
+- (IBAction)modifyButtonClick:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Permission Required"
+                                                    message:@"You must be authenticated to make a request.  Authenticate?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Yes",nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        //delete it
+    }
+    if (buttonIndex == 1){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        HTLoginViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"HTLoginViewController"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
+
+
 @end

@@ -33,7 +33,7 @@
 
 #import "HTContactUsViewController.h"
 
-@interface HTMasterViewController : UITableViewController <ADBannerViewDelegate, NSXMLParserDelegate> {
+@interface HTMasterViewController : UITableViewController <ADBannerViewDelegate, NSXMLParserDelegate, NSURLConnectionDelegate> {
     
     ADBannerView *adView;
     BOOL bannerIsVisible;

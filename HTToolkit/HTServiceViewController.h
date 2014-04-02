@@ -30,11 +30,13 @@
 #import <UIKit/UIKit.h>
 #import "HTServiceData.h"
 #import "HTContactsViewController.h"
+#import "HTCorrespondViewController.h"
 
 @interface HTServiceViewController : UITableViewController
 
 @property (nonatomic, weak) HTServiceData* entry;
 
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)modifyButtonClick:(id)sender;
 
 @end

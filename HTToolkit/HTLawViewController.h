@@ -31,6 +31,8 @@
 #import "HTFedLawData.h"
 #import <iAd/iAd.h>
 #import "HTContactUsViewController.h"
+#import "HTCorrespondViewController.h"
+#import "HTLoginViewController.h"
 
 @interface HTLawViewController : UITableViewController <ADBannerViewDelegate> {
     
@@ -44,5 +46,6 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *contactUsButtonItem;
 
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)modifyButtonClick:(id)sender;
 
 @end

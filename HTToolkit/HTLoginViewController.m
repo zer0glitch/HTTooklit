@@ -35,7 +35,8 @@
 @end
 
 @implementation HTLoginViewController
-@synthesize text;
+@synthesize email, pass;
+NSString *auth;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -51,7 +52,8 @@
     [super viewDidLoad];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-    [text setDelegate:self];
+    [email setDelegate:self];
+    [pass setDelegate:self];
     
     
 
@@ -62,8 +64,10 @@
     NSDictionary *properties = [[NSDictionary alloc]init];
     properties = [NSDictionary dictionaryWithContentsOfFile:path];
     NSString *code = [properties objectForKey:@"passcode"];
-    text.text = code;
-    [self authenticate: self];
+    NSString *mail = [properties objectForKey:@"email"];
+    auth = [properties objectForKey:@"authorization"];
+    pass.text = code;
+    email.text = mail;
     }
 	// Do any additional setup after loading the view.
 }
@@ -79,29 +83,33 @@
     return YES;
 }
 -(void)dismissKeyboard {
-    [text resignFirstResponder];
+    [pass resignFirstResponder];
+    [email resignFirstResponder];
 }
 
 - (IBAction)authenticate:(id)sender {
-    BOOL correct = FALSE;
-    if([text.text isEqual: @"password"]){
-        correct = TRUE;
-    }
-    else{
-        UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Incorrect Passcode" message:@"This passcode is case sensitive." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [message show];
-    }
-    if(correct)  // authenticated---> BOOL Value assign True only if Login Success
-    {
         NSDictionary *rootObj;
-        NSString *pass = text.text;
-        rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: pass, nil] forKeys:[NSArray arrayWithObjects:@"passcode", nil]];
+        NSString * code = pass.text;
+        NSString * mail = email.text;
+        rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: code, mail, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
         [rootObj writeToFile:path atomically:YES];
         HTMasterViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HTMasterViewController"];
         [self.navigationController pushViewController:detailViewController animated:YES];
-    }
 }
+
+- (IBAction)contactUsButtonClick:(id)sender {
+    HTContactUsViewController *controller = [[HTContactUsViewController alloc]
+                                             initWithNibName:@"HTContactUsViewController" bundle:nil];
+    
+    if (controller) [self presentViewController:controller animated:YES completion:nil];
+    // Show
+    
+    //  [controller release];
+    
+    // self.window.controller = controller;
+}
+
 @end

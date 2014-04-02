@@ -43,13 +43,10 @@
 
 NSMutableString *currentElementValue;
  HTFullData *one;
-
-NSMutableString *state;
-NSMutableString *agency;
-NSMutableString *jurisdiction;
-NSMutableString *contact;
-NSMutableString *email;
-NSString *code = @"";
+NSString *path, *urlstring;
+NSMutableString *state, *agency, *jurisdiction, *contact, *email, *user, *key, *tkey, *tuser, *auth;
+NSURL *url;
+int count = 0;
 
 
 - (void)awakeFromNib
@@ -60,11 +57,16 @@ NSString *code = @"";
 - (void)viewDidLoad {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
+    path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
     if([[NSFileManager defaultManager] fileExistsAtPath:path]){
         NSDictionary *properties = [[NSDictionary alloc]init];
         properties = [NSDictionary dictionaryWithContentsOfFile:path];
-        code = [properties objectForKey:@"passcode"];
+        tkey = [properties objectForKey:@"passcode"];
+        tuser = [properties objectForKey:@"email"];
+        key = [[NSMutableString alloc] initWithString:tkey];
+        user = [[NSMutableString alloc] initWithString:tuser];
+        
+        [user setString:tuser];
     }
     
     adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
@@ -143,7 +145,6 @@ NSString *code = @"";
     [one addNumber:@"Phone: (512) 936-2896"];
     [self insertNewObject:one];   
      */
-    
     [self loadData];
 }
 
@@ -162,15 +163,25 @@ NSString *code = @"";
 }
 
 - (void)loadData {
-    
-    if([code isEqualToString:@"password"]){
-    NSURL *url = [NSURL URLWithString:@"http://www.zeroglitch.org/ht/ht_data.xml"];
-   
-    NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
-
-    [xml setDelegate:self];
-    [xml parse];
+    if(count == 0){
+        urlstring = @"https://www.srcle.com/mobile/apps/htt/sensitive/ht_contacts.xml";
+        count++;
     }
+    if([urlstring  isEqual: @"https://www.srcle.com/mobile/apps/htt/sensitive/ht_contacts.xml"]){
+        auth = [[NSMutableString alloc] initWithString:@"1"];
+    }
+    else
+        auth = [[NSMutableString alloc] initWithString:@"0"];
+    url = [NSURL URLWithString:urlstring];
+    NSLog(@"load data");
+
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    //NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
+
+    //[xml setDelegate:self];
+    //[xml parse];
+    //NSLog(@"finish load data");
 }
 
 
@@ -244,6 +255,49 @@ NSString *code = @"";
     
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    if ([challenge previousFailureCount] == 0)
+    {
+        NSLog(@"received authentication challenge");
+        
+        NSURLCredential *newCredential;
+        newCredential=[NSURLCredential credentialWithUser:user password:key
+        persistence:NSURLCredentialPersistenceForSession];
+        
+        
+        NSLog(@"credential created");
+        
+        [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
+        
+    }
+    else if ([challenge previousFailureCount] == 1)
+    {
+        urlstring = @"https://www.srcle.com/mobile/apps/htt/public/ht_contacts.xml";
+        key = [[NSMutableString alloc] initWithString:@"PubL!cP@$$"];
+        user = [[NSMutableString alloc] initWithString:@"anonymous@srcle.com"];
+        [self loadData];
+    }
+    else
+    {
+        
+    }
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    NSDictionary *rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: tkey, tuser, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
+    [rootObj writeToFile:path atomically:YES];
+    
+    [xml setDelegate:self];
+    [xml parse];
+    
+    NSLog(@"responded to authentication challenge");
+    count = 0;
+    NSLog(@"finish load data");
+    NSLog(auth);
+}
+
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     if(!currentElementValue)  {
         string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -300,15 +354,12 @@ NSString *code = @"";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(![code isEqualToString:@"password"])
-       return 1;
-    else
-       return labels.count;
+       return labels.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(![code isEqualToString:@"password"]){
+    if(indexPath.row == labels.count){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"loginCell" forIndexPath:indexPath];
         return cell;
     }
@@ -322,7 +373,7 @@ NSString *code = @"";
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -358,9 +409,6 @@ NSString *code = @"";
         }
         detailViewController.List = temp;
         detailViewController.jurs = plac;
-    }
-    if ([[segue identifier] isEqualToString:@"password"]) {
-        HTLoginViewController *detailViewController = [segue destinationViewController];
     }
   
 }

@@ -31,6 +31,8 @@
 #import "HTFullData.h"
 #import <iAd/iAd.h>
 #import "HTContactUsViewController.h"
+#import "HTCorrespondViewController.h"
+#import "HTLoginViewController.h"
 
 @interface HTContactsViewController : UITableViewController  <ADBannerViewDelegate> {
     
@@ -42,6 +44,7 @@
 @property (nonatomic, weak) HTFullData* data;
 
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)modifyButtonClick:(id)sender;
 
 
 

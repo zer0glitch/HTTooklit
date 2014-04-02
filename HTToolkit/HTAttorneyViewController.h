@@ -43,5 +43,6 @@
 @property (weak, nonatomic) HTAllianceData* entry;
 
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)modifyButtonClick:(id)sender;
 
 @end

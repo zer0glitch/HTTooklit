@@ -31,6 +31,8 @@
 #import "HTServiceData.h"
 #import <iAd/iAd.h>
 #import "HTContactUsViewController.h"
+#import "HTCorrespondViewController.h"
+#import "HTLoginViewController.h"
 
 @interface HTFedSerInfoViewController : UITableViewController <ADBannerViewDelegate> {
     
@@ -43,5 +45,6 @@
 @property (nonatomic, weak) HTServiceData* entry;
 
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)modifyButtonClick:(id)sender;
 
 @end

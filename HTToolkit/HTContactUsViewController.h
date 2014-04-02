@@ -34,7 +34,7 @@
 
 #define kOFFSET_FOR_KEYBOARD .8;
 
-@interface HTContactUsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate> {
+@interface HTContactUsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate, UIAlertViewDelegate> {
     NSMutableArray *headers;
     NSMutableArray *fields;
     NSMutableArray *fieldHeaders;

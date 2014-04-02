@@ -30,7 +30,9 @@
 #import <UIKit/UIKit.h>
 
 @interface HTLoginViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *text;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *pass;
 - (IBAction)authenticate:(id)sender;
+- (IBAction)contactUsButtonClick:(id)sender;
 
 @end

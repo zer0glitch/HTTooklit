@@ -228,4 +228,43 @@
     // self.window.controller = controller;
 }
 
+- (IBAction)modifyButtonClick:(id)sender {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *auth;
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
+    if([[NSFileManager defaultManager] fileExistsAtPath:path]){
+        NSDictionary *properties = [[NSDictionary alloc]init];
+        properties = [NSDictionary dictionaryWithContentsOfFile:path];
+        auth = [properties objectForKey:@"authorization"];
+        NSLog(auth);
+    }
+    
+    if([auth isEqualToString:@"0"]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Permission Required"
+                                                        message:@"You must be authenticated to make a request.  Authenticate?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"No"
+                                              otherButtonTitles:@"Yes",nil];
+        [alert show];
+    }
+    else{
+        HTCorrespondViewController *controller = [[HTCorrespondViewController alloc]
+                                                  initWithNibName:@"HTCorrespondViewController" bundle:nil];
+        
+        if (controller) [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0){
+        //delete it
+    }
+    if (buttonIndex == 1){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        HTLoginViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"HTLoginViewController"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+}
+
 @end
