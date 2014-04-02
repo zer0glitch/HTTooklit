@@ -57,7 +57,7 @@ int count = 0;
 - (void)viewDidLoad {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
+    path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode1.plist"];
     if([[NSFileManager defaultManager] fileExistsAtPath:path]){
         NSDictionary *properties = [[NSDictionary alloc]init];
         properties = [NSDictionary dictionaryWithContentsOfFile:path];
