@@ -44,7 +44,7 @@
 NSMutableString *currentElementValue;
  HTFullData *one;
 NSString *path, *urlstring;
-NSMutableString *state, *agency, *jurisdiction, *contact, *email, *user, *key, *tkey, *tuser, *auth;
+NSMutableString *state, *agency, *jurisdiction, *contact, *email, *user, *key, *auth;
 NSURL *url;
 int count = 0;
 
@@ -57,14 +57,16 @@ int count = 0;
 - (void)viewDidLoad {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode1.plist"];
+    path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
     if([[NSFileManager defaultManager] fileExistsAtPath:path]){
         NSDictionary *properties = [[NSDictionary alloc]init];
         properties = [NSDictionary dictionaryWithContentsOfFile:path];
-        tkey = [properties objectForKey:@"passcode"];
-        tuser = [properties objectForKey:@"email"];
-        key = [[NSMutableString alloc] initWithString:tkey];
-        user = [[NSMutableString alloc] initWithString:tuser];
+        NSString *tkey = [properties objectForKey:@"passcode"];
+        if(tkey) key = [[NSMutableString alloc] initWithString:tkey];
+        else key = [[NSMutableString alloc] initWithString:@""];
+        NSString *tuser = [properties objectForKey:@"email"];
+        if(tuser) user = [[NSMutableString alloc] initWithString:tkey];
+        else user = [[NSMutableString alloc] initWithString:@""];
         
         [user setString:tuser];
     }
@@ -286,7 +288,7 @@ int count = 0;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
-    NSDictionary *rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: tkey, tuser, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
+    NSDictionary *rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: key, user, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
     [rootObj writeToFile:path atomically:YES];
     
     [xml setDelegate:self];

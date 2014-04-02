@@ -59,7 +59,7 @@ NSString *auth;
 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode1.plist"];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
     if([[NSFileManager defaultManager] fileExistsAtPath:path]){
     NSDictionary *properties = [[NSDictionary alloc]init];
     properties = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -94,7 +94,7 @@ NSString *auth;
         rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: code, mail, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode1.plist"];
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
         [rootObj writeToFile:path atomically:YES];
         HTMasterViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HTMasterViewController"];
         [self.navigationController pushViewController:detailViewController animated:YES];
