@@ -36,7 +36,9 @@
 @end
 
 @implementation HTSerStateViewController
-@synthesize data, states;
+@synthesize data, states, bannerIsVisible;
+HTServiceData *one;
+NSMutableString *currentElementValue, *info, *state, *agency, *address, *gender, *city;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,6 +51,19 @@
 
 - (void)viewDidLoad
 {
+    adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    //adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height-30);
+    if (!self.bannerIsVisible) {
+        adView.frame = CGRectOffset(adView.frame, 0, 0);
+    }
+    
+    [adView setDelegate:self];
+    
+    self.bannerIsVisible = NO;
+    //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    [self.view addSubview:adView];
+    [adView setHidden:TRUE];
+    
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -180,7 +195,7 @@
     
     
     ser = [[HTServiceData alloc] init:@"Louisiana" city:@"New Orleans" gender:@"Adult - Female" agency:@"Eden House" address:@"www.edenhousenola.org" info:@"Two-year residential program for women who have been commercially and sexually exploited, services such as counseling, education, and job training."];
-    [ser addNumber:@"Phone: (504) 407-094"];
+    [ser addNumber:@"Phone: (504) 407-0943"];
     [data addObject:ser];
     
     
@@ -207,7 +222,116 @@
         if(![states containsObject:temp.state])
             [states addObject:temp.state];
     }
+    //[self loadData];
 }
+
+/*-(void)loadData {
+    NSURL *url = [[NSURL alloc] initWithString:@""];
+    NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+    [xml setDelegate:self];
+    [xml parse];
+    NSLog(@"finish load data");
+}
+
+#pragma mark NSXMLParserDelegate
+
+#define ELTYPE(typeName) (NSOrderedSame == [elementName caseInsensitiveCompare:@#typeName])
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName
+    attributes:(NSDictionary *)attributeDict {
+    //  NSString *ident = [attributeDict objectForKey:@"id"];
+    if([elementName isEqualToString:@"Record"]) {
+        ////NSLog(@"found record");
+        NSLog(@"Start Record");
+        
+        one = [[HTServiceData alloc] init];
+        
+    } else if([elementName isEqualToString:@"Agency"]) {
+        // ////NSLog(@"found Agency");
+    }
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName {
+    
+    if([elementName isEqualToString:@"Record"]) {
+        
+        NSLog(@"End Record");
+        
+        [self insertNewObject:one];
+    } else  if([elementName isEqualToString:@"Agency"]) {
+        
+        NSLog(@"agency current %@", currentElementValue);
+        one.agency = currentElementValue;
+    } else if([elementName isEqualToString:@"State"]) {
+        state = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.state = currentElementValue;
+        
+    } else if([elementName isEqualToString:@"Gender"]) {
+        gender = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.gender = currentElementValue;
+        
+    }else if([elementName isEqualToString:@"City"]) {
+        city= [[NSMutableString alloc] initWithString:currentElementValue];
+        one.city = currentElementValue;
+        
+    } else if([elementName isEqualToString:@"Info"]) {
+        info = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.info = currentElementValue;
+        
+    } else if([elementName isEqualToString:@"Address"]) {
+        address = [[NSMutableString alloc] initWithString:currentElementValue];
+        one.address = currentElementValue;
+        
+    } else if([elementName isEqualToString:@"Number"]) {
+        NSLog(@"found phone: %@", currentElementValue);
+        [one addNumber:[[NSMutableString alloc] initWithString:currentElementValue]];
+        
+    } else {
+        NSLog(@"%@", elementName);
+    }
+    
+    currentElementValue = nil;
+    
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+    if(!currentElementValue)  {
+        string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        currentElementValue = [[NSMutableString alloc] initWithString:string];
+        
+        // [currentElementValue appendString:string];
+    } else {
+        string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [currentElementValue appendString:string];
+    }
+    
+    
+}
+
+- (void)insertNewObject:(HTServiceData *) obj {
+    if (!states) {
+        states = [states init];
+    }
+    if(![states containsObject:one.state]){
+        [states addObject:one.state];
+        ////NSLog(@"adding state%@", obj.state);
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    if(!data){
+        data = [data init];
+    }
+    if(![data containsObject:one]){
+        [data addObject:one];
+    }
+    
+}
+*/
 
 - (void)didReceiveMemoryWarning
 {
@@ -315,6 +439,65 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+// Banner
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    [adView setHidden:FALSE];
+    NSLog(@"HTContactViewController bannerViewDidLoad");
+    if (!self.bannerIsVisible) {
+        NSLog(@"should load banner");
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        // Assumes the banner view is just off the bottom of the screen.
+        banner.frame = CGRectOffset(banner.frame, 0, 0);// banner.frame.size.height+10);
+        // [adView setFrame:CGRectOffset([adView frame], 20,-[self getBannerHeight]-20)];
+        [UIView commitAnimations];
+        self.bannerIsVisible = YES;
+    }
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    NSLog(@"Banner view is beginning an ad bannerViewActionShouldBegin");
+    //    BOOL shouldExecuteAction = [self allowActionToRun]; // your application implements this method
+    //    if (!willLeave && shouldExecuteAction)
+    //    {
+    //        // insert code here to suspend any services that might conflict with the advertisement
+    //    }
+    //    return shouldExecuteAction;
+    NSLog(@"bannerViewActionShouldBegin");
+    return YES;
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"bannerView");
+    //    if (self.bannerIsVisible)
+    //    {
+    //        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+    //
+    //        banner.frame = CGRectOffset(banner.frame, 0, 30); // banner.frame.size.height+10);
+    //
+    //        [UIView commitAnimations];
+    //        self.bannerIsVisible = NO;
+    //    }
+    [adView setHidden:TRUE];
+}
+
+
+- (int)getBannerHeight:(UIDeviceOrientation)orientation {
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        return 32;
+    } else {
+        return 50;
+    }
+}
+
+- (int)getBannerHeight {
+    return [self getBannerHeight:[UIDevice currentDevice].orientation];
+}
+
 
 - (IBAction)contactUsButtonClick:(id)sender {
     HTContactUsViewController *controller = [[HTContactUsViewController alloc]
