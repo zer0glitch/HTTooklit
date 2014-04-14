@@ -38,10 +38,19 @@
 @synthesize headers, fields, _textField, fieldHeaders, keyboardShown, keyboardOverlap, activeCellIndexPath;
 
 int currentRow = 0;
+NSString *path;
+NSDictionary *properties;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitEmailSettings.plist"];
+    if([[NSFileManager defaultManager] fileExistsAtPath:path]){
+        properties = [[NSDictionary alloc]init];
+        properties = [NSDictionary dictionaryWithContentsOfFile:path];
+    }
     /*
      @property (nonatomic, retain) NSString *fieldName;
      @property (nonatomic, retain) NSString *value;
@@ -60,57 +69,95 @@ int currentRow = 0;
     
     DataElement *de = [[DataElement alloc] init];
     de.fieldName = @"Name";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:@"Name"];
+    }
+    else{
+        de.value = @"";
+    }
     de.fieldType = 1;
     [fields addObject:de];
     // NSLog(@"fields lengt %d", [fields count]);
     
     de = [[DataElement alloc] init];
     de.fieldName = @"Department";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else{
+        de.value = @"";
+    }
     de.fieldType = 1;
     [fields addObject:de];
     
     de = [[DataElement alloc] init];
     de.fieldName = @"Jurisdiction";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else
+        de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
     
     
     de = [[DataElement alloc] init];
     de.fieldName = @"Email";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else
+        de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
   
     de = [[DataElement alloc] init];
     de.fieldName = @"Phone";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else
+        de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
     
     de = [[DataElement alloc] init];
     de.fieldName = @"Address";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else
+        de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
     
     de = [[DataElement alloc] init];
     de.fieldName = @"City";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else
+        de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
     
     de = [[DataElement alloc] init];
     de.fieldName = @"State";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else
+        de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
     
     de = [[DataElement alloc] init];
     de.fieldName = @"Zip";
-    de.value = @"";
+    if([properties objectForKey:de.fieldName]){
+        de.value = [properties objectForKey:de.fieldName];
+    }
+    else
+        de.value = @"";
     de.fieldType = 1;
     [fields addObject:de];
     
@@ -152,6 +199,7 @@ int currentRow = 0;
         
         [textFields addObject:txt];
         
+        
     }
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -165,6 +213,12 @@ int currentRow = 0;
     if (self) {
         // Custom initialization
     }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Usage"
+                                                        message:@"Use organizational(.gov/.org) email to acquire access. Recieving email through this type of address will be considered as validation."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+    [alert show];
     return self;
 }
 
@@ -210,7 +264,7 @@ int currentRow = 0;
     
 	if (cell == nil) {
         cell = [[PITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
-        
+        cell.accessoryType = UITableViewCellAccessoryNone;
  //       DataElement *de = [fields objectAtIndex: indexPath.row];
         
 //        if (de.fieldType == 1) [cell setSelectionStyle:UITableViewCellAccessoryNone];
@@ -268,15 +322,6 @@ int currentRow = 0;
     }
     // For any other character return TRUE so that the text gets added to the view
     return TRUE;
-}
-
-- (UITableViewCellAccessoryType)tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
-    
-    DataElement *de = [fields objectAtIndex: indexPath.row];
-    
-    if (de.fieldType == 2) return UITableViewCellAccessoryDetailDisclosureButton ;
-    else return UITableViewCellAccessoryNone;
-    //return UITableViewCellAccessoryDisclosureIndicator;
 }
 
 - (void) tableView: (UITableView *) tableView accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath{
@@ -591,14 +636,22 @@ int currentRow = 0;
 }
 
 - (IBAction)saveData:(id)sender {
+    [_textField resignFirstResponder];
+
     NSString *emailData = @"";
-    
+    NSMutableArray *keys, *objs;
+    keys = [[NSMutableArray alloc]init];
+    objs = [[NSMutableArray alloc]init];
     for (DataElement *data in fields) {
-      //   NSLog(@"Data Name %@ = %@", data.fieldName, data.value);
+         NSLog(@"Data Name %@ = %@", data.fieldName, data.value);
         
         emailData = [emailData stringByAppendingFormat:@"%@: %@\n", data.fieldName, data.value];
+        [keys addObject:data.fieldName];
+        [objs addObject:data.value];
         
     }
+    NSDictionary *rootObj = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
+    [rootObj writeToFile:path atomically:YES];
     
     NSLog(@"email String %@", emailData);
     
