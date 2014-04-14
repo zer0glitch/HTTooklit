@@ -39,12 +39,12 @@
 @end
 
 @implementation HTMasterViewController
-@synthesize masterList, labels, bannerIsVisible;
+@synthesize masterList, labels, bannerIsVisible, imageview;
 
 NSMutableString *currentElementValue;
  HTFullData *one;
 NSString *path, *urlstring;
-NSMutableString *state, *agency, *jurisdiction, *contact, *email, *user, *key, *auth;
+NSMutableString *state, *agency, *jurisdiction, *contact, *email, *user, *key, *tkey, *tuser, *auth;
 NSURL *url;
 int count = 0;
 
@@ -61,16 +61,17 @@ int count = 0;
     if([[NSFileManager defaultManager] fileExistsAtPath:path]){
         NSDictionary *properties = [[NSDictionary alloc]init];
         properties = [NSDictionary dictionaryWithContentsOfFile:path];
-        NSString *tkey = [properties objectForKey:@"passcode"];
-        if(tkey) key = [[NSMutableString alloc] initWithString:tkey];
+        NSString *pkey = [properties objectForKey:@"passcode"];
+        if(pkey) key = [[NSMutableString alloc] initWithString:pkey];
         else key = [[NSMutableString alloc] initWithString:@""];
-        NSString *tuser = [properties objectForKey:@"email"];
-        if(tuser) user = [[NSMutableString alloc] initWithString:tkey];
+        tkey = [[NSMutableString alloc] initWithString:key];
+        NSString *puser = [properties objectForKey:@"email"];
+        if(puser) user = [[NSMutableString alloc] initWithString:puser];
         else user = [[NSMutableString alloc] initWithString:@""];
-        
+        tuser = [[NSMutableString alloc] initWithString:user];
         [user setString:tuser];
     }
-    
+    //imageview = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"slogo_src.png"]] initWithFrame:CGRectZero];
     adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
     //adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height-30);
     if (!self.bannerIsVisible) {
@@ -83,6 +84,7 @@ int count = 0;
     self.bannerIsVisible = NO;
     //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     [self.view addSubview:adView];
+    [adView setHidden:TRUE];
     
     
     //self.view.backgroundColor = [UIColor blackColor];
@@ -196,7 +198,6 @@ int count = 0;
  qualifiedName:(NSString *)qName
     attributes:(NSDictionary *)attributeDict {
     //  NSString *ident = [attributeDict objectForKey:@"id"];
-    
     if([elementName isEqualToString:@"Record"]) {
         ////NSLog(@"found record");
         NSLog(@"Start Record");
@@ -223,7 +224,7 @@ int count = 0;
     } else  if([elementName isEqualToString:@"Agency"]) {
      //   alert.title = currentElementValue;
         
-       // ////NSLog(@"agency current %@", currentElementValue);
+      // ////NSLog(@"agency current %@", currentElementValue);
         one.agencyName = currentElementValue;
        // ////NSLog(@"agency on. %@", one.agencyName);
     } else if([elementName isEqualToString:@"State"]) {
@@ -232,7 +233,7 @@ int count = 0;
             ////NSLog(@"state on. %@", state);
 
     } else if([elementName isEqualToString:@"Jurisdiction"]) {
-    //  jurisdiction = [[NSMutableString alloc] initWithString:currentElementValue];
+      //  jurisdiction = [[NSMutableString alloc] initWithString:currentElementValue];
         one.jurisdiction = currentElementValue;
         
     } else if([elementName isEqualToString:@"Contact"]) {
@@ -249,7 +250,7 @@ int count = 0;
       //  [one.phoneNumbers addObject:currentElementValue];
         
     } else {
-        // ////NSLog(@"%@", elementName);
+       // //// NSLog(@"%@", elementName);
     }
     
    //  [one printNumbers];
@@ -288,11 +289,17 @@ int count = 0;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
-    NSDictionary *rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: key, user, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
+    NSDictionary *rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: tkey, tuser, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
     [rootObj writeToFile:path atomically:YES];
     
     [xml setDelegate:self];
-    [xml parse];
+    NSLog(@"parsing...");
+    if([xml parse])
+        NSLog(@"parsing successful");
+    else
+        NSLog(@"parsing unsuccessful, stopped on %ld %ld\n%@",(long)[xml lineNumber], (long)[xml columnNumber], [xml parserError]);
+        
+    NSLog(@"finished parsing.");
     
     NSLog(@"responded to authentication challenge");
     count = 0;
@@ -309,10 +316,8 @@ int count = 0;
     } else {
         string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         [currentElementValue appendString:string];
-         // ////NSLog(@"Processing Value: %@", currentElementValue);
     }
-    
-     // ////NSLog(@"Processing Value: %@", currentElementValue);
+   
     
 }
 
@@ -378,15 +383,6 @@ int count = 0;
     return NO;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [labels removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showCity"]) {
@@ -420,6 +416,8 @@ int count = 0;
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
+    //[imageview setHidden:TRUE];
+    [adView setHidden:FALSE];
     ////NSLog(@"bannerViewDidLoad");
     if (!self.bannerIsVisible) {
         ////NSLog(@"should load banner");
@@ -473,6 +471,7 @@ int count = 0;
     //        [UIView commitAnimations];
     //        self.bannerIsVisible = NO;
     //    }
+    [adView setHidden:TRUE];
 }
 
 

@@ -34,11 +34,10 @@
 #import "HTContactUsViewController.h"
 
 @interface HTMasterViewController : UITableViewController <ADBannerViewDelegate, NSXMLParserDelegate, NSURLConnectionDelegate> {
-    
     ADBannerView *adView;
     BOOL bannerIsVisible;
 }
-
+@property (strong, nonatomic) IBOutlet UIImageView *imageview;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *refreshButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
