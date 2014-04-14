@@ -36,11 +36,24 @@
 @end
 
 @implementation HTStateViewController
-@synthesize List, jurs;
+@synthesize List, jurs, bannerIsVisible;
 
 
 - (void)viewDidLoad
 {
+    adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    //adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height-30);
+    if (!self.bannerIsVisible) {
+        adView.frame = CGRectOffset(adView.frame, 0, 0);
+    }
+    
+    [adView setDelegate:self];
+    
+    self.bannerIsVisible = NO;
+    //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    [self.view addSubview:adView];
+    [adView setHidden:TRUE];
+    
     [super viewDidLoad];
     
 

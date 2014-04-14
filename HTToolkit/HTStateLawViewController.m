@@ -62,7 +62,7 @@
     self.bannerIsVisible = NO;
     //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     [self.view addSubview:adView];
-    
+    [adView setHidden:TRUE];
     
     
     [super viewDidLoad];
@@ -196,6 +196,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
+    [adView setHidden:FALSE];
     NSLog(@"StateLaw bannerViewDidLoad");
     if (!self.bannerIsVisible) {
         NSLog(@"should load banner");
@@ -233,6 +234,7 @@
     //        [UIView commitAnimations];
     //        self.bannerIsVisible = NO;
     //    }
+    [adView setHidden:TRUE];
 }
 
 

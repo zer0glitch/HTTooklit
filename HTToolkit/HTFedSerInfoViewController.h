@@ -39,6 +39,7 @@
     ADBannerView *adView;
     BOOL bannerIsVisible;
 }
+@property (nonatomic, strong) IBOutlet UIImageView *imageview;
 @property (nonatomic,assign) BOOL bannerIsVisible;
 
 

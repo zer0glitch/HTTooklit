@@ -29,9 +29,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HTContactsViewController.h"
+#import <iAd/iAd.h>
 
-@interface HTUSjursViewController : UITableViewController
-
+@interface HTUSjursViewController : UITableViewController<ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 @property (nonatomic, copy) NSMutableArray *jurisdictions;
 @property (nonatomic, copy) NSMutableArray *list;
 

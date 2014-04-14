@@ -32,9 +32,14 @@
 #import "HTCorrespondViewController.h"
 #import "HTContactUsViewController.h"
 #import "HTLoginViewController.h"
+#import <iAd/iAd.h>
 
-@interface HTTrainViewController : UITableViewController
-
+@interface HTTrainViewController : UITableViewController<ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 @property (weak, nonatomic) IBOutlet UITextView *tVisa;
 @property (weak, nonatomic) IBOutlet UITextView *uVisa;
 @property (weak, nonatomic) IBOutlet UITextView *vawa;

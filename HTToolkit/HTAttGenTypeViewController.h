@@ -28,9 +28,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface HTAttGenTypeViewController : UITableViewController
-
+@interface HTAttGenTypeViewController : UITableViewController<ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 @property (nonatomic, copy) NSMutableArray* states;
 @property (nonatomic, copy) NSMutableArray* list;
 

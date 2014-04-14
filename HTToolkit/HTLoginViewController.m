@@ -89,8 +89,8 @@ NSString *auth;
 
 - (IBAction)authenticate:(id)sender {
         NSDictionary *rootObj;
-        NSString * code = pass.text;
-        NSString * mail = email.text;
+        NSString *code = pass.text;
+        NSString *mail = email.text;
         rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: code, mail, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];

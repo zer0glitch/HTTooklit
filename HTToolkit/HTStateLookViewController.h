@@ -29,9 +29,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HTContactUsViewController.h"
+#import <iAd/iAd.h>
 
-@interface HTStateLookViewController : UITableViewController
-
+@interface HTStateLookViewController : UITableViewController<ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 @property (nonatomic, copy) NSMutableArray *states;
 @property (nonatomic, copy) NSMutableArray *labels;
 

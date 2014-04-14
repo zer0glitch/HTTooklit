@@ -31,9 +31,14 @@
 #import "HTServiceData.h"
 #import "HTContactsViewController.h"
 #import "HTCorrespondViewController.h"
+#import <iAd/iAd.h>
 
-@interface HTServiceViewController : UITableViewController
-
+@interface HTServiceViewController : UITableViewController<ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 @property (nonatomic, weak) HTServiceData* entry;
 
 - (IBAction)contactUsButtonClick:(id)sender;

@@ -29,9 +29,15 @@
 
 #import <UIKit/UIKit.h>
 #import "HTContactsViewController.h"
+#import <iAd/iAd.h>
 
-@interface HTSerAgencyViewController : UITableViewController
 
+@interface HTSerAgencyViewController : UITableViewController<ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 @property (nonatomic,copy) NSMutableArray* list;
 
 - (IBAction)contactUsButtonClick:(id)sender;

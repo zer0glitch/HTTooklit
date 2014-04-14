@@ -31,11 +31,15 @@
 
 #import <UIKit/UIKit.h>
 #import "HTAllianceData.h"
-
+#import <iAd/iAd.h>
 #import "HTContactUsViewController.h"
 
-@interface HTAllianceViewController : UITableViewController
-
+@interface HTAllianceViewController : UITableViewController<ADBannerViewDelegate> {
+    
+    ADBannerView *adView;
+    BOOL bannerIsVisible;
+}
+@property (nonatomic,assign) BOOL bannerIsVisible;
 @property (nonatomic, copy) NSMutableArray *USattorneys;
 @property (nonatomic, copy) NSMutableArray *attorneyGenerals;
 @property (nonatomic, copy) NSMutableArray *districtAttornies;

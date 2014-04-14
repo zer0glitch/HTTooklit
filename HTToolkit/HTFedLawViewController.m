@@ -61,7 +61,7 @@
     self.bannerIsVisible = NO;
     //  adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
     [self.view addSubview:adView];
-    
+    [adView setHidden:TRUE];
     
     [super viewDidLoad];
     // Uncomment the following line to preserve selection between presentations.
@@ -238,6 +238,7 @@
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
+    [adView setHidden:FALSE];
     NSLog(@"FedLawView Controller bannerViewDidLoad");
     if (!self.bannerIsVisible) {
         NSLog(@"should load banner");
@@ -275,6 +276,7 @@
     //        [UIView commitAnimations];
     //        self.bannerIsVisible = NO;
     //    }
+    [adView setHidden:TRUE];
 }
 
 
