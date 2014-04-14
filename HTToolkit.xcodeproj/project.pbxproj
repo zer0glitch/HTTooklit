@@ -15,6 +15,7 @@
 		5C30CE2B177DDAA000D3AA8C /* HTAttGenTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE2A177DDAA000D3AA8C /* HTAttGenTypeViewController.m */; };
 		5C30CE34177DFF6800D3AA8C /* HTAttorneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE33177DFF6800D3AA8C /* HTAttorneyViewController.m */; };
 		5C30CE371781F0D400D3AA8C /* HTDistStateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C30CE361781F0D300D3AA8C /* HTDistStateViewController.m */; };
+		5C37347E18FBAB62008FC2FD /* slogo_src.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C37347D18FBAB62008FC2FD /* slogo_src.png */; };
 		5C58645118EA1FE00046C208 /* HTCorrespondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C58645018EA1FE00046C208 /* HTCorrespondViewController.xib */; };
 		5C58645418EA2A6D0046C208 /* HTCorrespondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C58645318EA2A6D0046C208 /* HTCorrespondViewController.m */; };
 		5C6F5DE81754FEC3003B1927 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C6F5DE71754FEC3003B1927 /* UIKit.framework */; };
@@ -91,6 +92,7 @@
 		5C30CE33177DFF6800D3AA8C /* HTAttorneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTAttorneyViewController.m; sourceTree = "<group>"; };
 		5C30CE351781F0D300D3AA8C /* HTDistStateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTDistStateViewController.h; sourceTree = "<group>"; };
 		5C30CE361781F0D300D3AA8C /* HTDistStateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTDistStateViewController.m; sourceTree = "<group>"; };
+		5C37347D18FBAB62008FC2FD /* slogo_src.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slogo_src.png; sourceTree = "<group>"; };
 		5C58645018EA1FE00046C208 /* HTCorrespondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTCorrespondViewController.xib; sourceTree = "<group>"; };
 		5C58645218EA2A6D0046C208 /* HTCorrespondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCorrespondViewController.h; sourceTree = "<group>"; };
 		5C58645318EA2A6D0046C208 /* HTCorrespondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCorrespondViewController.m; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		5C6F5DEE1754FEC3003B1927 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5C37347D18FBAB62008FC2FD /* slogo_src.png */,
 				7DF1773018B783CB00447F18 /* Default-568h@2x.png */,
 				7DF1772E18B783BF00447F18 /* Default@2x.png */,
 				7D99824E1891F27600116F2E /* src-contact.png */,
@@ -410,7 +413,7 @@
 				ORGANIZATIONNAME = SRC;
 				TargetAttributes = {
 					5C6F5DE31754FEC3003B1927 = {
-						DevelopmentTeam = 4GLDN6B2R8;
+						DevelopmentTeam = 5J4TDNPP75;
 					};
 				};
 			};
@@ -436,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C37347E18FBAB62008FC2FD /* slogo_src.png in Resources */,
 				5C6F5DF21754FEC3003B1927 /* InfoPlist.strings in Resources */,
 				7D1A960B189094F7005C8CEE /* htt-logo3-40.png in Resources */,
 				5C6F5E011754FEC3003B1927 /* MainStoryboard.storyboard in Resources */,
