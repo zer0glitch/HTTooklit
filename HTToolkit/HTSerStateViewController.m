@@ -226,7 +226,7 @@ NSMutableString *currentElementValue, *info, *state, *agency, *address, *gender,
 }
 
 /*-(void)loadData {
-    NSURL *url = [[NSURL alloc] initWithString:@""];
+    NSURL *url = [NSURL URLWithString:@""];
     NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
     [xml setDelegate:self];
