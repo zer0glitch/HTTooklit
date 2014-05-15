@@ -650,7 +650,9 @@ NSDictionary *properties;
         [objs addObject:data.value];
         
     }
+    NSLog(@"Starting This!!!!");
     NSDictionary *rootObj = [NSDictionary dictionaryWithObjects:objs forKeys:keys];
+    NSLog(@"Did i get here?");
     [rootObj writeToFile:path atomically:YES];
     
     NSLog(@"email String %@", emailData);

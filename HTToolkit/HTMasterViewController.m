@@ -56,6 +56,7 @@ int count = 0;
 
 - (void)viewDidLoad {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //NSLog(@"HTMaster 1");
     NSString *documentsDirectory = [paths objectAtIndex:0];
     path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
     if([[NSFileManager defaultManager] fileExistsAtPath:path]){
@@ -71,6 +72,7 @@ int count = 0;
         tuser = [[NSMutableString alloc] initWithString:user];
         [user setString:tuser];
     }
+    //NSLog(@"HTMaster 2");
     //imageview = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"slogo_src.png"]] initWithFrame:CGRectZero];
     adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
     //adView.frame = CGRectOffset(adView.frame, 0, adView.frame.size.height-30);
@@ -92,63 +94,7 @@ int count = 0;
 	// Do any additional setup after loading the view, typically from a nib.
     labels = [[NSMutableArray alloc]init];
     masterList = [[NSMutableArray alloc]init];
-    
-    /*
-    
-    HTFullData *one = [[HTFullData alloc] initWithName:@"California" jurisdiction:@"Los Angeles" agencyName:@"Los Angeles Police Department" contact:@"Lt. Andrea Grossman" email:@"30231@lapd.lacity.org"];
-    [one addNumber:@"Phone: (562) 624-4028"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc]initWithName:@"California" jurisdiction:@"Los Angeles" agencyName:@"SAC Office" contact:@"Liz Mitchell" email:@"liz.e.mitchell@ice.dhs.gov"];
-    [one addNumber:@"Phone: (213) 633-6262"];
-    [self insertNewObject:one];
-    
-    one = [[HTFullData alloc] initWithName:@"Florida" jurisdiction:@"South Florida" agencyName:@"Broward County Sheriff's Office" contact:@"Lieutenant Charlotte Ross" email:@"leachtaskforce@bsosid.org"];
-    [one addNumber:@"Phone: (954) 888-5299"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami" agencyName:@"Miami Beach Police" contact:@"Captain Mark Causey" email:@"Markcausey@miamibeachfl.gov"];
-    [one addNumber:@"Phone: (305) 673-7776;5662"];
-    [one addNumber:@"Cell: (305) 498-7438"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami-Dade" agencyName:@"Miami-Dade Police" contact:@"Sargent Nicole Donnelly & Detective Peter Caracilio" email:@"pcaracilio@mdpd.com"];
-    [one addNumber:@"Sargent Nicole Donnelly: (305) 216-2591"];
-    [one addNumber:@"Detective Peter Caracilio: (305) 297-6067"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc]initWithName:@"Florida" jurisdiction:@"Miami" agencyName:@"SAC Office" contact:@"Mariano Aponte" email:@"mariano.L.Aponte@ice.dhs.gov"];
-    [one addNumber:@"Phone: (305) 597-6614"];
-    [self insertNewObject:one];
-    
-    one = [[HTFullData alloc]initWithName:@"Georgia" jurisdiction:@"Atlanta" agencyName:@"SAC Office" contact:@"Brian Ramsey" email:@"brian.e.ramsey@ice.dhs.gov"];
-    [one addNumber:@"Phone: (404) 346-2885"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc] initWithName:@"Georgia" jurisdiction:@"Georgia" agencyName:@"Georgia Bureau of investigation" contact:@"Special Agent in Charge Sandra Putnam" email:@"Sandra.Putnam@gbi.ga.gov"];
-    [one addNumber:@"Phone: (404) 270-8870"];
-    [self insertNewObject:one];
-    
-    one = [[HTFullData alloc] initWithName:@"Kansas" jurisdiction:@"Kansas" agencyName:@"Sedgwick County's Sheriff's Office" contact:@"Lt. Jeff Weible" email:@"jweible@sedgwick.gov"];
-    [one addNumber:@"Phone: (316) 337-6552"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc]initWithName:@"Kansas" jurisdiction:@"Kansas City" agencyName:@"SAC Office" contact:@"Mark Fox" email:@"mark.e.fox@ice.dhs.gov"];
-    [one addNumber:@"Phone: (816) 584-1054"];
-    [self insertNewObject:one];
-    
-    one = [[HTFullData alloc] initWithName:@"Louisiana" jurisdiction:@"Louisiana" agencyName:@"Louisiana Department of Justice" contact:@"Computer Forensic Lab Manager Corey Bourgeois" email:@"bourgeoisc@ag.state.la.us"];
-    [one addNumber:@"Phone: (225) 326-6145"];
-    [self insertNewObject:one];
-    
-    one = [[HTFullData alloc]initWithName:@"Tennessee" jurisdiction:@"Memphis" agencyName:@"SAC Office" contact:@"James Shires" email:@"james.a.shires@ice.dhs.gov"];
-    [one addNumber:@"Phone: (504) 310-8865"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc] initWithName:@"Tennessee" jurisdiction:@"Tennessee" agencyName:@"Knoxville Police Department" contact:@"Captain Monty Houk" email:@"mhouk@cityofknoxville.org"];
-    [one addNumber:@"Phone: (865) 215-7020"];
-    [self insertNewObject:one];
-    
-    one = [[HTFullData alloc]initWithName:@"Texas" jurisdiction:@"El Paso" agencyName:@"SAC Office" contact:@"Gustavo Correa" email:@"gustavo.e.correa@ice.dhs.gov"];
-    [one addNumber:@"Phone: (915) 881-5560"];
-    [self insertNewObject:one];
-    one = [[HTFullData alloc] initWithName:@"Texas" jurisdiction:@"Texas, Southern" agencyName:@" Attorney General of Texas" contact:@"Captain Kimberly Bustos" email:@"kimberly.bustos@texasattorneygeneral.gov"];
-    [one addNumber:@"Phone: (512) 936-2896"];
-    [self insertNewObject:one];   
-     */
+
     [self loadData];
 }
 
@@ -167,25 +113,132 @@ int count = 0;
 }
 
 - (void)loadData {
-    if(count == 0){
-        urlstring = @"https://www.srcle.com/mobile/apps/htt/sensitive/ht_contacts.xml";
+    if(user == NULL || [user isEqualToString:@"anonymous@srcle.com"]){
+        urlstring = @"https://www.srcle.com/mobile/apps/htt/public/ht_contacts.xml";
         count++;
-    }
-    if([urlstring  isEqual: @"https://www.srcle.com/mobile/apps/htt/sensitive/ht_contacts.xml"]){
+    } else if (user != NULL){
         auth = [[NSMutableString alloc] initWithString:@"1"];
-    }
-    else
-        auth = [[NSMutableString alloc] initWithString:@"0"];
+        urlstring = @"https://www.srcle.com/mobile/apps/htt/sensitive/ht_contacts.xml";
+    } else auth = [[NSMutableString alloc] initWithString:@"0"];
+    
+    //NSLog(@"URL String %@", urlstring);
     url = [NSURL URLWithString:urlstring];
-    NSLog(@"load data");
+    //NSLog(@"load data");
 
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    
     //NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
 
     //[xml setDelegate:self];
     //[xml parse];
+    ////NSLog(@"finish load data");
+}
+
+- (void)loadPublicData {
+    if(user == NULL || [user isEqualToString:@"anonymous@srcle.com"]){
+        urlstring = @"https://www.srcle.com/mobile/apps/htt/public/ht_contacts.xml";
+        auth = [[NSMutableString alloc] initWithString:@"0"];
+
+        count++;
+    }
+    
+    //NSLog(@"URL String %@", urlstring);
+    url = [NSURL URLWithString:urlstring];
+    //NSLog(@"load data");
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    
+    //NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+    //[xml setDelegate:self];
+    //[xml parse];
+    ////NSLog(@"finish load data");
+}
+
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    //NSLog(@"credital failure %d ", [challenge previousFailureCount]);
+    //NSLog(@"on url %@", urlstring);
+    if ([challenge previousFailureCount] == 3) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Announcement" message: @"Username and Passcode are invalid!" delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        user = NULL;
+        key = NULL;
+        //[connection cancel];
+        [connection cancel];
+        [self loadPublicData];
+        
+    }
+    //NSLog(@"User %@ key %@", user, key);
+    if (user == NULL || [user isEqualToString:@"anonymous@srcle.com"]) {
+        
+        urlstring = @"https://www.srcle.com/mobile/apps/htt/public/ht_contacts.xml";
+        key = [[NSMutableString alloc] initWithString:@"PubL!cP@$$"];
+        user = [[NSMutableString alloc] initWithString:@"anonymous@srcle.com"];
+        auth = [[NSMutableString alloc] initWithString:@"0"];
+ 
+        //  [self loadData];
+    } else {
+        urlstring = @"https://www.srcle.com/mobile/apps/htt/sensitive/ht_contacts.xml";
+    }
+    
+    //NSLog(@"received authentication challenge");
+    
+    NSURLCredential *newCredential;
+    newCredential=[NSURLCredential credentialWithUser:user password:key persistence:NSURLCredentialPersistenceForSession];
+    
+    //NSLog(@"credential created");
+    
+    [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
+    
+   // if ([user isEqualToString:@"anonymous@srcle.com"]) [self loadData];
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:
+
+(NSURLResponse *)response
+{
+    
+
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:
+(NSData *)data {
+    NSString *myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //NSLog(@"return data - %@", myString);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    //NSLog(@"connection finished");
+    NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+    if (tkey != NULL) {
+        //NSLog(@"I am in here");
+        NSMutableDictionary *rootObj = [[NSMutableDictionary alloc] init];
+    
+        [rootObj setObject:tkey forKey:@"passcode"];
+        [rootObj setObject:tuser forKey:@"email"];
+        [rootObj setObject:auth forKey:@"authorization"];
+
+        [rootObj writeToFile:path atomically:YES];
+    }
+    
+    [xml setDelegate:self];
+    //NSLog(@"parsing...");
+    if([xml parse]) NSLog(@"parsing successful");
+    else NSLog(@"parsing unsuccessful, stopped on %ld %ld\n%@",(long)[xml lineNumber], (long)[xml columnNumber], [xml parserError]);
+    
+    //NSLog(@"finished parsing.");
+    
+    //NSLog(@"responded to authentication challenge");
+    count = 0;
     //NSLog(@"finish load data");
+    //NSLog(auth);
 }
 
 
@@ -194,43 +247,49 @@ int count = 0;
 #define ELTYPE(typeName) (NSOrderedSame == [elementName caseInsensitiveCompare:@#typeName])
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
-  namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName
+    namespaceURI:(NSString *)namespaceURI
+    qualifiedName:(NSString *)qName
     attributes:(NSDictionary *)attributeDict {
+    
+   // //NSLog(@"Element name %@", elementName);
+    // //NSLog(@"Element name %@", qName);
     //  NSString *ident = [attributeDict objectForKey:@"id"];
     if([elementName isEqualToString:@"Record"]) {
-        ////NSLog(@"found record");
-        NSLog(@"Start Record");
+        //////NSLog(@"found record");
+        //NSLog(@"Start Record");
         
         one = [[HTFullData alloc] init];
         
     } else if([elementName isEqualToString:@"Agency"]) {
-       // ////NSLog(@"found Agency");
+       // //////NSLog(@"found Agency");
     }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName
   namespaceURI:(NSString *)namespaceURI
- qualifiedName:(NSString *)qName {
-    
+  qualifiedName:(NSString *)qName {
+    //NSLog(@"Element name %@", elementName);
+    //NSLog(@"Element name %@", qName);
 
     if([elementName isEqualToString:@"Record"]) {
       //  [twitterAlerts addObject:alert];
        // [alert release];
       //  HTFullData *one = [[HTFullData alloc] initWithName:state jurisdiction:jurisdiction agencyName:agency contact:contact email:email];
-        NSLog(@"End Record");
+        //NSLog(@"End Record");
+        
+        //NSLog(@"Adding one %@", one.state);
         
         [self insertNewObject:one];
     } else  if([elementName isEqualToString:@"Agency"]) {
      //   alert.title = currentElementValue;
         
-      // ////NSLog(@"agency current %@", currentElementValue);
+     // //NSLog(@"agency current %@", currentElementValue);
         one.agencyName = currentElementValue;
-       // ////NSLog(@"agency on. %@", one.agencyName);
+       // //////NSLog(@"agency on. %@", one.agencyName);
     } else if([elementName isEqualToString:@"State"]) {
       //state = [[NSMutableString alloc] initWithString:currentElementValue];
         one.state = currentElementValue;
-            ////NSLog(@"state on. %@", state);
+            //NSLog(@"state on. %@", currentElementValue);
 
     } else if([elementName isEqualToString:@"Jurisdiction"]) {
       //  jurisdiction = [[NSMutableString alloc] initWithString:currentElementValue];
@@ -245,66 +304,22 @@ int count = 0;
         one.email = currentElementValue;
   
     } else if([elementName isEqualToString:@"Number"]) {
-        NSLog(@"found phone: %@", currentElementValue);
+        //NSLog(@"found phone: %@", currentElementValue);
         [one addNumber:[[NSMutableString alloc] initWithString:currentElementValue]];
       //  [one.phoneNumbers addObject:currentElementValue];
         
     } else {
-       // //// NSLog(@"%@", elementName);
+       // //// //NSLog(@"%@", elementName);
+    }
+    
+    if([elementName isEqualToString:@"HTData"]) {
+      //  [self insertNewObject:one];
+        [self.tableView reloadData];
     }
     
    //  [one printNumbers];
     currentElementValue = nil;
     
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-    if ([challenge previousFailureCount] == 0)
-    {
-        NSLog(@"received authentication challenge");
-        
-        NSURLCredential *newCredential;
-        newCredential=[NSURLCredential credentialWithUser:user password:key
-        persistence:NSURLCredentialPersistenceForSession];
-        
-        
-        NSLog(@"credential created");
-        
-        [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge];
-        
-    }
-    else if ([challenge previousFailureCount] == 1)
-    {
-        urlstring = @"https://www.srcle.com/mobile/apps/htt/public/ht_contacts.xml";
-        key = [[NSMutableString alloc] initWithString:@"PubL!cP@$$"];
-        user = [[NSMutableString alloc] initWithString:@"anonymous@srcle.com"];
-        [self loadData];
-    }
-    else
-    {
-        
-    }
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSXMLParser *xml = [[NSXMLParser alloc] initWithContentsOfURL:url];
-    NSDictionary *rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: tkey, tuser, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
-    [rootObj writeToFile:path atomically:YES];
-    
-    [xml setDelegate:self];
-    NSLog(@"parsing...");
-    if([xml parse])
-        NSLog(@"parsing successful");
-    else
-        NSLog(@"parsing unsuccessful, stopped on %ld %ld\n%@",(long)[xml lineNumber], (long)[xml columnNumber], [xml parserError]);
-        
-    NSLog(@"finished parsing.");
-    
-    NSLog(@"responded to authentication challenge");
-    count = 0;
-    NSLog(@"finish load data");
-    NSLog(auth);
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
@@ -321,13 +336,10 @@ int count = 0;
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 // Adds objects to the master list and creates a list of labels.
 - (void)insertNewObject:(HTFullData *) obj {
@@ -336,7 +348,7 @@ int count = 0;
     }
     if(![labels containsObject:one.state]){
         [labels addObject:one.state];
-        ////NSLog(@"adding state%@", obj.state);
+        NSLog(@"adding state%@", obj.state);
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }
@@ -349,7 +361,7 @@ int count = 0;
     
     [one printNumbers];
     
-    //NSLog(@"adding %d state %@ jurisdiction %@", masterList.count, obj.state, obj.jurisdiction);
+    ////NSLog(@"adding %d state %@ jurisdiction %@", masterList.count, obj.state, obj.jurisdiction);
 }
 
 #pragma mark - Table View
@@ -359,20 +371,19 @@ int count = 0;
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
        return labels.count + 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+   // if (labels.count > 0) NSLog(@"THE TABLE CELL %@ row %d", [labels objectAtIndex:indexPath.row], indexPath.row);
     if(indexPath.row == labels.count){
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"loginCell" forIndexPath:indexPath];
         return cell;
-    }
-    else{
+    } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         NSString *str = [labels objectAtIndex:indexPath.row];
+        
         cell.textLabel.text = str;
         return cell;
     }
@@ -393,7 +404,7 @@ int count = 0;
             HTFullData *data = [masterList objectAtIndex:i];
             //NSLog(@"the state x%@x data.state x%@x", state, data.state);
             if([state isEqualToString:data.state]){
-                //NSLog(@"equal");
+                ////NSLog(@"equal");
                 [temp insertObject:data atIndex:0];
             }
         }
@@ -418,9 +429,9 @@ int count = 0;
 {
     //[imageview setHidden:TRUE];
     [adView setHidden:FALSE];
-    ////NSLog(@"bannerViewDidLoad");
+    //////NSLog(@"bannerViewDidLoad");
     if (!self.bannerIsVisible) {
-        ////NSLog(@"should load banner");
+        //////NSLog(@"should load banner");
         [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
         // Assumes the banner view is just off the bottom of the screen.
         banner.frame = CGRectOffset(banner.frame, 0, 0);// banner.frame.size.height+10);
@@ -432,14 +443,14 @@ int count = 0;
 
 - (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
 {
-    ////NSLog(@"Banner view is beginning an ad bannerViewActionShouldBegin");
+    //////NSLog(@"Banner view is beginning an ad bannerViewActionShouldBegin");
     //    BOOL shouldExecuteAction = [self allowActionToRun]; // your application implements this method
     //    if (!willLeave && shouldExecuteAction)
     //    {
     //        // insert code here to suspend any services that might conflict with the advertisement
     //    }
     //    return shouldExecuteAction;
-    ////NSLog(@"bannerViewActionShouldBegin");
+    //////NSLog(@"bannerViewActionShouldBegin");
     return YES;
 }
 - (IBAction)buttonPress:(id)sender {
@@ -461,7 +472,7 @@ int count = 0;
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
 {
-    ////NSLog(@"bannerView");
+    //////NSLog(@"bannerView");
     //    if (self.bannerIsVisible)
     //    {
     //        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];

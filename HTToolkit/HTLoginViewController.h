@@ -34,5 +34,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *pass;
 - (IBAction)authenticate:(id)sender;
 - (IBAction)contactUsButtonClick:(id)sender;
+- (IBAction)touchInEmail:(id)sender;
+- (IBAction)touchUpInCode:(id)sender;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIButton *signInButton;
 
 @end

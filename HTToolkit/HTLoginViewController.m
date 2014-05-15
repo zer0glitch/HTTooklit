@@ -35,7 +35,7 @@
 @end
 
 @implementation HTLoginViewController
-@synthesize email, pass;
+@synthesize email, pass, scrollView;
 NSString *auth;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -88,10 +88,18 @@ NSString *auth;
 }
 
 - (IBAction)authenticate:(id)sender {
-        NSDictionary *rootObj;
+        NSMutableDictionary *rootObj;
         NSString *code = pass.text;
         NSString *mail = email.text;
-        rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: code, mail, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
+    NSLog(@"authenticate 1");
+        //rootObj = [NSDictionary dictionaryWithObjects: [NSArray arrayWithObjects: code, mail, auth, nil] forKeys:[NSArray arrayWithObjects:@"passcode",@"email", @"authorization", nil]];
+    rootObj = [[NSMutableDictionary alloc] init];
+    
+    if (code != NULL) [rootObj setObject:code forKey:@"passcode"];
+    if (mail != NULL) [rootObj setObject:mail forKey:@"email"];
+    if (auth != NULL) [rootObj setObject:auth forKey:@"authorization"];
+    
+     NSLog(@"authenticate 2");
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString *path = [documentsDirectory stringByAppendingPathComponent:@"ToolkitPasscode.plist"];
@@ -105,11 +113,88 @@ NSString *auth;
                                              initWithNibName:@"HTContactUsViewController" bundle:nil];
     
     if (controller) [self presentViewController:controller animated:YES completion:nil];
-    // Show
+
+}
+
+// Start Keyboard stuff
+- (void)registerForKeyboardNotifications {
     
-    //  [controller release];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
     
-    // self.window.controller = controller;
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+}
+
+- (void)deregisterFromKeyboardNotifications {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidHideNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [self registerForKeyboardNotifications];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [self deregisterFromKeyboardNotifications];
+    
+    [super viewWillDisappear:animated];
+    
+}
+
+- (void)keyboardWasShown:(NSNotification *)notification {
+    
+    NSDictionary* info = [notification userInfo];
+    
+    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGPoint buttonOrigin = self.signInButton.frame.origin;
+    
+    CGFloat buttonHeight = self.signInButton.frame.size.height;
+    
+    CGRect visibleRect = self.view.frame;
+    
+    visibleRect.size.height -= keyboardSize.height;
+    
+    if (!CGRectContainsPoint(visibleRect, buttonOrigin)){
+        
+        CGPoint scrollPoint = CGPointMake(0.0, buttonOrigin.y - visibleRect.size.height + buttonHeight);
+        
+        [self.scrollView setContentOffset:scrollPoint animated:YES];
+        
+    }
+    
+}
+
+- (void)keyboardWillBeHidden:(NSNotification *)notification {
+    
+    [self.scrollView setContentOffset:CGPointZero animated:YES];
+    
+}
+
+// END keyboard stuff
+
+- (IBAction)touchInEmail:(id)sender {
+}
+
+- (IBAction)touchUpInCode:(id)sender {
 }
 
 @end

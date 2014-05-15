@@ -17,6 +17,36 @@
             endingLineNumber = "40"
             landmarkName = "@interface HTUSjursViewController"
             landmarkType = "2">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HTUSjursViewController jurisdictions]"
+                  moduleName = "HTToolkit"
+                  urlString = "file:///Users/jamie/dev/iOS/HTTooklit/HTToolkit/HTUSjursViewController.h"
+                  timestampString = "419989534.146839"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[HTUSjursViewController setJurisdictions:]"
+                  moduleName = "HTToolkit"
+                  urlString = "file:///Users/jamie/dev/iOS/HTTooklit/HTToolkit/HTUSjursViewController.h"
+                  timestampString = "419989534.147087"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
